@@ -2,8 +2,6 @@ echo "Installing aqt..."
 
 pip install aqtinstall --upgrade
 
-mkdir Qt
-
 echo "Installing Qt..."
 
 set /P qt_version=<%CD%\qt.version

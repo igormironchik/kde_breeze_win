@@ -6,6 +6,7 @@ class DependenciesRecipe(ConanFile):
 
     def requirements(self):
         self.requires("libiconv/1.17")
+        self.requires("zlib/1.3.1")
         if self.settings.os == "Windows":
             self.requires("gettext/1.0")
             self.requires("libgettext/0.26")
@@ -18,6 +19,7 @@ class DependenciesRecipe(ConanFile):
     def configure(self):
         self.options["libiconv"].shared = False
         self.options["gettext"].shared = False
+        self.options["zlib"].shared = False
         self.options["libgettext"].shared = False
         self.options["zstd"].shared = False
         self.options["bzip2"].shared = False
