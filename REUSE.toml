@@ -1,0 +1,178 @@
+version = 1
+SPDX-PackageName = "kde_breeze_win"
+SPDX-PackageSupplier = "Igor Mironchik <igor.mironchik@gmail.com>"
+SPDX-PackageDownloadLocation = "https://github.com/igormironchik/kde_breeze_win"
+
+[[annotations]]
+path = "KDE/extra-cmake-modules/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = "KDE/kwidgetsaddons/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/breeze/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "GPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/breeze-icons/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/karchive/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kbookmarks/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-only"
+
+[[annotations]]
+path = "KDE/kcmutils/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kcodecs/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kcolorscheme/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kcompletion/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = "KDE/kconfig/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kconfigwidgets/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kcoreaddons/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kcrash/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kdecoration/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL"
+
+[[annotations]]
+path = "KDE/kguiaddons/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL"
+
+[[annotations]]
+path = "KDE/ki18n/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kiconthemes/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-only"
+
+[[annotations]]
+path = "KDE/kio/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL"
+
+[[annotations]]
+path = "KDE/kirigami/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = "KDE/kitemviews/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kjobwidgets/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/knotifications/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-only OR LGPL-3.0-only"
+
+[[annotations]]
+path = "KDE/kservice/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/kwindowsystem/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = "KDE/kxmlgui/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = "KDE/snoretoast/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-3.0-or-later"
+
+[[annotations]]
+path = "KDE/solid/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = ["*.bat", "*.md", "*.py"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Igor Mironchik <igor.mironchik@gmail.com>"
+SPDX-License-Identifier = "GPL-3.0-or-later"
