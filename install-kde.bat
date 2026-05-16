@@ -166,7 +166,7 @@ IF %ERRORLEVEL% NEQ 0 (
 	exit /B %ERRORLEVEL%
 )
 
-cmake -S KDE/solid -B ../builds/build-solid -DCMAKE_BUILD_TYPE=Release -DCMAKE_MODULE_PATH="%cwd%/../builds/conan;%cwd%/win_cmake" -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+cmake -S KDE/solid -B ../builds/build-solid -DCMAKE_BUILD_TYPE=Release -DCMAKE_MODULE_PATH="%cwd%/../builds/conan;%cwd%/cmake" -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
 
 IF %ERRORLEVEL% NEQ 0 (
 	exit /B %ERRORLEVEL%
