@@ -99,6 +99,14 @@ BorderRadius BorderOutline::radius() const
     return m_radius;
 }
 
+class DecorationStateData : public QSharedData
+{
+public:
+    QMarginsF borders;
+    BorderRadius borderRadius;
+    BorderOutline borderOutline;
+};
+
 DecorationState::DecorationState()
     : d(new DecorationStateData)
 {
@@ -108,6 +116,8 @@ DecorationState::DecorationState(const DecorationState &other)
     : d(other.d)
 {
 }
+
+DecorationState &DecorationState::operator=(const DecorationState &other) = default;
 
 DecorationState::~DecorationState()
 {
@@ -157,6 +167,8 @@ Positioner::Positioner(const Positioner &other)
     : d(other.d)
 {
 }
+
+Positioner &Positioner::operator=(const Positioner &other) = default;
 
 Positioner::~Positioner()
 {

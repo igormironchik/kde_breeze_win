@@ -29,13 +29,8 @@ class DecorationPrivate;
 class DecoratedWindow;
 class DecorationButton;
 class DecorationSettings;
+class DecorationStateData;
 class PositionerData;
-
-class PositionerData : public QSharedData
-{
-public:
-    QRectF anchorRect;
-};
 
 /**
  * \brief Decoration corner radius.
@@ -85,14 +80,6 @@ private:
     BorderRadius m_radius;
 };
 
-class DecorationStateData : public QSharedData
-{
-public:
-    QMarginsF borders;
-    BorderRadius borderRadius;
-    BorderOutline borderOutline;
-};
-
 /**
  * \brief Decoration state.
  *
@@ -105,6 +92,7 @@ class KDECORATIONS3_EXPORT DecorationState
 public:
     DecorationState();
     DecorationState(const DecorationState &other);
+    DecorationState &operator=(const DecorationState &other);
     virtual ~DecorationState();
 
     virtual std::shared_ptr<DecorationState> clone() const;
@@ -132,6 +120,7 @@ class KDECORATIONS3_EXPORT Positioner
 public:
     Positioner();
     Positioner(const Positioner &other);
+    Positioner &operator=(const Positioner &other);
     ~Positioner();
 
     /**
