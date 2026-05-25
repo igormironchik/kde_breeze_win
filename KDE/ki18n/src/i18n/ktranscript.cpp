@@ -5,6 +5,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <config.h>
+
 #include <common_helpers_p.h>
 #include <ktranscript_p.h>
 
@@ -405,36 +407,36 @@ static QJSValue throwError(QJSEngine *engine, const QString &message)
     return QJSValue::UndefinedValue;
 }
 
-#ifdef KTRANSCRIPT_TESTBUILD
-
-// ----------------------------------------------------------------------
-// Test build creation/destruction hooks
-static KTranscriptImp *s_transcriptInstance = nullptr;
-
+Q_GLOBAL_STATIC(std::unique_ptr<KTranscriptImp>, globalKTIPtr)
 KTranscriptImp *globalKTI()
 {
-    return s_transcriptInstance;
+    if (!*globalKTIPtr()) {
+        *globalKTIPtr() = std::make_unique<KTranscriptImp>();
+    }
+    return globalKTIPtr()->get();
 }
+
+// Test build creation/destruction hooks
+#if defined(KTRANSCRIPT_TESTBUILD) || HAVE_STATIC_KTRANSCRIPT
 
 KTranscript *autotestCreateKTranscriptImp()
 {
-    Q_ASSERT(s_transcriptInstance == nullptr);
-    s_transcriptInstance = new KTranscriptImp;
-    return s_transcriptInstance;
+    Q_ASSERT(!*globalKTIPtr());
+    *globalKTIPtr() = std::make_unique<KTranscriptImp>();
+    return globalKTIPtr()->get();
 }
 
 void autotestDestroyKTranscriptImp()
 {
-    Q_ASSERT(s_transcriptInstance != nullptr);
-    delete s_transcriptInstance;
-    s_transcriptInstance = nullptr;
+    Q_ASSERT(*globalKTIPtr());
+    globalKTIPtr()->reset();
 }
 
-#else
+#endif
+#ifndef KTRANSCRIPT_TESTBUILD
 
 // ----------------------------------------------------------------------
 // Dynamic loading.
-Q_GLOBAL_STATIC(KTranscriptImp, globalKTI)
 extern "C" {
 KTRANSCRIPT_EXPORT KTranscript *load_transcript()
 {
@@ -659,11 +661,15 @@ void KTranscriptImp::setupInterpreter(const QString &lang)
 
 Scriptface::Scriptface(const TsConfigGroup &config_, QObject *parent)
     : QObject(parent)
-    , scriptEngine(new QJSEngine)
+    , scriptEngine(new QJSEngine(this))
     , fallbackRequest(nullptr)
     , config(config_)
 {
+    // register 'this' as object and avoid that the engine will delete it, we own the engine
     QJSValue object = scriptEngine->newQObject(this);
+    scriptEngine->setObjectOwnership(this, QJSEngine::CppOwnership);
+    Q_ASSERT(scriptEngine->objectOwnership(this) == QJSEngine::CppOwnership);
+
     scriptEngine->globalObject().setProperty(QStringLiteral(SFNAME), object);
     scriptEngine->evaluate(QStringLiteral("Ts.acall = function() { return Ts.acallInternal(Array.prototype.slice.call(arguments)); };"));
 }
@@ -671,7 +677,6 @@ Scriptface::Scriptface(const TsConfigGroup &config_, QObject *parent)
 Scriptface::~Scriptface()
 {
     qDeleteAll(loadedPmapHandles);
-    scriptEngine->deleteLater();
 }
 
 void Scriptface::put(const QString &propertyName, const QJSValue &value)

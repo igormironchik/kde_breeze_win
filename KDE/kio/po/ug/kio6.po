@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:39+0000\n"
+"POT-Creation-Date: 2026-04-19 00:40+0000\n"
 "PO-Revision-Date: 2026-01-22 21:14-0500\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -95,7 +95,7 @@ msgid "Folder Already Exists"
 msgstr "قىسقۇچ مەۋجۇت"
 
 #: core/copyjob.cpp:1736 core/copyjob.cpp:2441 core/filecopyjob.cpp:371
-#: core/job_error.cpp:577 widgets/paste.cpp:48
+#: core/job_error.cpp:577 widgets/paste.cpp:49
 #, kde-format
 msgid "File Already Exists"
 msgstr "ھۆججەت مەۋجۇت"
@@ -2793,7 +2793,7 @@ msgid "All Supported Files"
 msgstr "قوللايدىغان ھەممە ھۆججەت"
 
 #: filewidgets/kfilefiltercombo.cpp:169 filewidgets/kfilefiltercombo.cpp:171
-#: filewidgets/kfilewidget.cpp:2060
+#: filewidgets/kfilewidget.cpp:2057
 #, kde-format
 msgid "All Files"
 msgstr "بارلىق ھۆججەت"
@@ -2999,86 +2999,86 @@ msgctxt "KFile System Bookmarks"
 msgid "Modified Yesterday"
 msgstr "تۈنۈگۈن ئۆزگەرتىلگەن"
 
-#: filewidgets/kfileplacesmodel.cpp:1127
+#: filewidgets/kfileplacesmodel.cpp:1130
 #, kde-format
 msgctxt "Placeholder is error message"
 msgid "Could not add to the Places panel: %1"
 msgstr "ئورۇن كۆزنەكچىسىگە قوشالمايدۇ: %1"
 
-#: filewidgets/kfileplacesmodel.cpp:1134
+#: filewidgets/kfileplacesmodel.cpp:1137
 #, kde-format
 msgid "Only folders can be added to the Places panel."
 msgstr "ئورۇن كۆزنەكچىگە پەقەت قىسقۇچنىلا قوشقىلى بولىدۇ."
 
-#: filewidgets/kfileplacesmodel.cpp:1377
+#: filewidgets/kfileplacesmodel.cpp:1380
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Configure…"
 msgstr "سەپلە…"
 
-#: filewidgets/kfileplacesmodel.cpp:1413
+#: filewidgets/kfileplacesmodel.cpp:1416
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Releasing…"
 msgstr "تارقىتىۋاتىدۇ…"
 
-#: filewidgets/kfileplacesmodel.cpp:1415
+#: filewidgets/kfileplacesmodel.cpp:1418
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Release"
 msgstr "تارقات(&R)"
 
-#: filewidgets/kfileplacesmodel.cpp:1419
+#: filewidgets/kfileplacesmodel.cpp:1422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Safely Removing…"
 msgstr "بىخەتەر چىقىرىۋېتىۋاتىدۇ…"
 
-#: filewidgets/kfileplacesmodel.cpp:1421
+#: filewidgets/kfileplacesmodel.cpp:1424
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Safely Remove"
 msgstr "بىخەتەر چىقىرىۋەت(&S)"
 
-#: filewidgets/kfileplacesmodel.cpp:1426
+#: filewidgets/kfileplacesmodel.cpp:1429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unmounting…"
 msgstr "ئېگەرسىزلەۋاتىدۇ…"
 
-#: filewidgets/kfileplacesmodel.cpp:1428
+#: filewidgets/kfileplacesmodel.cpp:1431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Unmount"
 msgstr "ئېگەرسىزلە(&U)"
 
-#: filewidgets/kfileplacesmodel.cpp:1452
+#: filewidgets/kfileplacesmodel.cpp:1455
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Eject"
 msgstr "قاڭقىت(&E)"
 
-#: filewidgets/kfileplacesmodel.cpp:1499
+#: filewidgets/kfileplacesmodel.cpp:1502
 #, kde-format
 msgid "The device '%1' is not a disk and cannot be ejected."
 msgstr "ئۈسكۈنە «%1» دىسكا ئەمەس، قاڭقىتالمايدۇ."
 
-#: filewidgets/kfileplacesmodel.cpp:1534
+#: filewidgets/kfileplacesmodel.cpp:1537
 #, kde-format
 msgid "An error occurred while accessing '%1', the system responded: %2"
 msgstr "«%1» ئېلىپ بېرىۋاتقاندا خاتالىق كۆرۈلدى، سىستېما ئىنكاسى: %2"
 
-#: filewidgets/kfileplacesmodel.cpp:1536
+#: filewidgets/kfileplacesmodel.cpp:1539
 #, kde-format
 msgid "An error occurred while accessing '%1'"
 msgstr "«%1» نى زىيارەت قىلىۋاتقاندا خاتالىق كۆرۈلدى"
 
-#: filewidgets/kfileplacesmodel.cpp:1562
+#: filewidgets/kfileplacesmodel.cpp:1565
 #, kde-format
 msgid "One or more files on this device are open within an application."
 msgstr "بۇ ئۈسكۈنىدىكى بىر ياكى بىر قانچە ھۆججەت بىر پىروگراممىدا ئوچۇق."
 
-#: filewidgets/kfileplacesmodel.cpp:1565
+#: filewidgets/kfileplacesmodel.cpp:1568
 #, kde-kuit-format
 msgid ""
 "One or more files on this device are opened in application <application>"
@@ -3090,13 +3090,13 @@ msgstr[0] ""
 "بۇ ئۈسكۈنىدىكى بىر ياكى بىر قانچە ھۆججەت <application>\"%2\"</application> "
 "پىروگراممىدا ئېچىلغان."
 
-#: filewidgets/kfileplacesmodel.cpp:1568
+#: filewidgets/kfileplacesmodel.cpp:1571
 #, kde-format
 msgctxt "separator in list of apps blocking device unmount"
 msgid ", "
 msgstr "، "
 
-#: filewidgets/kfileplacesmodel.cpp:1615
+#: filewidgets/kfileplacesmodel.cpp:1618
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reformat or Edit with Partition Manager"
@@ -3224,32 +3224,27 @@ msgctxt "Huge icon size"
 msgid "Huge (%1x%1)"
 msgstr "زور (%1x%1)"
 
-#: filewidgets/kfilewidget.cpp:404
-#, kde-format
-msgid "Current Directory: %1"
-msgstr "نۆۋەتتىكى مۇندەرىجە: %1"
-
-#: filewidgets/kfilewidget.cpp:640
+#: filewidgets/kfilewidget.cpp:637
 #, kde-format
 msgid "You can only select one file"
 msgstr "بىرلا ھۆججەت تاللىيالايسىز"
 
-#: filewidgets/kfilewidget.cpp:640
+#: filewidgets/kfilewidget.cpp:637
 #, kde-format
 msgid "More than one file provided"
 msgstr "بېرىلگەن ھۆججەت بىردىن كۆپ"
 
-#: filewidgets/kfilewidget.cpp:816
+#: filewidgets/kfilewidget.cpp:813
 #, kde-format
 msgid "You can only select local files"
 msgstr "يەرلىك ھۆججەتنىلا تاللىيالايسىز"
 
-#: filewidgets/kfilewidget.cpp:816
+#: filewidgets/kfilewidget.cpp:813
 #, kde-format
 msgid "Remote files not accepted"
 msgstr "يىراقتىكى ھۆججەتنى قوبۇل قىلمايدۇ"
 
-#: filewidgets/kfilewidget.cpp:823
+#: filewidgets/kfilewidget.cpp:820
 #, kde-format
 msgid ""
 "The selected URL uses an unsupported scheme. Please use the following "
@@ -3261,22 +3256,22 @@ msgstr[0] ""
 "تاللانغان تور ئادرېسى قوللىمايدىغان لايىھەنى ئىشلەتكەن. تۆۋەندىكى لايىھەنى "
 "ئىشلىتىڭ: %2"
 
-#: filewidgets/kfilewidget.cpp:829
+#: filewidgets/kfilewidget.cpp:826
 #, kde-format
 msgid "Unsupported URL scheme"
 msgstr "قوللىمايدىغان تور ئادرېس لايىھەسى"
 
-#: filewidgets/kfilewidget.cpp:850
+#: filewidgets/kfilewidget.cpp:847
 #, kde-format
 msgid "The file \"%1\" could not be found"
 msgstr "«%1» ھۆججەت  تېپىلمىدى"
 
-#: filewidgets/kfilewidget.cpp:850
+#: filewidgets/kfilewidget.cpp:847
 #, kde-format
 msgid "Cannot open file"
 msgstr "ھۆججەت ئاچالمىدى"
 
-#: filewidgets/kfilewidget.cpp:1219
+#: filewidgets/kfilewidget.cpp:1216
 #, kde-format
 msgid ""
 "<qt>Click this button to enter the parent folder.<br /><br />For instance, "
@@ -3287,42 +3282,42 @@ msgstr ""
 "ئورۇن: file:/home/konqi بولسا بۇ توپچە چېكىلسە سىزنى file:/home غا ئاپىرىدۇ."
 "</qt>"
 
-#: filewidgets/kfilewidget.cpp:1223
+#: filewidgets/kfilewidget.cpp:1220
 #, kde-format
 msgid "Click this button to move backwards one step in the browsing history."
 msgstr "بۇ توپچە چېكىلسە زىيارەت تارىخى ئارقىغا بىر قەدەم چېكىنىدۇ."
 
-#: filewidgets/kfilewidget.cpp:1224
+#: filewidgets/kfilewidget.cpp:1221
 #, kde-format
 msgid "Click this button to move forward one step in the browsing history."
 msgstr "بۇ توپچە چېكىلسە زىيارەت تارىخى ئالدىغا بىر قەدەم چېكىنىدۇ."
 
-#: filewidgets/kfilewidget.cpp:1226
+#: filewidgets/kfilewidget.cpp:1223
 #, kde-format
 msgid "Click this button to reload the contents of the current location."
 msgstr "بۇ توپچە چېكىلسە نۆۋەتتىكى ئورۇننىڭ مەزمۇنىنى يېڭىلايدۇ."
 
-#: filewidgets/kfilewidget.cpp:1228
+#: filewidgets/kfilewidget.cpp:1225
 #, kde-format
 msgid "Click this button to create a new folder."
 msgstr "بۇ توپچە چېكىلسە يېڭى بىر قىسقۇچ قۇرىدۇ."
 
-#: filewidgets/kfilewidget.cpp:1230
+#: filewidgets/kfilewidget.cpp:1227
 #, kde-format
 msgid "Show Places Panel"
 msgstr "ئورۇن كۆزنەكچىنى كۆرسىتىدۇ"
 
-#: filewidgets/kfilewidget.cpp:1237
+#: filewidgets/kfilewidget.cpp:1234
 #, kde-format
 msgid "Show Quick Filter"
 msgstr "تېز سۈزگۈچنى كۆرسىتىدۇ"
 
-#: filewidgets/kfilewidget.cpp:1245
+#: filewidgets/kfilewidget.cpp:1242
 #, kde-format
 msgid "Options"
 msgstr "تاللانما"
 
-#: filewidgets/kfilewidget.cpp:1248
+#: filewidgets/kfilewidget.cpp:1245
 #, kde-format
 msgid ""
 "<qt>This is the preferences menu for the file dialog. Various options can be "
@@ -3337,12 +3332,12 @@ msgstr ""
 "ھۆججەتنى كۆرسىتەمدۇ يوق</li><li>ئورۇن كۆزنەكچىسى</li><li>ھۆججەتنى ئالدىن "
 "كۆزىتىش</li><li>قىسقۇچ ۋە ھۆججەتنى پەرقلەندۈرىدۇ</li></ul></qt>"
 
-#: filewidgets/kfilewidget.cpp:1267
+#: filewidgets/kfilewidget.cpp:1264
 #, kde-format
 msgid "Bookmarks"
 msgstr "خەتكۈش"
 
-#: filewidgets/kfilewidget.cpp:1271
+#: filewidgets/kfilewidget.cpp:1268
 #, kde-format
 msgid ""
 "<qt>This button allows you to bookmark specific locations. Click on this "
@@ -3357,35 +3352,35 @@ msgstr ""
 "قىلىنىدۇ.</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: filewidgets/kfilewidget.cpp:1316 widgets/kpropertiesdesktopbase.ui:22
+#: filewidgets/kfilewidget.cpp:1313 widgets/kpropertiesdesktopbase.ui:22
 #, kde-format
 msgid "&Name:"
 msgstr "ئاتى(&N):"
 
-#: filewidgets/kfilewidget.cpp:1341
+#: filewidgets/kfilewidget.cpp:1338
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo filename change"
 msgstr "ھۆججەت ئاتىنى ئۆزگەرتىشتىن يېنىۋال"
 
-#: filewidgets/kfilewidget.cpp:1396
+#: filewidgets/kfilewidget.cpp:1393
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Keep Filter When Changing Folders"
 msgstr "قىسقۇچ ئالماشتۇرغاندا سۈزگۈچنى ساقلاپ قالىدۇ"
 
-#: filewidgets/kfilewidget.cpp:1400
+#: filewidgets/kfilewidget.cpp:1397
 #, kde-format
 msgid "Filter by name…"
 msgstr "ئاتى بويىچە سۈز…"
 
-#: filewidgets/kfilewidget.cpp:1408
+#: filewidgets/kfilewidget.cpp:1405
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide Filter Bar"
 msgstr "سۈزگۈچ بالداقنى يوشۇر"
 
-#: filewidgets/kfilewidget.cpp:1457
+#: filewidgets/kfilewidget.cpp:1454
 #, kde-format
 msgid ""
 "<qt>While typing in the text area, you may be presented with possible "
@@ -3397,12 +3392,12 @@ msgstr ""
 "ئىقتىدارنى تىزگىنلەشتە چاشقىنەك ئوڭ توپچىسىنى چېكىپ ئاندىن  <b>تېكىست "
 "تاماملا</b> تىزىملىكىدىن ئارزۇ قىلغان ھالەتنى تاللاڭ.</qt>"
 
-#: filewidgets/kfilewidget.cpp:1464
+#: filewidgets/kfilewidget.cpp:1461
 #, kde-format
 msgid "This is the name to save the file as."
 msgstr "بۇ ھۆججەتنى ساقلايدىغان ئات."
 
-#: filewidgets/kfilewidget.cpp:1467
+#: filewidgets/kfilewidget.cpp:1464
 #, kde-format
 msgid ""
 "This is the list of files to open. More than one file can be specified by "
@@ -3411,73 +3406,78 @@ msgstr ""
 "بۇ ئاچماقچى بولغان ھۆججەت تىزىمى. كۆپ ھۆججەت بەلگىلەشتە بوشلۇق بىلەن "
 "ئايرىشقا بولىدۇ."
 
-#: filewidgets/kfilewidget.cpp:1472
+#: filewidgets/kfilewidget.cpp:1469
 #, kde-format
 msgid "This is the name of the file to open."
 msgstr "بۇ ئاچماقچى بولغان ھۆججەت ئاتى."
 
-#: filewidgets/kfilewidget.cpp:1485
+#: filewidgets/kfilewidget.cpp:1482
 #, kde-format
 msgctxt "@title:window"
 msgid "Places"
 msgstr "ئورۇن"
 
-#: filewidgets/kfilewidget.cpp:1766
+#: filewidgets/kfilewidget.cpp:1763
 #, kde-format
 msgid "The file \"%1\" already exists. Do you wish to overwrite it?"
 msgstr "ھۆججەت «%1» مەۋجۇت. قاپلامسىز؟"
 
-#: filewidgets/kfilewidget.cpp:1767
+#: filewidgets/kfilewidget.cpp:1764
 #, kde-format
 msgid "Overwrite File?"
 msgstr "ھۆججەت قاپلامسىز؟"
 
-#: filewidgets/kfilewidget.cpp:1964
+#: filewidgets/kfilewidget.cpp:1961
 #, kde-format
 msgid "You can only select local files."
 msgstr "يەرلىك ھۆججەتنىلا تاللىيالايسىز."
 
-#: filewidgets/kfilewidget.cpp:1964
+#: filewidgets/kfilewidget.cpp:1961
 #, kde-format
 msgid "Remote Files Not Accepted"
 msgstr "يىراقتىكى ھۆججەتنى قوبۇل قىلمايدۇ"
 
-#: filewidgets/kfilewidget.cpp:2058
+#: filewidgets/kfilewidget.cpp:2055
 #, kde-format
 msgid "All Folders"
 msgstr "ھەممە قىسقۇچ"
 
-#: filewidgets/kfilewidget.cpp:2198 widgets/kfileitemactions.cpp:842
+#: filewidgets/kfilewidget.cpp:2079
+#, kde-format
+msgid "Current Directory: %1"
+msgstr "نۆۋەتتىكى مۇندەرىجە: %1"
+
+#: filewidgets/kfilewidget.cpp:2208 widgets/kfileitemactions.cpp:847
 #, kde-format
 msgid "&Open"
 msgstr "ئاچ(&O)"
 
-#: filewidgets/kfilewidget.cpp:2299
+#: filewidgets/kfilewidget.cpp:2309
 #, kde-format
 msgid "Icon size: %1 pixels"
 msgstr "سىنبەلگە چوڭلۇقى: %1 پىكسېل"
 
-#: filewidgets/kfilewidget.cpp:2466
+#: filewidgets/kfilewidget.cpp:2476
 #, kde-format
 msgid "Automatically select filename e&xtension (%1)"
 msgstr "ھۆججەتنىڭ كېڭەيتىلگەن ئاتىنى ئۆزلۈكىدىن تاللا(%1)(&X)"
 
-#: filewidgets/kfilewidget.cpp:2467
+#: filewidgets/kfilewidget.cpp:2477
 #, kde-format
 msgid "the extension <b>%1</b>"
 msgstr "كېڭەيتىلمە <b>%1</b>"
 
-#: filewidgets/kfilewidget.cpp:2473
+#: filewidgets/kfilewidget.cpp:2483
 #, kde-format
 msgid "Automatically select filename e&xtension"
 msgstr "ھۆججەتنىڭ كېڭەيتىلگەن ئاتىنى ئۆزلۈكىدىن تاللا(&X)"
 
-#: filewidgets/kfilewidget.cpp:2474
+#: filewidgets/kfilewidget.cpp:2484
 #, kde-format
 msgid "a suitable extension"
 msgstr "مۇناسىپ كېڭەيتىلمە"
 
-#: filewidgets/kfilewidget.cpp:2482
+#: filewidgets/kfilewidget.cpp:2492
 #, kde-format
 msgid ""
 "This option enables some convenient features for saving files with "
@@ -3505,12 +3505,12 @@ msgstr ""
 "ئىناۋەتلىكلىكىنى ساقلاپ قېلىڭ، بۇنداق بولغاندا ھۆججەتلىرىڭىزنى تېخىمۇ ئاسان "
 "باشقۇرالايسىز."
 
-#: filewidgets/kfilewidget.cpp:2948
+#: filewidgets/kfilewidget.cpp:2958
 #, kde-format
 msgid "&File type:"
 msgstr "ھۆججەت تۈرى(&F):"
 
-#: filewidgets/kfilewidget.cpp:2952
+#: filewidgets/kfilewidget.cpp:2962
 #, kde-format
 msgid ""
 "<qt>This is the file type selector. It is used to select the format that the "
@@ -3519,7 +3519,7 @@ msgstr ""
 "<qt>بۇ ھۆججەت تۈرىنى تاللىغۇچ. ئۇ ھۆججەتنىڭ ساقلاش پىچىمىنى تاللاشقا "
 "ئىشلىتىلىدۇ.</qt>"
 
-#: filewidgets/kfilewidget.cpp:2954
+#: filewidgets/kfilewidget.cpp:2964
 #, kde-format
 msgid ""
 "<qt>This is the file type selector. It is used to select the format of the "
@@ -4130,7 +4130,7 @@ msgstr "ئىجرا قىلىدىغان بۇيرۇق"
 msgid "URL(s) or local file(s) used for 'command'"
 msgstr "بۇيرۇق ئىشلىتىدىغان تور ئادرېسى ياكى يەرلىك ھۆججەت"
 
-#: kioworkers/file/file.cpp:650
+#: kioworkers/file/file.cpp:649
 #, kde-format
 msgid ""
 "Could not change permissions for\n"
@@ -4139,7 +4139,7 @@ msgstr ""
 "تۆۋەندىكىنىڭ ھوقۇقىنى ئۆزگەرتكىلى بولمىدى\n"
 "%1"
 
-#: kioworkers/file/file.cpp:658
+#: kioworkers/file/file.cpp:657
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -4149,17 +4149,17 @@ msgstr ""
 "ئىگىدار ۋە گۇرۇپپىنى ئۆزگەرتكىلى بولمىدى\n"
 "%1"
 
-#: kioworkers/file/file.cpp:741 kioworkers/file/file.cpp:833
+#: kioworkers/file/file.cpp:740 kioworkers/file/file.cpp:832
 #, kde-format
 msgid "Could not open temporary file"
 msgstr "ۋاقىتلىق ھۆججەتنى ئاچالمايدۇ"
 
-#: kioworkers/file/file.cpp:765
+#: kioworkers/file/file.cpp:764
 #, kde-format
 msgid "Could not find program \"mount\""
 msgstr "«mount» پىروگراممىنى تاپالمىدى"
 
-#: kioworkers/file/file.cpp:842
+#: kioworkers/file/file.cpp:841
 #, kde-format
 msgid "Could not find program \"umount\""
 msgstr "«umount» پىروگراممىنى تاپالمىدى"
@@ -4232,7 +4232,7 @@ msgstr ""
 msgid "Site:"
 msgstr "تور بېكەت:"
 
-#: kioworkers/ftp/ftp.cpp:571 kioworkers/ftp/ftp.cpp:2500
+#: kioworkers/ftp/ftp.cpp:571 kioworkers/ftp/ftp.cpp:2499
 #, kde-format
 msgid "<b>%1</b>"
 msgstr "<b>%1</b>"
@@ -4256,7 +4256,7 @@ msgstr ""
 "\n"
 "مۇلازىمېتىر ئۇچۇرى: «%1»"
 
-#: kioworkers/ftp/ftp.cpp:2495 kioworkers/http/http.cpp:379
+#: kioworkers/ftp/ftp.cpp:2494 kioworkers/http/http.cpp:379
 #, kde-format
 msgid ""
 "You need to supply a username and a password for the proxy server listed "
@@ -4265,12 +4265,12 @@ msgstr ""
 "سىز تۆۋەندە كۆرسىتىلگەن ۋاكالىتەن مۇلازىمېتىرنى ئىشلەتكۈچى ئاتى ۋە ئىم بىلەن "
 "تەمىنلىسىڭىز ئاندىن تور بېكەتنى زىيارەت قىلالايسىز."
 
-#: kioworkers/ftp/ftp.cpp:2499 kioworkers/http/http.cpp:383
+#: kioworkers/ftp/ftp.cpp:2498 kioworkers/http/http.cpp:383
 #, kde-format
 msgid "Proxy:"
 msgstr "ۋاكالەتچى:"
 
-#: kioworkers/ftp/ftp.cpp:2502
+#: kioworkers/ftp/ftp.cpp:2501
 #, kde-format
 msgid "Proxy Authentication Failed."
 msgstr "ۋاكالەتچىنى دەلىللىيەلمىدى."
@@ -4817,31 +4817,18 @@ msgctxt "@action:button Launch script"
 msgid "&Launch"
 msgstr "قوزغات(&L)"
 
-#: widgets/executablefileopendialog.cpp:81
-#, kde-format
-msgctxt "@option:check"
-msgid "Launch executable files without asking"
-msgstr "ئىشلەتكۈچىدىن سورىمايلا ئىجراچان ھۆججەتنى قوزغىتىدۇ"
-
-#: widgets/executablefileopendialog.cpp:84
-#, kde-format
-msgctxt "@option:check Open in the associated app"
-msgid "Open executable files in the default application without asking"
-msgstr ""
-"ئىشلەتكۈچىدىن سورىمايلا ئىجراچان ھۆججەتنى كۆڭۈلدىكى پىروگراممىدا ئاچىدۇ"
-
-#: widgets/executablefileopendialog.cpp:87
+#: widgets/executablefileopendialog.cpp:80
 #, kde-format
 msgid "What do you wish to do with this file?"
 msgstr "سىز بۇ ھۆججەتكە قانداق مەشغۇلات ئېلىپ بارماقچى؟"
 
-#: widgets/executablefileopendialog.cpp:90
+#: widgets/executablefileopendialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open"
 msgstr "ئاچ(&O)"
 
-#: widgets/executablefileopendialog.cpp:92
+#: widgets/executablefileopendialog.cpp:85
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open with %1"
@@ -4852,23 +4839,6 @@ msgstr "%1 دا ئاچ(&O)"
 #, kde-format
 msgid "Would you like to launch this file?"
 msgstr "بۇ ھۆججەتنى قوزغىتامسىز؟"
-
-#. i18n: ectx: property (text), widget (QCheckBox, dontAgainCheckBox)
-#: widgets/executablefileopendialog.ui:97
-#, kde-format
-msgctxt "@option:check Always open/launch executable files (dont ask again)"
-msgid "Remember for all executable files"
-msgstr "بارلىق ئىجراچان ھۆججەت ئۈچۈن ئەستە تۇتىدۇ"
-
-#. i18n: ectx: property (contextualHelpText), widget (KContextualHelpButton, dontAgainHelpButton)
-#: widgets/executablefileopendialog.ui:104
-#, kde-format
-msgctxt "@info:tooltip How to undo do not ask again"
-msgid ""
-"You can undo this under \"Confirmations\" in Dolphin file manager settings."
-msgstr ""
-"سىز Dolphin ھۆججەت باشقۇرغۇچ تەڭشىكىدىكى «جەزملەش» تاللانمىسىدا بۇ "
-"مەشغۇلاتتىن يېنىۋالالايسىز."
 
 #: widgets/fileundomanager.cpp:126
 #, kde-format
@@ -5308,48 +5278,48 @@ msgctxt "@title:menu"
 msgid "&Actions"
 msgstr "مەشغۇلات(&A)"
 
-#: widgets/kfileitemactions.cpp:751
+#: widgets/kfileitemactions.cpp:756
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open Folder With…"
 msgstr "قىسقۇچ ئاچ(&O)…"
 
-#: widgets/kfileitemactions.cpp:751
+#: widgets/kfileitemactions.cpp:756
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "ئاچقۇز(&O)…"
 
-#: widgets/kfileitemactions.cpp:809
+#: widgets/kfileitemactions.cpp:814
 #, fuzzy, kde-format
 #| msgid "&Run Executable"
 msgctxt "@action:inmenu"
 msgid "&Run Executable"
 msgstr "ئىجراچاننى ئىجرا قىل(&R)"
 
-#: widgets/kfileitemactions.cpp:831
+#: widgets/kfileitemactions.cpp:836
 #, kde-format
 msgid "&Open folder with %1"
 msgstr "قىسقۇچنى %1 دا ئاچ(&O)"
 
-#: widgets/kfileitemactions.cpp:831
+#: widgets/kfileitemactions.cpp:836
 #, kde-format
 msgid "&Open with %1"
 msgstr "%1 دا ئاچ(&O)"
 
-#: widgets/kfileitemactions.cpp:863
+#: widgets/kfileitemactions.cpp:868
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open Folder With"
 msgstr "قىسقۇچ ئاچ(&O)"
 
-#: widgets/kfileitemactions.cpp:863
+#: widgets/kfileitemactions.cpp:868
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "ئاچقۇز(&O)"
 
-#: widgets/kfileitemactions.cpp:874
+#: widgets/kfileitemactions.cpp:879
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other Application…"
@@ -6722,7 +6692,13 @@ msgstr "تور تېزلەتمىسىنى سەپلەش…"
 msgid "Open file dialog"
 msgstr "ھۆججەت سۆزلەشكۈسىنى ئاچ"
 
-#: widgets/paste.cpp:65 widgets/paste.cpp:104
+#: widgets/paste.cpp:69
+#, kde-format
+msgctxt "A default file name excluding extension for some pasted content"
+msgid "pasted file"
+msgstr "چاپلانغان ھۆججەت"
+
+#: widgets/paste.cpp:79 widgets/paste.cpp:113
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Paste Clipboard Contents…"
@@ -6730,13 +6706,7 @@ msgctxt "@title:dialog"
 msgid "Paste Clipboard Content"
 msgstr "چاپلاش تاختىسىدىكى مەزمۇننى چاپلا(&P)…"
 
-#: widgets/paste.cpp:101
-#, kde-format
-msgctxt "A default file name excluding extension for some pasted content"
-msgid "pasted file"
-msgstr "چاپلانغان ھۆججەت"
-
-#: widgets/paste.cpp:113
+#: widgets/paste.cpp:122
 #, kde-format
 msgid ""
 "The clipboard has changed since you used 'paste': the chosen data format is "
@@ -6746,45 +6716,45 @@ msgstr ""
 "مەلۇماتنىڭ پىچىمىنى قوبۇل قىلالمايدۇ. چاپلىماقچى بولغان مەزمۇننى قايتا "
 "كۆچۈرۈڭ."
 
-#: widgets/paste.cpp:234
+#: widgets/paste.cpp:250
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One Folder"
 msgstr "بىر قىسقۇچ چاپلا"
 
-#: widgets/paste.cpp:234
+#: widgets/paste.cpp:250
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One File"
 msgstr "بىر ھۆججەت چاپلا"
 
-#: widgets/paste.cpp:236
+#: widgets/paste.cpp:252
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One Item"
 msgid_plural "Paste %1 Items"
 msgstr[0] "%1 تۈر چاپلا"
 
-#: widgets/paste.cpp:238
+#: widgets/paste.cpp:254
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste Clipboard Contents…"
 msgstr "چاپلاش تاختىسىدىكى مەزمۇننى چاپلا(&P)…"
 
-#: widgets/paste.cpp:242
+#: widgets/paste.cpp:258
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "چاپلا"
 
-#: widgets/pastedialog.cpp:54
+#: widgets/pastedialog.cpp:57
 #, fuzzy, kde-format
 #| msgid "Data format:"
 msgctxt "@label"
 msgid "Data format:"
 msgstr "سانلىق-مەلۇمات پىچىمى:"
 
-#: widgets/pastedialog.cpp:63
+#: widgets/pastedialog.cpp:68
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -7426,6 +7396,27 @@ msgstr "بۇ پىروگراممىنى قوزغىتىدۇ:"
 #, kde-format
 msgid "If you do not trust this program, click Cancel"
 msgstr "ئەگەر بۇ پىروگراممىغا ئىشەنمىسىڭىز ۋاز كەچنى چېكىڭ"
+
+#~ msgctxt "@option:check"
+#~ msgid "Launch executable files without asking"
+#~ msgstr "ئىشلەتكۈچىدىن سورىمايلا ئىجراچان ھۆججەتنى قوزغىتىدۇ"
+
+#~ msgctxt "@option:check Open in the associated app"
+#~ msgid "Open executable files in the default application without asking"
+#~ msgstr ""
+#~ "ئىشلەتكۈچىدىن سورىمايلا ئىجراچان ھۆججەتنى كۆڭۈلدىكى پىروگراممىدا ئاچىدۇ"
+
+#~ msgctxt "@option:check Always open/launch executable files (dont ask again)"
+#~ msgid "Remember for all executable files"
+#~ msgstr "بارلىق ئىجراچان ھۆججەت ئۈچۈن ئەستە تۇتىدۇ"
+
+#~ msgctxt "@info:tooltip How to undo do not ask again"
+#~ msgid ""
+#~ "You can undo this under \"Confirmations\" in Dolphin file manager "
+#~ "settings."
+#~ msgstr ""
+#~ "سىز Dolphin ھۆججەت باشقۇرغۇچ تەڭشىكىدىكى «جەزملەش» تاللانمىسىدا بۇ "
+#~ "مەشغۇلاتتىن يېنىۋالالايسىز."
 
 #~ msgid "Delete Files"
 #~ msgstr "ھۆججەت ئۆچۈر"

@@ -9,6 +9,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 import org.kde.kirigami.platform as Platform
 
 /*!
@@ -70,11 +71,13 @@ QQC2.ToolButton {
         toolTip.delay = Platform.Units.toolTipDelay;
         toolTipVisible = false;
     }
-    Layout.maximumHeight: parent?.height ?? -1
+    Layout.maximumHeight: implicitHeight
+    Layout.fillHeight: true
 
     QQC2.ToolTip {
         id: toolTip
         clip: true
+        z: Kirigami.OverlayZStacking.z
         visible: root.hovered || root.toolTipVisible || toolTipHandler.hovered
         onVisibleChanged: {
             if (!visible && root.toolTipVisible) {
