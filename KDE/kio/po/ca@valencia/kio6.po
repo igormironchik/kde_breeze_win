@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:39+0000\n"
+"POT-Creation-Date: 2026-04-19 00:40+0000\n"
 "PO-Revision-Date: 2026-03-19 11:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -101,7 +101,7 @@ msgid "Folder Already Exists"
 msgstr "La carpeta ja existix"
 
 #: core/copyjob.cpp:1736 core/copyjob.cpp:2441 core/filecopyjob.cpp:371
-#: core/job_error.cpp:577 widgets/paste.cpp:48
+#: core/job_error.cpp:577 widgets/paste.cpp:49
 #, kde-format
 msgid "File Already Exists"
 msgstr "El fitxer ja existix"
@@ -2854,7 +2854,7 @@ msgid "All Supported Files"
 msgstr "Tots els fitxers admesos"
 
 #: filewidgets/kfilefiltercombo.cpp:169 filewidgets/kfilefiltercombo.cpp:171
-#: filewidgets/kfilewidget.cpp:2060
+#: filewidgets/kfilewidget.cpp:2057
 #, kde-format
 msgid "All Files"
 msgstr "Tots els fitxers"
@@ -3060,87 +3060,87 @@ msgctxt "KFile System Bookmarks"
 msgid "Modified Yesterday"
 msgstr "Modificats ahir"
 
-#: filewidgets/kfileplacesmodel.cpp:1127
+#: filewidgets/kfileplacesmodel.cpp:1130
 #, kde-format
 msgctxt "Placeholder is error message"
 msgid "Could not add to the Places panel: %1"
 msgstr "No s'ha pogut afegir al quadro Llocs: %1"
 
-#: filewidgets/kfileplacesmodel.cpp:1134
+#: filewidgets/kfileplacesmodel.cpp:1137
 #, kde-format
 msgid "Only folders can be added to the Places panel."
 msgstr "Només es poden afegir carpetes al quadro Llocs."
 
-#: filewidgets/kfileplacesmodel.cpp:1377
+#: filewidgets/kfileplacesmodel.cpp:1380
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Configure…"
 msgstr "Configura…"
 
-#: filewidgets/kfileplacesmodel.cpp:1413
+#: filewidgets/kfileplacesmodel.cpp:1416
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Releasing…"
 msgstr "Allibera…"
 
-#: filewidgets/kfileplacesmodel.cpp:1415
+#: filewidgets/kfileplacesmodel.cpp:1418
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Release"
 msgstr "Allibe&ra"
 
-#: filewidgets/kfileplacesmodel.cpp:1419
+#: filewidgets/kfileplacesmodel.cpp:1422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Safely Removing…"
 msgstr "Extrau amb seguretat…"
 
-#: filewidgets/kfileplacesmodel.cpp:1421
+#: filewidgets/kfileplacesmodel.cpp:1424
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Safely Remove"
 msgstr "Extrau amb &seguretat"
 
-#: filewidgets/kfileplacesmodel.cpp:1426
+#: filewidgets/kfileplacesmodel.cpp:1429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unmounting…"
 msgstr "Desmunta…"
 
-#: filewidgets/kfileplacesmodel.cpp:1428
+#: filewidgets/kfileplacesmodel.cpp:1431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Unmount"
 msgstr "Desm&unta"
 
-#: filewidgets/kfileplacesmodel.cpp:1452
+#: filewidgets/kfileplacesmodel.cpp:1455
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Eject"
 msgstr "E&xpulsa"
 
-#: filewidgets/kfileplacesmodel.cpp:1499
+#: filewidgets/kfileplacesmodel.cpp:1502
 #, kde-format
 msgid "The device '%1' is not a disk and cannot be ejected."
 msgstr "El dispositiu «%1» no és cap disc i no es pot expulsar."
 
-#: filewidgets/kfileplacesmodel.cpp:1534
+#: filewidgets/kfileplacesmodel.cpp:1537
 #, kde-format
 msgid "An error occurred while accessing '%1', the system responded: %2"
 msgstr ""
 "S'ha produït un error mentre s'accedia a «%1», el sistema ha contestat: %2"
 
-#: filewidgets/kfileplacesmodel.cpp:1536
+#: filewidgets/kfileplacesmodel.cpp:1539
 #, kde-format
 msgid "An error occurred while accessing '%1'"
 msgstr "S'ha produït un error mentre s'accedia a «%1»"
 
-#: filewidgets/kfileplacesmodel.cpp:1562
+#: filewidgets/kfileplacesmodel.cpp:1565
 #, kde-format
 msgid "One or more files on this device are open within an application."
 msgstr "Un o més fitxers d'este dispositiu estan oberts en una aplicació."
 
-#: filewidgets/kfileplacesmodel.cpp:1565
+#: filewidgets/kfileplacesmodel.cpp:1568
 #, kde-kuit-format
 msgid ""
 "One or more files on this device are opened in application <application>"
@@ -3155,13 +3155,13 @@ msgstr[1] ""
 "Un o més fitxers d'este dispositiu estan oberts en les aplicacions següents: "
 "<application>%2</application>."
 
-#: filewidgets/kfileplacesmodel.cpp:1568
+#: filewidgets/kfileplacesmodel.cpp:1571
 #, kde-format
 msgctxt "separator in list of apps blocking device unmount"
 msgid ", "
 msgstr ", "
 
-#: filewidgets/kfileplacesmodel.cpp:1615
+#: filewidgets/kfileplacesmodel.cpp:1618
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reformat or Edit with Partition Manager"
@@ -3288,32 +3288,27 @@ msgctxt "Huge icon size"
 msgid "Huge (%1x%1)"
 msgstr "Enorme (%1x%1)"
 
-#: filewidgets/kfilewidget.cpp:404
-#, kde-format
-msgid "Current Directory: %1"
-msgstr "Directori actual: %1"
-
-#: filewidgets/kfilewidget.cpp:640
+#: filewidgets/kfilewidget.cpp:637
 #, kde-format
 msgid "You can only select one file"
 msgstr "Només podeu seleccionar un fitxer"
 
-#: filewidgets/kfilewidget.cpp:640
+#: filewidgets/kfilewidget.cpp:637
 #, kde-format
 msgid "More than one file provided"
 msgstr "S'ha indicat més d'un fitxer"
 
-#: filewidgets/kfilewidget.cpp:816
+#: filewidgets/kfilewidget.cpp:813
 #, kde-format
 msgid "You can only select local files"
 msgstr "Només podeu seleccionar fitxers locals"
 
-#: filewidgets/kfilewidget.cpp:816
+#: filewidgets/kfilewidget.cpp:813
 #, kde-format
 msgid "Remote files not accepted"
 msgstr "No s'accepten fitxers remots"
 
-#: filewidgets/kfilewidget.cpp:823
+#: filewidgets/kfilewidget.cpp:820
 #, kde-format
 msgid ""
 "The selected URL uses an unsupported scheme. Please use the following "
@@ -3328,22 +3323,22 @@ msgstr[1] ""
 "L'URL seleccionat utilitza un esquema no admés. Utilitzeu un dels esquemes "
 "següents: %2"
 
-#: filewidgets/kfilewidget.cpp:829
+#: filewidgets/kfilewidget.cpp:826
 #, kde-format
 msgid "Unsupported URL scheme"
 msgstr "Esquema d'URL no admés"
 
-#: filewidgets/kfilewidget.cpp:850
+#: filewidgets/kfilewidget.cpp:847
 #, kde-format
 msgid "The file \"%1\" could not be found"
 msgstr "No s'ha pogut trobar el fitxer «%1»"
 
-#: filewidgets/kfilewidget.cpp:850
+#: filewidgets/kfilewidget.cpp:847
 #, kde-format
 msgid "Cannot open file"
 msgstr "No s'ha pogut obrir el fitxer"
 
-#: filewidgets/kfilewidget.cpp:1219
+#: filewidgets/kfilewidget.cpp:1216
 #, kde-format
 msgid ""
 "<qt>Click this button to enter the parent folder.<br /><br />For instance, "
@@ -3354,48 +3349,48 @@ msgstr ""
 ">Per exemple, si la ubicació actual és file:/home/konqui, clicar damunt "
 "d'este botó vos portarà a file:/home.</qt>"
 
-#: filewidgets/kfilewidget.cpp:1223
+#: filewidgets/kfilewidget.cpp:1220
 #, kde-format
 msgid "Click this button to move backwards one step in the browsing history."
 msgstr ""
 "Cliqueu damunt d'este botó per a anar un pas arrere en l'historial de "
 "navegació."
 
-#: filewidgets/kfilewidget.cpp:1224
+#: filewidgets/kfilewidget.cpp:1221
 #, kde-format
 msgid "Click this button to move forward one step in the browsing history."
 msgstr ""
 "Cliqueu damunt d'este botó per a anar un pas avant en l'historial de "
 "navegació."
 
-#: filewidgets/kfilewidget.cpp:1226
+#: filewidgets/kfilewidget.cpp:1223
 #, kde-format
 msgid "Click this button to reload the contents of the current location."
 msgstr ""
 "Cliqueu damunt d'este botó per a tornar a carregar el contingut de la "
 "ubicació actual."
 
-#: filewidgets/kfilewidget.cpp:1228
+#: filewidgets/kfilewidget.cpp:1225
 #, kde-format
 msgid "Click this button to create a new folder."
 msgstr "Cliqueu damunt d'este botó per a crear una carpeta nova."
 
-#: filewidgets/kfilewidget.cpp:1230
+#: filewidgets/kfilewidget.cpp:1227
 #, kde-format
 msgid "Show Places Panel"
 msgstr "Mostra el quadro dels llocs"
 
-#: filewidgets/kfilewidget.cpp:1237
+#: filewidgets/kfilewidget.cpp:1234
 #, kde-format
 msgid "Show Quick Filter"
 msgstr "Mostra el filtre ràpid"
 
-#: filewidgets/kfilewidget.cpp:1245
+#: filewidgets/kfilewidget.cpp:1242
 #, kde-format
 msgid "Options"
 msgstr "Opcions"
 
-#: filewidgets/kfilewidget.cpp:1248
+#: filewidgets/kfilewidget.cpp:1245
 #, kde-format
 msgid ""
 "<qt>This is the preferences menu for the file dialog. Various options can be "
@@ -3411,12 +3406,12 @@ msgstr ""
 "prèvies dels fitxers </li><li>separació de les carpetes dels fitxers</li></"
 "ul></qt>"
 
-#: filewidgets/kfilewidget.cpp:1267
+#: filewidgets/kfilewidget.cpp:1264
 #, kde-format
 msgid "Bookmarks"
 msgstr "Adreces d'interés"
 
-#: filewidgets/kfilewidget.cpp:1271
+#: filewidgets/kfilewidget.cpp:1268
 #, kde-format
 msgid ""
 "<qt>This button allows you to bookmark specific locations. Click on this "
@@ -3431,35 +3426,35 @@ msgstr ""
 "les adreces d'interés arreu de KDE.</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: filewidgets/kfilewidget.cpp:1316 widgets/kpropertiesdesktopbase.ui:22
+#: filewidgets/kfilewidget.cpp:1313 widgets/kpropertiesdesktopbase.ui:22
 #, kde-format
 msgid "&Name:"
 msgstr "&Nom:"
 
-#: filewidgets/kfilewidget.cpp:1341
+#: filewidgets/kfilewidget.cpp:1338
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo filename change"
 msgstr "Desfés el canvi de nom de fitxer"
 
-#: filewidgets/kfilewidget.cpp:1396
+#: filewidgets/kfilewidget.cpp:1393
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Keep Filter When Changing Folders"
 msgstr "Mantín el filtre en canviar de carpeta"
 
-#: filewidgets/kfilewidget.cpp:1400
+#: filewidgets/kfilewidget.cpp:1397
 #, kde-format
 msgid "Filter by name…"
 msgstr "Filtra per nom…"
 
-#: filewidgets/kfilewidget.cpp:1408
+#: filewidgets/kfilewidget.cpp:1405
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide Filter Bar"
 msgstr "Oculta la barra de filtres"
 
-#: filewidgets/kfilewidget.cpp:1457
+#: filewidgets/kfilewidget.cpp:1454
 #, kde-format
 msgid ""
 "<qt>While typing in the text area, you may be presented with possible "
@@ -3472,12 +3467,12 @@ msgstr ""
 "ratolí i seleccionant un mode preferit del menú <b>Compleció del text</b>.</"
 "qt>"
 
-#: filewidgets/kfilewidget.cpp:1464
+#: filewidgets/kfilewidget.cpp:1461
 #, kde-format
 msgid "This is the name to save the file as."
 msgstr "Este és el nom amb el qual guardar el fitxer."
 
-#: filewidgets/kfilewidget.cpp:1467
+#: filewidgets/kfilewidget.cpp:1464
 #, kde-format
 msgid ""
 "This is the list of files to open. More than one file can be specified by "
@@ -3486,73 +3481,78 @@ msgstr ""
 "Esta és la llista dels fitxers que s'obriran. Es pot especificar més d'un "
 "fitxer llistant diversos fitxers, separats per espais."
 
-#: filewidgets/kfilewidget.cpp:1472
+#: filewidgets/kfilewidget.cpp:1469
 #, kde-format
 msgid "This is the name of the file to open."
 msgstr "Este és el nom del fitxer que s'obrirà."
 
-#: filewidgets/kfilewidget.cpp:1485
+#: filewidgets/kfilewidget.cpp:1482
 #, kde-format
 msgctxt "@title:window"
 msgid "Places"
 msgstr "Llocs"
 
-#: filewidgets/kfilewidget.cpp:1766
+#: filewidgets/kfilewidget.cpp:1763
 #, kde-format
 msgid "The file \"%1\" already exists. Do you wish to overwrite it?"
 msgstr "El fitxer «%1» ja existix. Voleu sobreescriure'l?"
 
-#: filewidgets/kfilewidget.cpp:1767
+#: filewidgets/kfilewidget.cpp:1764
 #, kde-format
 msgid "Overwrite File?"
 msgstr "Voleu sobreescriure el fitxer?"
 
-#: filewidgets/kfilewidget.cpp:1964
+#: filewidgets/kfilewidget.cpp:1961
 #, kde-format
 msgid "You can only select local files."
 msgstr "Només podeu seleccionar fitxers locals."
 
-#: filewidgets/kfilewidget.cpp:1964
+#: filewidgets/kfilewidget.cpp:1961
 #, kde-format
 msgid "Remote Files Not Accepted"
 msgstr "No s'accepten fitxers remots"
 
-#: filewidgets/kfilewidget.cpp:2058
+#: filewidgets/kfilewidget.cpp:2055
 #, kde-format
 msgid "All Folders"
 msgstr "Totes les carpetes"
 
-#: filewidgets/kfilewidget.cpp:2198 widgets/kfileitemactions.cpp:842
+#: filewidgets/kfilewidget.cpp:2079
+#, kde-format
+msgid "Current Directory: %1"
+msgstr "Directori actual: %1"
+
+#: filewidgets/kfilewidget.cpp:2208 widgets/kfileitemactions.cpp:847
 #, kde-format
 msgid "&Open"
 msgstr "O&bri"
 
-#: filewidgets/kfilewidget.cpp:2299
+#: filewidgets/kfilewidget.cpp:2309
 #, kde-format
 msgid "Icon size: %1 pixels"
 msgstr "Mida de la icona: %1 píxels"
 
-#: filewidgets/kfilewidget.cpp:2466
+#: filewidgets/kfilewidget.cpp:2476
 #, kde-format
 msgid "Automatically select filename e&xtension (%1)"
 msgstr "Tria automàticament l'e&xtensió del nom de fitxer (%1)"
 
-#: filewidgets/kfilewidget.cpp:2467
+#: filewidgets/kfilewidget.cpp:2477
 #, kde-format
 msgid "the extension <b>%1</b>"
 msgstr "l'extensió <b>%1</b>"
 
-#: filewidgets/kfilewidget.cpp:2473
+#: filewidgets/kfilewidget.cpp:2483
 #, kde-format
 msgid "Automatically select filename e&xtension"
 msgstr "Tria automàticament l'e&xtensió del nom de fitxer"
 
-#: filewidgets/kfilewidget.cpp:2474
+#: filewidgets/kfilewidget.cpp:2484
 #, kde-format
 msgid "a suitable extension"
 msgstr "una extensió adequada"
 
-#: filewidgets/kfilewidget.cpp:2482
+#: filewidgets/kfilewidget.cpp:2492
 #, kde-format
 msgid ""
 "This option enables some convenient features for saving files with "
@@ -3579,12 +3579,12 @@ msgstr ""
 "final el punt s'eliminarà automàticament).</li></ol>Si no esteu segur, "
 "deixeu l'opció activada, ja que farà més manejables els vostres fitxers."
 
-#: filewidgets/kfilewidget.cpp:2948
+#: filewidgets/kfilewidget.cpp:2958
 #, kde-format
 msgid "&File type:"
 msgstr "Tipus de fi&txer:"
 
-#: filewidgets/kfilewidget.cpp:2952
+#: filewidgets/kfilewidget.cpp:2962
 #, kde-format
 msgid ""
 "<qt>This is the file type selector. It is used to select the format that the "
@@ -3593,7 +3593,7 @@ msgstr ""
 "<qt>Este és el selector de tipus de fitxer. S'utilitza per a seleccionar el "
 "format amb què es guardarà el fitxer.</qt>"
 
-#: filewidgets/kfilewidget.cpp:2954
+#: filewidgets/kfilewidget.cpp:2964
 #, kde-format
 msgid ""
 "<qt>This is the file type selector. It is used to select the format of the "
@@ -4207,7 +4207,7 @@ msgstr "Ordre que s'ha d'executar"
 msgid "URL(s) or local file(s) used for 'command'"
 msgstr "Els URL o fitxers locals utilitzats per l'«ordre»"
 
-#: kioworkers/file/file.cpp:650
+#: kioworkers/file/file.cpp:649
 #, kde-format
 msgid ""
 "Could not change permissions for\n"
@@ -4216,7 +4216,7 @@ msgstr ""
 "No s'han pogut canviar els permisos per a\n"
 "%1"
 
-#: kioworkers/file/file.cpp:658
+#: kioworkers/file/file.cpp:657
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -4226,17 +4226,17 @@ msgstr ""
 "No s'ha pogut canviar el propietari ni el grup per a\n"
 "%1"
 
-#: kioworkers/file/file.cpp:741 kioworkers/file/file.cpp:833
+#: kioworkers/file/file.cpp:740 kioworkers/file/file.cpp:832
 #, kde-format
 msgid "Could not open temporary file"
 msgstr "No s'ha pogut obrir un fitxer temporal"
 
-#: kioworkers/file/file.cpp:765
+#: kioworkers/file/file.cpp:764
 #, kde-format
 msgid "Could not find program \"mount\""
 msgstr "No s'ha pogut trobar el programa «mount»"
 
-#: kioworkers/file/file.cpp:842
+#: kioworkers/file/file.cpp:841
 #, kde-format
 msgid "Could not find program \"umount\""
 msgstr "No s'ha pogut trobar el programa «umount»"
@@ -4309,7 +4309,7 @@ msgstr ""
 msgid "Site:"
 msgstr "Lloc:"
 
-#: kioworkers/ftp/ftp.cpp:571 kioworkers/ftp/ftp.cpp:2500
+#: kioworkers/ftp/ftp.cpp:571 kioworkers/ftp/ftp.cpp:2499
 #, kde-format
 msgid "<b>%1</b>"
 msgstr "<b>%1</b>"
@@ -4333,7 +4333,7 @@ msgstr ""
 "\n"
 "El servidor ha indicat: «%1»"
 
-#: kioworkers/ftp/ftp.cpp:2495 kioworkers/http/http.cpp:379
+#: kioworkers/ftp/ftp.cpp:2494 kioworkers/http/http.cpp:379
 #, kde-format
 msgid ""
 "You need to supply a username and a password for the proxy server listed "
@@ -4342,12 +4342,12 @@ msgstr ""
 "Heu de donar un nom d'usuari i una contrasenya per al servidor intermediari "
 "llistat davall abans que se vos permeta accedir a altres llocs."
 
-#: kioworkers/ftp/ftp.cpp:2499 kioworkers/http/http.cpp:383
+#: kioworkers/ftp/ftp.cpp:2498 kioworkers/http/http.cpp:383
 #, kde-format
 msgid "Proxy:"
 msgstr "Servidor intermediari:"
 
-#: kioworkers/ftp/ftp.cpp:2502
+#: kioworkers/ftp/ftp.cpp:2501
 #, kde-format
 msgid "Proxy Authentication Failed."
 msgstr "No s'ha pogut fer l'autenticació de l'intermediari."
@@ -4893,31 +4893,18 @@ msgctxt "@action:button Launch script"
 msgid "&Launch"
 msgstr "&Inicia"
 
-#: widgets/executablefileopendialog.cpp:81
-#, kde-format
-msgctxt "@option:check"
-msgid "Launch executable files without asking"
-msgstr "Inicia els fitxers executables sense preguntar"
-
-#: widgets/executablefileopendialog.cpp:84
-#, kde-format
-msgctxt "@option:check Open in the associated app"
-msgid "Open executable files in the default application without asking"
-msgstr ""
-"Obri els fitxers executables a l'aplicació predeterminada sense preguntar"
-
-#: widgets/executablefileopendialog.cpp:87
+#: widgets/executablefileopendialog.cpp:80
 #, kde-format
 msgid "What do you wish to do with this file?"
 msgstr "Què voleu fer amb este fitxer?"
 
-#: widgets/executablefileopendialog.cpp:90
+#: widgets/executablefileopendialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open"
 msgstr "O&bri"
 
-#: widgets/executablefileopendialog.cpp:92
+#: widgets/executablefileopendialog.cpp:85
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open with %1"
@@ -4928,23 +4915,6 @@ msgstr "O&bri amb %1"
 #, kde-format
 msgid "Would you like to launch this file?"
 msgstr "Voleu iniciar este fitxer?"
-
-#. i18n: ectx: property (text), widget (QCheckBox, dontAgainCheckBox)
-#: widgets/executablefileopendialog.ui:97
-#, kde-format
-msgctxt "@option:check Always open/launch executable files (dont ask again)"
-msgid "Remember for all executable files"
-msgstr "Recorda per a tots els fitxers executables"
-
-#. i18n: ectx: property (contextualHelpText), widget (KContextualHelpButton, dontAgainHelpButton)
-#: widgets/executablefileopendialog.ui:104
-#, kde-format
-msgctxt "@info:tooltip How to undo do not ask again"
-msgid ""
-"You can undo this under \"Confirmations\" in Dolphin file manager settings."
-msgstr ""
-"Podeu desfer açò a «Confirmacions» dins de la configuració del gestor de "
-"fitxers Dolphin."
 
 #: widgets/fileundomanager.cpp:126
 #, kde-format
@@ -5391,47 +5361,47 @@ msgctxt "@title:menu"
 msgid "&Actions"
 msgstr "&Accions"
 
-#: widgets/kfileitemactions.cpp:751
+#: widgets/kfileitemactions.cpp:756
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open Folder With…"
 msgstr "O&bri la carpeta amb…"
 
-#: widgets/kfileitemactions.cpp:751
+#: widgets/kfileitemactions.cpp:756
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "O&bri amb…"
 
-#: widgets/kfileitemactions.cpp:809
+#: widgets/kfileitemactions.cpp:814
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Run Executable"
 msgstr "&Executa l'ordre"
 
-#: widgets/kfileitemactions.cpp:831
+#: widgets/kfileitemactions.cpp:836
 #, kde-format
 msgid "&Open folder with %1"
 msgstr "O&bri la carpeta amb %1"
 
-#: widgets/kfileitemactions.cpp:831
+#: widgets/kfileitemactions.cpp:836
 #, kde-format
 msgid "&Open with %1"
 msgstr "O&bri amb %1"
 
-#: widgets/kfileitemactions.cpp:863
+#: widgets/kfileitemactions.cpp:868
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open Folder With"
 msgstr "Obri la carpeta amb"
 
-#: widgets/kfileitemactions.cpp:863
+#: widgets/kfileitemactions.cpp:868
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "O&bri amb"
 
-#: widgets/kfileitemactions.cpp:874
+#: widgets/kfileitemactions.cpp:879
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other Application…"
@@ -6822,19 +6792,19 @@ msgstr "Configura les dreceres web…"
 msgid "Open file dialog"
 msgstr "Diàleg d'obrir fitxers"
 
-#: widgets/paste.cpp:65 widgets/paste.cpp:104
-#, kde-format
-msgctxt "@title:dialog"
-msgid "Paste Clipboard Content"
-msgstr "Apega el contingut del porta-retalls"
-
-#: widgets/paste.cpp:101
+#: widgets/paste.cpp:69
 #, kde-format
 msgctxt "A default file name excluding extension for some pasted content"
 msgid "pasted file"
 msgstr "fitxer apegat"
 
-#: widgets/paste.cpp:113
+#: widgets/paste.cpp:79 widgets/paste.cpp:113
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Paste Clipboard Content"
+msgstr "Apega el contingut del porta-retalls"
+
+#: widgets/paste.cpp:122
 #, kde-format
 msgid ""
 "The clipboard has changed since you used 'paste': the chosen data format is "
@@ -6843,19 +6813,19 @@ msgstr ""
 "El porta-retalls ha canviat d'ençà que heu utilitzat «apega»: ja no s'aplica "
 "el format triat per a les dades. Torneu a copiar allò que volíeu apegar."
 
-#: widgets/paste.cpp:234
+#: widgets/paste.cpp:250
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One Folder"
 msgstr "Apega una carpeta"
 
-#: widgets/paste.cpp:234
+#: widgets/paste.cpp:250
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One File"
 msgstr "Apega un fitxer"
 
-#: widgets/paste.cpp:236
+#: widgets/paste.cpp:252
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One Item"
@@ -6863,25 +6833,25 @@ msgid_plural "Paste %1 Items"
 msgstr[0] "Apega un element"
 msgstr[1] "Apega %1 elements"
 
-#: widgets/paste.cpp:238
+#: widgets/paste.cpp:254
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste Clipboard Contents…"
 msgstr "Apega el contingut del porta-retalls…"
 
-#: widgets/paste.cpp:242
+#: widgets/paste.cpp:258
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Apega"
 
-#: widgets/pastedialog.cpp:54
+#: widgets/pastedialog.cpp:57
 #, kde-format
 msgctxt "@label"
 msgid "Data format:"
 msgstr "Format de les dades:"
 
-#: widgets/pastedialog.cpp:63
+#: widgets/pastedialog.cpp:68
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -7542,3 +7512,24 @@ msgstr "Iniciarà el programa:"
 #, kde-format
 msgid "If you do not trust this program, click Cancel"
 msgstr "Si no confieu en este programa, cliqueu damunt «Cancel·la»"
+
+#~ msgctxt "@option:check"
+#~ msgid "Launch executable files without asking"
+#~ msgstr "Inicia els fitxers executables sense preguntar"
+
+#~ msgctxt "@option:check Open in the associated app"
+#~ msgid "Open executable files in the default application without asking"
+#~ msgstr ""
+#~ "Obri els fitxers executables a l'aplicació predeterminada sense preguntar"
+
+#~ msgctxt "@option:check Always open/launch executable files (dont ask again)"
+#~ msgid "Remember for all executable files"
+#~ msgstr "Recorda per a tots els fitxers executables"
+
+#~ msgctxt "@info:tooltip How to undo do not ask again"
+#~ msgid ""
+#~ "You can undo this under \"Confirmations\" in Dolphin file manager "
+#~ "settings."
+#~ msgstr ""
+#~ "Podeu desfer açò a «Confirmacions» dins de la configuració del gestor de "
+#~ "fitxers Dolphin."

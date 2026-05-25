@@ -31,6 +31,7 @@
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QMimeData>
+#include <QMimeDatabase>
 #include <QTemporaryFile>
 
 static QUrl getDestinationUrl(const QUrl &srcUrl, const QUrl &destUrl, QWidget *widget)
@@ -60,9 +61,22 @@ static QUrl getDestinationUrl(const QUrl &srcUrl, const QUrl &destUrl, QWidget *
     return destUrl;
 }
 
-static QUrl getNewFileName(const QUrl &u, const QString &text, const QString &suggestedFileName, QWidget *widget)
+static QString defaultFileName(const QString &suggestedFileName)
 {
-    KIO::PasteDialog dlg(i18nc("@title:dialog", "Paste Clipboard Content"), text, suggestedFileName, {}, widget);
+    if (!suggestedFileName.isEmpty()) {
+        return suggestedFileName;
+    }
+    return i18nc("A default file name excluding extension for some pasted content", "pasted file");
+}
+
+static QUrl getNewFileName(const QUrl &u, const QString &text, const QString &suggestedFileName, const QString &format, QWidget *widget)
+{
+    QStringList formats;
+    if (!format.isEmpty()) {
+        formats.append(format);
+    }
+
+    KIO::PasteDialog dlg(i18nc("@title:dialog", "Paste Clipboard Content"), text, defaultFileName(suggestedFileName), formats, widget);
     if (dlg.exec() != QDialog::Accepted) {
         return {};
     }
@@ -76,7 +90,7 @@ static QUrl getNewFileName(const QUrl &u, const QString &text, const QString &su
 static KIO::Job *putDataAsyncTo(const QUrl &url, const QByteArray &data, QWidget *widget, KIO::JobFlags flags)
 {
     KIO::Job *job = KIO::storedPut(data, url, -1, flags);
-    QObject::connect(job, &KIO::Job::result, [url](KJob *job) {
+    QObject::connect(job, &KIO::Job::result, job, [url](KJob *job) {
         if (job->error() == KJob::NoError) {
 #ifdef WITH_QTDBUS
             org::kde::KDirNotify::emitFilesAdded(url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
@@ -96,12 +110,7 @@ static QByteArray chooseFormatAndUrl(const QUrl &u,
                                      bool clipboard,
                                      QUrl *newUrl)
 {
-    auto defaultFilename = suggestedFileName;
-    if (defaultFilename.isEmpty()) {
-        defaultFilename = i18nc("A default file name excluding extension for some pasted content", "pasted file");
-    }
-
-    KIO::PasteDialog dlg(i18nc("@title:dialog", "Paste Clipboard Content"), text, defaultFilename, formats, widget);
+    KIO::PasteDialog dlg(i18nc("@title:dialog", "Paste Clipboard Content"), text, defaultFileName(suggestedFileName), formats, widget);
 
     if (dlg.exec() != QDialog::Accepted) {
         return QByteArray();
@@ -195,7 +204,14 @@ std::pair<KIO::Job *, int> pasteMimeDataImpl(const QMimeData *mimeData, const QU
         return std::make_pair(nullptr, KIO::ERR_NO_CONTENT);
     }
 
-    const QUrl newUrl = getNewFileName(destUrl, dialogText, suggestedFilename, widget);
+    QString guessedFormat;
+    QMimeDatabase db;
+    const QMimeType guessedMimeType = db.mimeTypeForData(ba);
+    if (guessedMimeType.isValid() && !guessedMimeType.isDefault()) {
+        guessedFormat = guessedMimeType.name();
+    }
+
+    const QUrl newUrl = getNewFileName(destUrl, dialogText, suggestedFilename, guessedFormat, widget);
     if (newUrl.isEmpty()) {
         return std::make_pair(nullptr, KIO::ERR_USER_CANCELED);
     }

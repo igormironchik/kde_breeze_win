@@ -1,11 +1,12 @@
-add_subdirectory(controls)
 add_subdirectory(platform)
+add_subdirectory(layouts)
 add_subdirectory(primitives)
+add_subdirectory(templates)
+add_subdirectory(controls)
 add_subdirectory(delegates)
 add_subdirectory(dialogs)
-add_subdirectory(layouts)
 add_subdirectory(polyfill)
-add_subdirectory(templates)
+add_subdirectory(forms)
 
 add_library(Kirigami)
 add_library(KF6::Kirigami ALIAS Kirigami)
@@ -60,15 +61,16 @@ ecm_add_qml_module(Kirigami URI "org.kde.kirigami" VERSION 2.0
     INSTALLED_PLUGIN_TARGET KF6Kirigamiplugin
     DEPENDENCIES
     "QtQuick.Controls"
-    "org.kde.kirigami.private"
-    "org.kde.kirigami.private.polyfill"
+    TARGET KirigamiPrivate
+    TARGET KirigamiPolyfill
     IMPORTS
-    "org.kde.kirigami.controls"
-    "org.kde.kirigami.platform"
-    "org.kde.kirigami.primitives"
-    "org.kde.kirigami.delegates"
-    "org.kde.kirigami.dialogs"
-    "org.kde.kirigami.layouts"
+    TARGET KirigamiControls
+    TARGET KirigamiPlatform
+    TARGET KirigamiPrimitives
+    TARGET KirigamiDelegates
+    TARGET KirigamiDialogs
+    TARGET KirigamiLayouts
+    TARGET KirigamiForms
     ${_extra_options}
 )
 
@@ -163,6 +165,10 @@ if (NOT BUILD_SHARED_LIBS)
             KirigamiLayoutsPrivateplugin
             KirigamiPrivateplugin
             KirigamiTemplatesplugin
+            KirigamiFormsplugin
+            KirigamiFormsPrivateTemplatesplugin
+            KirigamiFormsPrivateFlatplugin
+            KirigamiFormsPrivateCardsplugin
     )
     # for tests to find this under the name it's actually installed with'
     add_library(KF6Kirigamiplugin ALIAS Kirigamiplugin)
@@ -178,6 +184,10 @@ else()
             KirigamiLayouts
             KirigamiPrivate
             KirigamiTemplates
+            KirigamiForms
+            KirigamiFormsPrivateTemplates
+            KirigamiFormsPrivateFlat
+            KirigamiFormsPrivateCards
     )
 endif()
 

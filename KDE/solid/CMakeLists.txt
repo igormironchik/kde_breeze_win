@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.29)
 
-set(KF_VERSION "6.25.0") # handled by release scripts
+set(KF_VERSION "6.26.0") # handled by release scripts
 project(Solid VERSION ${KF_VERSION})
 
 include(FeatureSummary)
-find_package(ECM 6.25.0  NO_MODULE)
+find_package(ECM 6.26.0  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 
-list(APPEND CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
@@ -123,6 +123,7 @@ if (CMAKE_SYSTEM_NAME MATCHES Linux)
             add_device_backend(udisks2)
         endif()
         add_device_backend(upower)
+        add_device_backend(kdeconnect)
     endif()
 elseif (APPLE)
     find_package(IOKit REQUIRED)
@@ -139,6 +140,7 @@ else()
 
     if (HAVE_DBUS)
         add_device_backend(upower)
+        add_device_backend(kdeconnect)
         if (CMAKE_SYSTEM_NAME MATCHES FreeBSD OR CMAKE_SYSTEM_NAME MATCHES OpenBSD)
             add_device_backend(udisks2)
         endif()

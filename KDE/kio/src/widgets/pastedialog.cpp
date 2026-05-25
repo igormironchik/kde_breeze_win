@@ -33,9 +33,8 @@ KIO::PasteDialog::PasteDialog(const QString &title, const QString &label, const 
     auto hLayout = new QHBoxLayout;
     topLayout->addLayout(hLayout);
 
-    auto icon = new QLabel;
-    icon->setPixmap(QIcon::fromTheme(u"edit-paste"_s).pixmap(KIconLoader::SizeHuge));
-    hLayout->addWidget(icon, {}, Qt::AlignVCenter);
+    m_iconLabel = new QLabel(this);
+    hLayout->addWidget(m_iconLabel, {}, Qt::AlignVCenter);
 
     auto innerLayout = new QVBoxLayout;
     hLayout->addLayout(innerLayout);
@@ -50,24 +49,33 @@ KIO::PasteDialog::PasteDialog(const QString &title, const QString &label, const 
     m_lineEdit->setFocus();
     m_label->setBuddy(m_lineEdit);
 
-    if (!formats.isEmpty()) {
-        innerLayout->addWidget(new QLabel(i18nc("@label", "Data format:")));
+    if (formats.isEmpty()) {
+        setIcon(QIcon());
+    } else {
+        QMimeDatabase db;
+
+        auto *comboBoxHeading = new QLabel(i18nc("@label", "Data format:"));
+        comboBoxHeading->setVisible(formats.size() > 1);
+        innerLayout->addWidget(comboBoxHeading);
+
         m_comboBox = new QComboBox;
-        m_comboBox->setVisible(!formats.isEmpty());
+        m_comboBox->setVisible(formats.size() > 1);
 
         // Populate the combobox with nice human-readable labels
-        QMimeDatabase db;
         for (const QString &format : formats) {
             QMimeType mime = db.mimeTypeForName(format);
             if (mime.isValid()) {
                 auto label = i18n("%1 (%2)", mime.comment(), format);
-                m_comboBox->addItem(label, mime.name());
+                m_comboBox->addItem(QIcon::fromTheme(mime.iconName()), label, mime.name());
             } else {
                 m_comboBox->addItem(format);
             }
         }
 
         m_lastValidComboboxFormat = formats.value(comboItem());
+
+        const QMimeType mimeType = db.mimeTypeForName(m_lastValidComboboxFormat);
+        setIcon(QIcon::fromTheme(mimeType.iconName()));
 
         // Get fancy: if the user changes the format, try to replace the filename extension
         connect(m_comboBox, &QComboBox::activated, this, [this, formats]() {
@@ -80,6 +88,8 @@ KIO::PasteDialog::PasteDialog(const QString &title, const QString &label, const 
 
             const QString newExtension = newMimetype.preferredSuffix();
             const QString oldExtension = oldMimetype.preferredSuffix();
+
+            setIcon(QIcon::fromTheme(newMimetype.iconName()));
 
             m_lastValidComboboxFormat = format;
             if (newMimetype.isValid()) {
@@ -152,6 +162,15 @@ int KIO::PasteDialog::comboItem() const
         return {};
     }
     return m_comboBox->currentIndex();
+}
+
+void KIO::PasteDialog::setIcon(const QIcon &icon)
+{
+    QIcon effectiveIcon = icon;
+    if (effectiveIcon.isNull()) {
+        effectiveIcon = QIcon::fromTheme(QIcon::ThemeIcon::EditPaste);
+    }
+    m_iconLabel->setPixmap(effectiveIcon.pixmap(KIconLoader::SizeHuge));
 }
 
 #include "moc_pastedialog_p.cpp"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:39+0000\n"
+"POT-Creation-Date: 2026-04-19 00:40+0000\n"
 "PO-Revision-Date: 2024-01-30 09:25-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -95,7 +95,7 @@ msgid "Folder Already Exists"
 msgstr "ਫੋਲਡਰ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ"
 
 #: core/copyjob.cpp:1736 core/copyjob.cpp:2441 core/filecopyjob.cpp:371
-#: core/job_error.cpp:577 widgets/paste.cpp:48
+#: core/job_error.cpp:577 widgets/paste.cpp:49
 #, kde-format
 msgid "File Already Exists"
 msgstr "ਫਾਇਲ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ"
@@ -2688,7 +2688,7 @@ msgid "All Supported Files"
 msgstr "ਸਭ ਸਹਾਇਕ ਫਾਇਲਾਂ"
 
 #: filewidgets/kfilefiltercombo.cpp:169 filewidgets/kfilefiltercombo.cpp:171
-#: filewidgets/kfilewidget.cpp:2060
+#: filewidgets/kfilewidget.cpp:2057
 #, kde-format
 msgid "All Files"
 msgstr "ਸਭ ਫਾਇਲਾਂ"
@@ -2893,87 +2893,87 @@ msgctxt "KFile System Bookmarks"
 msgid "Modified Yesterday"
 msgstr "ਕੱਲ੍ਹ ਸੋਧ ਕੀਤੇ"
 
-#: filewidgets/kfileplacesmodel.cpp:1127
+#: filewidgets/kfileplacesmodel.cpp:1130
 #, kde-format
 msgctxt "Placeholder is error message"
 msgid "Could not add to the Places panel: %1"
 msgstr "ਥਾਵਾਂ ਪੈਨਲ ਜੋੜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %1"
 
-#: filewidgets/kfileplacesmodel.cpp:1134
+#: filewidgets/kfileplacesmodel.cpp:1137
 #, kde-format
 msgid "Only folders can be added to the Places panel."
 msgstr "ਸਿਰਫ਼ ਫੋਲਡਰ ਹੀ ਥਾਵਾਂ ਪੈਨਲ ਵਿੱਚ ਜੋੜੇ ਜਾ ਸਕਦੇ ਹਨ।"
 
-#: filewidgets/kfileplacesmodel.cpp:1377
+#: filewidgets/kfileplacesmodel.cpp:1380
 #, fuzzy, kde-format
 #| msgid "Configure Web Shortcuts..."
 msgctxt "@action:inmenu"
 msgid "Configure…"
 msgstr "ਵੈੱਬ ਸ਼ਾਰਟਕੱਟਾਂ ਦੀ ਸੰਰਚਨਾ..."
 
-#: filewidgets/kfileplacesmodel.cpp:1413
+#: filewidgets/kfileplacesmodel.cpp:1416
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Releasing…"
 msgstr "...ਜਾਰੀ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: filewidgets/kfileplacesmodel.cpp:1415
+#: filewidgets/kfileplacesmodel.cpp:1418
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Release"
 msgstr "ਰੀਲਿਜ਼(&R)"
 
-#: filewidgets/kfileplacesmodel.cpp:1419
+#: filewidgets/kfileplacesmodel.cpp:1422
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Safely Removing…"
 msgstr "…ਸਹੀ ਸਲਾਮਤੀ ਹਟਾਇਆ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: filewidgets/kfileplacesmodel.cpp:1421
+#: filewidgets/kfileplacesmodel.cpp:1424
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Safely Remove"
 msgstr "ਸਹੀ ਸਲਾਮਤੀ ਹਟਾਓ(&S)"
 
-#: filewidgets/kfileplacesmodel.cpp:1426
+#: filewidgets/kfileplacesmodel.cpp:1429
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unmounting…"
 msgstr "…ਅਣ-ਮਾਊਂਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"
 
-#: filewidgets/kfileplacesmodel.cpp:1428
+#: filewidgets/kfileplacesmodel.cpp:1431
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Unmount"
 msgstr "ਅਣ-ਮਾਊਂਟ(&U)"
 
-#: filewidgets/kfileplacesmodel.cpp:1452
+#: filewidgets/kfileplacesmodel.cpp:1455
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Eject"
 msgstr "ਕੱਢੋ(&E)"
 
-#: filewidgets/kfileplacesmodel.cpp:1499
+#: filewidgets/kfileplacesmodel.cpp:1502
 #, kde-format
 msgid "The device '%1' is not a disk and cannot be ejected."
 msgstr "ਡਿਵਾਈਸ '%1' ਇੱਕ ਡਿਸਕ ਨਹੀਂ ਹੈ ਅਤੇ ਬਾਹਰ ਨਹੀਂ ਕੱਢੀ ਜਾ ਸਕਦੀ।"
 
-#: filewidgets/kfileplacesmodel.cpp:1534
+#: filewidgets/kfileplacesmodel.cpp:1537
 #, kde-format
 msgid "An error occurred while accessing '%1', the system responded: %2"
 msgstr "'%1' ਵਰਤਣ ਦੌਰਾਨ ਗਲਤੀ ਆਈ ਹੈ, ਸਿਸਟਮ ਨੇ ਕਿਹਾ: %2"
 
-#: filewidgets/kfileplacesmodel.cpp:1536
+#: filewidgets/kfileplacesmodel.cpp:1539
 #, kde-format
 msgid "An error occurred while accessing '%1'"
 msgstr "'%1' ਵਰਤਣ ਦੌਰਾਨ ਗਲਤੀ ਆਈ ਹੈ"
 
-#: filewidgets/kfileplacesmodel.cpp:1562
+#: filewidgets/kfileplacesmodel.cpp:1565
 #, kde-format
 msgid "One or more files on this device are open within an application."
 msgstr "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਇੱਕ ਜਾਂ ਵੱਧ ਫਾਇਲਾਂ ਐਪਲੀਕੇਸ਼ਨ ਨਾਲ ਖੁੱਲ੍ਹੀਆਂ ਹਨ।"
 
-#: filewidgets/kfileplacesmodel.cpp:1565
+#: filewidgets/kfileplacesmodel.cpp:1568
 #, kde-kuit-format
 msgid ""
 "One or more files on this device are opened in application <application>"
@@ -2988,13 +2988,13 @@ msgstr[1] ""
 "ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਇੱਕ ਜਾਂ ਵੱਧ ਫਾਇਲਾਂ ਅੱਗੇ ਦਿੱਤੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਨਾਲ ਖੁੱਲ੍ਹੀਆਂ ਹਨ:<application>%2</"
 "application>।"
 
-#: filewidgets/kfileplacesmodel.cpp:1568
+#: filewidgets/kfileplacesmodel.cpp:1571
 #, kde-format
 msgctxt "separator in list of apps blocking device unmount"
 msgid ", "
 msgstr ", "
 
-#: filewidgets/kfileplacesmodel.cpp:1615
+#: filewidgets/kfileplacesmodel.cpp:1618
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reformat or Edit with Partition Manager"
@@ -3123,33 +3123,27 @@ msgctxt "Huge icon size"
 msgid "Huge (%1x%1)"
 msgstr "ਵਿਸ਼ਾਲ (%1x%1)"
 
-#: filewidgets/kfilewidget.cpp:404
-#, fuzzy, kde-format
-#| msgid "Create Directory"
-msgid "Current Directory: %1"
-msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਓ"
-
-#: filewidgets/kfilewidget.cpp:640
+#: filewidgets/kfilewidget.cpp:637
 #, kde-format
 msgid "You can only select one file"
 msgstr "ਤੁਸੀਂ ਕੇਵਲ ਇੱਕ ਫਾਇਲ ਹੀ ਚੁਣ ਸਕਦੇ ਹੋ"
 
-#: filewidgets/kfilewidget.cpp:640
+#: filewidgets/kfilewidget.cpp:637
 #, kde-format
 msgid "More than one file provided"
 msgstr "ਇੱਕ ਤੋਂ ਵੱਧ ਫਾਇਲ ਦਿੱਤੀ ਗਈ ਹੈ"
 
-#: filewidgets/kfilewidget.cpp:816
+#: filewidgets/kfilewidget.cpp:813
 #, kde-format
 msgid "You can only select local files"
 msgstr "ਤੁਸੀ ਸਿਰਫ਼ ਲੋਕਲ ਫਾਇਲਾਂ ਹੀ ਚੁਣ ਸਕਦੇ ਹੋ।"
 
-#: filewidgets/kfilewidget.cpp:816
+#: filewidgets/kfilewidget.cpp:813
 #, kde-format
 msgid "Remote files not accepted"
 msgstr "ਰਿਮੋਟ ਫਾਇਲ ਸਵੀਕਾਰ ਨਹੀਂ ਹਨ"
 
-#: filewidgets/kfilewidget.cpp:823
+#: filewidgets/kfilewidget.cpp:820
 #, kde-format
 msgid ""
 "The selected URL uses an unsupported scheme. Please use the following "
@@ -3160,22 +3154,22 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: filewidgets/kfilewidget.cpp:829
+#: filewidgets/kfilewidget.cpp:826
 #, kde-format
 msgid "Unsupported URL scheme"
 msgstr "ਗ਼ੈਰ-ਸਹਾਇਕ URL ਸਕੀਮ"
 
-#: filewidgets/kfilewidget.cpp:850
+#: filewidgets/kfilewidget.cpp:847
 #, kde-format
 msgid "The file \"%1\" could not be found"
 msgstr "ਫਾਇਲ \"%1\" ਨਹੀਂ ਲੱਭੀ ਜਾ ਸਕੀ"
 
-#: filewidgets/kfilewidget.cpp:850
+#: filewidgets/kfilewidget.cpp:847
 #, kde-format
 msgid "Cannot open file"
 msgstr "ਫਾਇਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕਦੀ"
 
-#: filewidgets/kfilewidget.cpp:1219
+#: filewidgets/kfilewidget.cpp:1216
 #, kde-format
 msgid ""
 "<qt>Click this button to enter the parent folder.<br /><br />For instance, "
@@ -3185,43 +3179,43 @@ msgstr ""
 "<qt>ਮੁੱਖ ਫੋਲਡਰ 'ਚ ਜਾਣ ਲਈ ਆਹ ਬਟਨ ਦਬਾਓ। <br /><br />ਜਿਵੇਂ ਕਿ ਇਸ ਮੌਕੇ ਉੱਤੇ ਮੌਜੂਦਾ ਟਿਕਾਣਾ "
 "file:/home/konqi ਹੈ ਤਾਂ ਆਹ ਬਟਨ ਦਬਾਉਣ ਨਾਲ ਤੁਸੀਂ file:/home ਉੱਤੇ ਚਲੇ ਜਾਓਗੇ।</qt>"
 
-#: filewidgets/kfilewidget.cpp:1223
+#: filewidgets/kfilewidget.cpp:1220
 #, kde-format
 msgid "Click this button to move backwards one step in the browsing history."
 msgstr "ਅਤੀਤ ਦੀ ਝਲਕ ਵੇਖਣ ਲਈ ਇੱਕ ਪਗ਼ ਪਿੱਛੇ ਜਾਣ ਲਈ ਆਹ ਬਟਨ ਦਬਾਓ।"
 
-#: filewidgets/kfilewidget.cpp:1224
+#: filewidgets/kfilewidget.cpp:1221
 #, kde-format
 msgid "Click this button to move forward one step in the browsing history."
 msgstr "ਅਤੀਤ ਦੀ ਝਲਕ ਵੇਖਣ ਲਈ ਇੱਕ ਪਗ਼ ਅੱਗੇ ਵਧਣ ਲਈ ਆਹ ਬਟਨ ਦਬਾਓ।"
 
-#: filewidgets/kfilewidget.cpp:1226
+#: filewidgets/kfilewidget.cpp:1223
 #, kde-format
 msgid "Click this button to reload the contents of the current location."
 msgstr "ਮੌਜੂਦਾ ਟਿਕਾਣੇ ਦੇ ਭਾਗ ਮੁੜ ਲੋਡ ਕਰਨ ਲਈ ਇਹ ਬਟਨ ਦਬਾਉ।"
 
-#: filewidgets/kfilewidget.cpp:1228
+#: filewidgets/kfilewidget.cpp:1225
 #, kde-format
 msgid "Click this button to create a new folder."
 msgstr "ਨਵਾਂ ਫੋਲਡਰ ਬਣਾਉਣ ਲਈ ਇਹ ਬਟਨ ਦਬਾਉ।"
 
-#: filewidgets/kfilewidget.cpp:1230
+#: filewidgets/kfilewidget.cpp:1227
 #, kde-format
 msgid "Show Places Panel"
 msgstr "ਥਾਂਵਾਂ ਪੈਨਲ ਵੇਖਾਓ"
 
-#: filewidgets/kfilewidget.cpp:1237
+#: filewidgets/kfilewidget.cpp:1234
 #, fuzzy, kde-format
 #| msgid "Show Hidden Files"
 msgid "Show Quick Filter"
 msgstr "ਲੁਕਵੀਆਂ ਫਾਇਲਾਂ ਵੇਖਾਓ"
 
-#: filewidgets/kfilewidget.cpp:1245
+#: filewidgets/kfilewidget.cpp:1242
 #, kde-format
 msgid "Options"
 msgstr "ਚੋਣਾਂ"
 
-#: filewidgets/kfilewidget.cpp:1248
+#: filewidgets/kfilewidget.cpp:1245
 #, kde-format
 msgid ""
 "<qt>This is the preferences menu for the file dialog. Various options can be "
@@ -3231,12 +3225,12 @@ msgid ""
 "folders from files</li></ul></qt>"
 msgstr ""
 
-#: filewidgets/kfilewidget.cpp:1267
+#: filewidgets/kfilewidget.cpp:1264
 #, kde-format
 msgid "Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: filewidgets/kfilewidget.cpp:1271
+#: filewidgets/kfilewidget.cpp:1268
 #, kde-format
 msgid ""
 "<qt>This button allows you to bookmark specific locations. Click on this "
@@ -3249,39 +3243,39 @@ msgstr ""
 "ਫਾਇਲ ਡਾਈਲਾਗ ਲਈ ਹੀ ਖਾਸ ਹਨ, ਨਹੀਂ ਤਾਂ KDE ਵਿੱਚ ਹੋਰ ਬੁੱਕਮਾਰਕਾਂ ਵਾਂਗ ਕੰਮ ਕਰਦੇ।</qt>"
 
 #. i18n: ectx: property (text), widget (QLabel, nameLabel)
-#: filewidgets/kfilewidget.cpp:1316 widgets/kpropertiesdesktopbase.ui:22
+#: filewidgets/kfilewidget.cpp:1313 widgets/kpropertiesdesktopbase.ui:22
 #, kde-format
 msgid "&Name:"
 msgstr "ਨਾਂ(&N):"
 
-#: filewidgets/kfilewidget.cpp:1341
+#: filewidgets/kfilewidget.cpp:1338
 #, fuzzy, kde-format
 #| msgid "Undo Changes"
 msgctxt "@info:tooltip"
 msgid "Undo filename change"
 msgstr "ਤਬਦੀਲੀਆਂ ਵਾਪਸ ਲਵੋ"
 
-#: filewidgets/kfilewidget.cpp:1396
+#: filewidgets/kfilewidget.cpp:1393
 #, fuzzy, kde-format
 #| msgid "Open Containing Folder"
 msgctxt "@info:tooltip"
 msgid "Keep Filter When Changing Folders"
 msgstr "ਰੱਖਣ ਵਾਲਾ ਫੋਲਡਰ ਖੋਲ੍ਹੋ"
 
-#: filewidgets/kfilewidget.cpp:1400
+#: filewidgets/kfilewidget.cpp:1397
 #, fuzzy, kde-format
 #| msgid "File name:"
 msgid "Filter by name…"
 msgstr "ਫਾਈਲ ਨਾਂ:"
 
-#: filewidgets/kfilewidget.cpp:1408
+#: filewidgets/kfilewidget.cpp:1405
 #, fuzzy, kde-format
 #| msgid "Hidden Files Last"
 msgctxt "@info:tooltip"
 msgid "Hide Filter Bar"
 msgstr "ਲੁਕਵੀਆਂ ਫਾਇਲਾਂ ਸਭ ਤੋਂ ਪਿੱਛੇ"
 
-#: filewidgets/kfilewidget.cpp:1457
+#: filewidgets/kfilewidget.cpp:1454
 #, kde-format
 msgid ""
 "<qt>While typing in the text area, you may be presented with possible "
@@ -3293,12 +3287,12 @@ msgstr ""
 "ਬਟਨ ਦਬਾ ਕੇ ਰੱਖਣ ਅਤੇ <b>ਟੈਕਸਟ ਮੁਕੰਮਲ</b> ਮੇਨ ਤੋਂ ਪਸੰਦੀਦਾ ਢੰਗ ਚੁਣ ਕੇ ਕੰਟਰੋਲ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।</"
 "qt>"
 
-#: filewidgets/kfilewidget.cpp:1464
+#: filewidgets/kfilewidget.cpp:1461
 #, kde-format
 msgid "This is the name to save the file as."
 msgstr "ਇਹ ਫਾਇਲ ਸੰਭਾਲਣ ਲਈ ਫਾਇਲ ਨਾਂ ਹੈ।"
 
-#: filewidgets/kfilewidget.cpp:1467
+#: filewidgets/kfilewidget.cpp:1464
 #, kde-format
 msgid ""
 "This is the list of files to open. More than one file can be specified by "
@@ -3307,73 +3301,79 @@ msgstr ""
 "ਇਹ ਫਾਇਲ ਖੋਲ੍ਹਣ ਲਈ ਫਾਇਲ ਨਾਂ ਹੈ। ਕਈ ਫਾਇਲਾਂ ਖੋਲ੍ਹਣ ਲਈ ਇੱਕ ਤੋਂ ਵੱਧ ਫਾਇਲਾਂ ਖਾਲੀ ਥਾਂ ਛੱਡ ਕੇ ਦਿੱਤੀਆਂ "
 "ਜਾ ਸਕਦੀਆਂ ਹਨ।"
 
-#: filewidgets/kfilewidget.cpp:1472
+#: filewidgets/kfilewidget.cpp:1469
 #, kde-format
 msgid "This is the name of the file to open."
 msgstr "ਇਹ ਖੋਲ੍ਹਣ ਲਈ ਫਾਇਲ ਦਾ ਨਾਂ ਹੈ।"
 
-#: filewidgets/kfilewidget.cpp:1485
+#: filewidgets/kfilewidget.cpp:1482
 #, kde-format
 msgctxt "@title:window"
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
 
-#: filewidgets/kfilewidget.cpp:1766
+#: filewidgets/kfilewidget.cpp:1763
 #, kde-format
 msgid "The file \"%1\" already exists. Do you wish to overwrite it?"
 msgstr "ਫਾਇਲ \"%1\" ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਉੱਤੇ ਲਿਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: filewidgets/kfilewidget.cpp:1767
+#: filewidgets/kfilewidget.cpp:1764
 #, kde-format
 msgid "Overwrite File?"
 msgstr "ਫਾਇਲ ਉੱਤੇ ਲਿਖਣਾ ਹੈ?"
 
-#: filewidgets/kfilewidget.cpp:1964
+#: filewidgets/kfilewidget.cpp:1961
 #, kde-format
 msgid "You can only select local files."
 msgstr "ਤੁਸੀ ਕੇਵਲ ਲੋਕਲ ਫਾਇਲਾਂ ਹੀ ਚੁਣ ਸਕਦੇ ਹੋ।"
 
-#: filewidgets/kfilewidget.cpp:1964
+#: filewidgets/kfilewidget.cpp:1961
 #, kde-format
 msgid "Remote Files Not Accepted"
 msgstr "ਰਿਮੋਟ ਫਾਇਲ ਸਵੀਕਾਰ ਨਹੀਂ ਹਨ"
 
-#: filewidgets/kfilewidget.cpp:2058
+#: filewidgets/kfilewidget.cpp:2055
 #, kde-format
 msgid "All Folders"
 msgstr "ਸਭ ਫੋਲਡਰ"
 
-#: filewidgets/kfilewidget.cpp:2198 widgets/kfileitemactions.cpp:842
+#: filewidgets/kfilewidget.cpp:2079
+#, fuzzy, kde-format
+#| msgid "Create Directory"
+msgid "Current Directory: %1"
+msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਓ"
+
+#: filewidgets/kfilewidget.cpp:2208 widgets/kfileitemactions.cpp:847
 #, kde-format
 msgid "&Open"
 msgstr "ਖੋਲ੍ਹੋ(&O)"
 
-#: filewidgets/kfilewidget.cpp:2299
+#: filewidgets/kfilewidget.cpp:2309
 #, kde-format
 msgid "Icon size: %1 pixels"
 msgstr "ਆਈਕਾਨ ਸਾਈਜ਼: %1 ਪਿਕਸਲ"
 
-#: filewidgets/kfilewidget.cpp:2466
+#: filewidgets/kfilewidget.cpp:2476
 #, kde-format
 msgid "Automatically select filename e&xtension (%1)"
 msgstr "ਆਟੋਮੈਟਿਕ ਹੀ ਫਾਇਲ ਨਾਂ ਇਕਸਟੈਨਸ਼ਨ ਚੁਣੋ (%1)(&x)"
 
-#: filewidgets/kfilewidget.cpp:2467
+#: filewidgets/kfilewidget.cpp:2477
 #, kde-format
 msgid "the extension <b>%1</b>"
 msgstr "ਇਕਸਟੈਨਸ਼ਨ <b>%1</b>"
 
-#: filewidgets/kfilewidget.cpp:2473
+#: filewidgets/kfilewidget.cpp:2483
 #, kde-format
 msgid "Automatically select filename e&xtension"
 msgstr "ਆਟੋਮੈਟਿਕ ਚੁਣੀ ਫਾਇਲ-ਨਾਂ ਇਕਸਟੈਨਸ਼ਨ(&x)"
 
-#: filewidgets/kfilewidget.cpp:2474
+#: filewidgets/kfilewidget.cpp:2484
 #, kde-format
 msgid "a suitable extension"
 msgstr "ਇੱਕ ਢੁੱਕਵੀਂ ਇਕਸਟੈਨਸ਼ਨ"
 
-#: filewidgets/kfilewidget.cpp:2482
+#: filewidgets/kfilewidget.cpp:2492
 #, kde-format
 msgid ""
 "This option enables some convenient features for saving files with "
@@ -3389,19 +3389,19 @@ msgid ""
 "enabled as it makes your files more manageable."
 msgstr ""
 
-#: filewidgets/kfilewidget.cpp:2948
+#: filewidgets/kfilewidget.cpp:2958
 #, kde-format
 msgid "&File type:"
 msgstr "ਫਾਇਲ ਕਿਸਮ(&F):"
 
-#: filewidgets/kfilewidget.cpp:2952
+#: filewidgets/kfilewidget.cpp:2962
 #, kde-format
 msgid ""
 "<qt>This is the file type selector. It is used to select the format that the "
 "file will be saved as.</qt>"
 msgstr ""
 
-#: filewidgets/kfilewidget.cpp:2954
+#: filewidgets/kfilewidget.cpp:2964
 #, kde-format
 msgid ""
 "<qt>This is the file type selector. It is used to select the format of the "
@@ -3994,7 +3994,7 @@ msgstr "ਚਲਾਉਣ ਲਈ ਕਮਾਂਡ"
 msgid "URL(s) or local file(s) used for 'command'"
 msgstr ""
 
-#: kioworkers/file/file.cpp:650
+#: kioworkers/file/file.cpp:649
 #, kde-format
 msgid ""
 "Could not change permissions for\n"
@@ -4003,7 +4003,7 @@ msgstr ""
 "%1\n"
 "ਲਈ ਇਜਾਜ਼ਤਾਂ ਬਦਲੀਆਂ ਨਹੀਂ ਜਾ ਸਕੀਆਂ"
 
-#: kioworkers/file/file.cpp:658
+#: kioworkers/file/file.cpp:657
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -4013,18 +4013,18 @@ msgstr ""
 "%1\n"
 "ਲਈ ਮਾਲਕ ਅਤੇ ਗਰੁੱਪ ਨਹੀਂ ਬਦਲੇ ਜਾ ਸਕੇ।"
 
-#: kioworkers/file/file.cpp:741 kioworkers/file/file.cpp:833
+#: kioworkers/file/file.cpp:740 kioworkers/file/file.cpp:832
 #, fuzzy, kde-format
 #| msgid "Could Not Rename Temporary File"
 msgid "Could not open temporary file"
 msgstr "ਆਰਜ਼ੀ ਫਾਇਲ ਦਾ ਨਾਂ ਬਦਲਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
 
-#: kioworkers/file/file.cpp:765
+#: kioworkers/file/file.cpp:764
 #, kde-format
 msgid "Could not find program \"mount\""
 msgstr "ਪਰੋਗਰਾਮ \"mount\" ਨਹੀਂ ਮਿਲਿਆ ਹੈ"
 
-#: kioworkers/file/file.cpp:842
+#: kioworkers/file/file.cpp:841
 #, kde-format
 msgid "Could not find program \"umount\""
 msgstr "ਪਰੋਗਰਾਮ \"umount\" ਨਹੀਂ ਮਿਲਿਆ ਹੈ"
@@ -4096,7 +4096,7 @@ msgstr "ਤੁਹਾਨੂੰ ਇਹ ਸਾਇਟ ਦੀ ਵਰਤੋਂ ਕਰ�
 msgid "Site:"
 msgstr "ਸਾਇਟ:"
 
-#: kioworkers/ftp/ftp.cpp:571 kioworkers/ftp/ftp.cpp:2500
+#: kioworkers/ftp/ftp.cpp:571 kioworkers/ftp/ftp.cpp:2499
 #, kde-format
 msgid "<b>%1</b>"
 msgstr "<b>%1</b>"
@@ -4120,7 +4120,7 @@ msgstr ""
 "\n"
 "ਸਰਵਰ ਤੋਂ ਸੁਨੇਹਾ: \"%1\""
 
-#: kioworkers/ftp/ftp.cpp:2495 kioworkers/http/http.cpp:379
+#: kioworkers/ftp/ftp.cpp:2494 kioworkers/http/http.cpp:379
 #, kde-format
 msgid ""
 "You need to supply a username and a password for the proxy server listed "
@@ -4129,12 +4129,12 @@ msgstr ""
 "ਇਸ ਤੋਂ ਪਹਿਲਾਂ ਕਿ ਤੁਸੀ ਕੋਈ ਸਾਇਟ ਖੋਲ੍ਹੋ, ਇਹ ਲਾਜ਼ਮੀ ਹੈ ਕਿ ਹੇਠ ਦਿੱਤੀ ਪਰਾਕਸੀ ਸਰਵਰ ਲਿਸਟ ਵਿੱਚੋਂ "
 "ਕਿਸੇ ਲਈ ਵਰਤੋਂਕਾਰ ਨਾਂ ਤੇ ਪਾਸਵਰਡ ਭਰੋ।"
 
-#: kioworkers/ftp/ftp.cpp:2499 kioworkers/http/http.cpp:383
+#: kioworkers/ftp/ftp.cpp:2498 kioworkers/http/http.cpp:383
 #, kde-format
 msgid "Proxy:"
 msgstr "ਪਰਾਕਸੀ:"
 
-#: kioworkers/ftp/ftp.cpp:2502
+#: kioworkers/ftp/ftp.cpp:2501
 #, kde-format
 msgid "Proxy Authentication Failed."
 msgstr "ਪਰਾਕਸੀ ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ ਹੋਈ।"
@@ -4665,31 +4665,19 @@ msgctxt "@action:button Launch script"
 msgid "&Launch"
 msgstr "%1 ਲਾਂਚ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: widgets/executablefileopendialog.cpp:81
-#, kde-format
-msgctxt "@option:check"
-msgid "Launch executable files without asking"
-msgstr ""
-
-#: widgets/executablefileopendialog.cpp:84
-#, kde-format
-msgctxt "@option:check Open in the associated app"
-msgid "Open executable files in the default application without asking"
-msgstr ""
-
-#: widgets/executablefileopendialog.cpp:87
+#: widgets/executablefileopendialog.cpp:80
 #, kde-format
 msgid "What do you wish to do with this file?"
 msgstr "ਇਸ ਫਾਇਲ ਨਾਲ ਤੁਸੀਂ ਕੀ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: widgets/executablefileopendialog.cpp:90
+#: widgets/executablefileopendialog.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "&Open"
 msgstr "ਖੋਲ੍ਹੋ(&O)"
 
-#: widgets/executablefileopendialog.cpp:92
+#: widgets/executablefileopendialog.cpp:85
 #, fuzzy, kde-format
 #| msgid "&Open with %1"
 msgctxt "@action:button"
@@ -4702,21 +4690,6 @@ msgstr "%1 ਨਾਲ ਖੋਲ੍ਹੋ(&O)"
 #| msgid "What do you wish to do with this file?"
 msgid "Would you like to launch this file?"
 msgstr "ਇਸ ਫਾਇਲ ਨਾਲ ਤੁਸੀਂ ਕੀ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#. i18n: ectx: property (text), widget (QCheckBox, dontAgainCheckBox)
-#: widgets/executablefileopendialog.ui:97
-#, kde-format
-msgctxt "@option:check Always open/launch executable files (dont ask again)"
-msgid "Remember for all executable files"
-msgstr ""
-
-#. i18n: ectx: property (contextualHelpText), widget (KContextualHelpButton, dontAgainHelpButton)
-#: widgets/executablefileopendialog.ui:104
-#, kde-format
-msgctxt "@info:tooltip How to undo do not ask again"
-msgid ""
-"You can undo this under \"Confirmations\" in Dolphin file manager settings."
-msgstr ""
 
 #: widgets/fileundomanager.cpp:126
 #, kde-format
@@ -5169,7 +5142,7 @@ msgctxt "@title:menu"
 msgid "&Actions"
 msgstr "ਐਕਸ਼ਨ(&A)"
 
-#: widgets/kfileitemactions.cpp:751
+#: widgets/kfileitemactions.cpp:756
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Open Folder With"
@@ -5177,7 +5150,7 @@ msgctxt "@action:inmenu"
 msgid "&Open Folder With…"
 msgstr "ਫੋਲਡਰ ਇਸ ਨਾਲ ਖੋਲ੍ਹੋ(&O)"
 
-#: widgets/kfileitemactions.cpp:751
+#: widgets/kfileitemactions.cpp:756
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Open With"
@@ -5185,36 +5158,36 @@ msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "ਇਸ ਨਾਲ ਖੋਲ੍ਹੋ(&O)"
 
-#: widgets/kfileitemactions.cpp:809
+#: widgets/kfileitemactions.cpp:814
 #, fuzzy, kde-format
 #| msgid "&Execute"
 msgctxt "@action:inmenu"
 msgid "&Run Executable"
 msgstr "ਚਲਾਓ(&E)"
 
-#: widgets/kfileitemactions.cpp:831
+#: widgets/kfileitemactions.cpp:836
 #, kde-format
 msgid "&Open folder with %1"
 msgstr "ਫੋਲਡਰ %1 ਨਾਲ ਖੋਲ੍ਹੋ(&O)"
 
-#: widgets/kfileitemactions.cpp:831
+#: widgets/kfileitemactions.cpp:836
 #, kde-format
 msgid "&Open with %1"
 msgstr "%1 ਨਾਲ ਖੋਲ੍ਹੋ(&O)"
 
-#: widgets/kfileitemactions.cpp:863
+#: widgets/kfileitemactions.cpp:868
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open Folder With"
 msgstr "ਫੋਲਡਰ ਇਸ ਨਾਲ ਖੋਲ੍ਹੋ(&O)"
 
-#: widgets/kfileitemactions.cpp:863
+#: widgets/kfileitemactions.cpp:868
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "ਇਸ ਨਾਲ ਖੋਲ੍ਹੋ(&O)"
 
-#: widgets/kfileitemactions.cpp:874
+#: widgets/kfileitemactions.cpp:879
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Open With"
 #| msgid "&Other Application..."
@@ -6566,14 +6539,7 @@ msgstr "ਵੈੱਬ ਸ਼ਾਰਟਕੱਟਾਂ ਦੀ ਸੰਰਚਨਾ..."
 msgid "Open file dialog"
 msgstr "ਫਾਇਲ ਖੋਲ੍ਹੋ ਡਾਈਲਾਗ"
 
-#: widgets/paste.cpp:65 widgets/paste.cpp:104
-#, fuzzy, kde-format
-#| msgid "&Paste Clipboard Contents"
-msgctxt "@title:dialog"
-msgid "Paste Clipboard Content"
-msgstr "ਕਲਿੱਪਬੋਰਡ ਸਮੱਗਰੀ ਚੇਪੋ(&P)"
-
-#: widgets/paste.cpp:101
+#: widgets/paste.cpp:69
 #, fuzzy, kde-format
 #| msgid "&Paste File"
 #| msgid_plural "&Paste %1 Files"
@@ -6581,26 +6547,33 @@ msgctxt "A default file name excluding extension for some pasted content"
 msgid "pasted file"
 msgstr "ਫਾਈਲ ਚੇਪੋ(&P)"
 
-#: widgets/paste.cpp:113
+#: widgets/paste.cpp:79 widgets/paste.cpp:113
+#, fuzzy, kde-format
+#| msgid "&Paste Clipboard Contents"
+msgctxt "@title:dialog"
+msgid "Paste Clipboard Content"
+msgstr "ਕਲਿੱਪਬੋਰਡ ਸਮੱਗਰੀ ਚੇਪੋ(&P)"
+
+#: widgets/paste.cpp:122
 #, kde-format
 msgid ""
 "The clipboard has changed since you used 'paste': the chosen data format is "
 "no longer applicable. Please copy again what you wanted to paste."
 msgstr ""
 
-#: widgets/paste.cpp:234
+#: widgets/paste.cpp:250
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One Folder"
 msgstr "ਇੱਕ ਫੋਲਡਰ ਨੂੰ ਚੇਪੋ"
 
-#: widgets/paste.cpp:234
+#: widgets/paste.cpp:250
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One File"
 msgstr "ਇੱਕ ਫਾਇਲ ਨੂੰ ਚੇਪੋ"
 
-#: widgets/paste.cpp:236
+#: widgets/paste.cpp:252
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste One Item"
@@ -6608,27 +6581,27 @@ msgid_plural "Paste %1 Items"
 msgstr[0] "ਇੱਕ ਆਈਟਮ ਨੂੰ ਚੇਪੋ"
 msgstr[1] "%1 ਆਈਟਮਾਂ ਨੂੰ ਚੇਪੋ"
 
-#: widgets/paste.cpp:238
+#: widgets/paste.cpp:254
 #, fuzzy, kde-format
 #| msgid "&Paste Clipboard Contents"
 msgctxt "@action:inmenu"
 msgid "Paste Clipboard Contents…"
 msgstr "ਕਲਿੱਪਬੋਰਡ ਸਮੱਗਰੀ ਚੇਪੋ(&P)"
 
-#: widgets/paste.cpp:242
+#: widgets/paste.cpp:258
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "ਚੇਪੋ"
 
-#: widgets/pastedialog.cpp:54
+#: widgets/pastedialog.cpp:57
 #, fuzzy, kde-format
 #| msgid "Data format:"
 msgctxt "@label"
 msgid "Data format:"
 msgstr "ਡਾਟਾ ਫਾਰਮੈਟ:"
 
-#: widgets/pastedialog.cpp:63
+#: widgets/pastedialog.cpp:68
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"

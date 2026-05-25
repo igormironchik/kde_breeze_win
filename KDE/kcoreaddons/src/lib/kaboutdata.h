@@ -588,6 +588,86 @@ private:
 Q_DECLARE_TYPEINFO(KAboutComponent, Q_RELOCATABLE_TYPE);
 
 /*!
+ * \class KAboutRelease
+ * \inmodule KCoreAddons
+ *
+ * \brief An individual release note of a program or plugin.
+ *
+ * This represents an AppStream release note of an individual version.
+ *
+ * \see https://www.freedesktop.org/software/appstream/docs/sect-Metadata-Releases.html
+ *
+ * \since 6.26
+ */
+class KCOREADDONS_EXPORT KAboutRelease
+{
+    Q_GADGET
+    /*!
+     * \property KAboutRelease::version
+     */
+    Q_PROPERTY(QString version READ version)
+    /*!
+     * \property KAboutRelease::date
+     */
+    Q_PROPERTY(QDate date READ date)
+    /*!
+     * \property KAboutRelease::description
+     */
+    Q_PROPERTY(QString description READ description)
+    /*!
+     * \property KAboutRelease::url
+     */
+    Q_PROPERTY(QUrl url READ url)
+public:
+    explicit KAboutRelease();
+    KCOREADDONS_NO_EXPORT explicit KAboutRelease(const QString &version,
+                                                 const QDate &date,
+                                                 const QString &description,
+                                                 const QString &untranslatedDescription,
+                                                 const QUrl &url);
+    KAboutRelease(const KAboutRelease &);
+    KAboutRelease(KAboutRelease &&) noexcept;
+    ~KAboutRelease();
+    KAboutRelease &operator=(const KAboutRelease &);
+    KAboutRelease &operator=(KAboutRelease &&) noexcept;
+
+    /*!
+     * Retursn the version this release note refers to.
+     */
+    [[nodiscard]] QString version() const;
+    /*!
+     * Returns the date on which this version was released.
+     */
+    [[nodiscard]] QDate date() const;
+    /*!
+     * Returns the (translated) release notes.
+     *
+     * This is provided as restricted rich text, following what the description tag
+     * in AppStream allows. This is suitable for consumption by Qt rich text labels.
+     */
+    [[nodiscard]] QString description() const;
+    /*!
+     * Returns the untranslated release notes.
+     *
+     * This is not meant for displaying to users, but for detecting changes
+     * since the last display, when display release notes on development versions.
+     *
+     * \see description
+     */
+    [[nodiscard]] QString untranslatedDescription() const;
+
+    /*!
+     * Returns a URL to a website with more information about the release.
+     */
+    [[nodiscard]] QUrl url() const;
+
+private:
+    QSharedDataPointer<class KAboutReleasePrivate> d;
+};
+
+Q_DECLARE_TYPEINFO(KAboutRelease, Q_RELOCATABLE_TYPE);
+
+/*!
  * \class KAboutData
  * \inmodule KCoreAddons
  *
@@ -732,6 +812,12 @@ class KCOREADDONS_EXPORT KAboutData
      * \property KAboutData::desktopFileName
      */
     Q_PROPERTY(QString desktopFileName READ desktopFileName CONSTANT)
+
+    /*!
+     * \property KAboutData::releases
+     */
+    Q_PROPERTY(QList<KAboutRelease> releases READ releases)
+
 public:
     /*!
      * Returns the KAboutData for the application.
@@ -764,6 +850,53 @@ public:
      * \sa applicationData
      */
     static void setApplicationData(const KAboutData &aboutData);
+
+    /*!
+     * Create about data from an AppStream file.
+     *
+     * This fills all fields of the returned KAboutData object that can be
+     * found in the the given AppStream file, including (translated) name,
+     * license, URLs, etc. Note that most importantly the version number
+     * is not included in this.
+     *
+     * \a appStreamFileName A path to the AppStream file to read.
+     *
+     * \sa fromAppStreamId, fromAppStreamForApplication
+     * \since 6.26
+     */
+    static KAboutData fromAppStreamFile(const QString &appStreamFileName);
+
+    /*!
+     * Create about data from an AppStream file.
+     *
+     * This fills all fields of the returned KAboutData object that can be
+     * found in the the given AppStream file, including (translated) name,
+     * license, URLs, etc. Note that most importantly the version number
+     * is not included in this.
+     *
+     * \a applicationId An application identifier used to find the corresponding
+     *    AppStream file in the default install location.
+     *
+     * \sa fromAppStreamFile, fromAppStreamForApplication
+     * \since 6.26
+     */
+    static KAboutData fromAppStreamId(const QString &applicationId);
+
+    /*!
+     * Create about data from the AppStream file of the current application.
+     *
+     * This fills all fields of the returned KAboutData object that can be
+     * found in the the given AppStream file, including (translated) name,
+     * license, URLs, etc. Note that most importantly the version number
+     * is not included in this.
+     *
+     * QGuiApplication::desktopFileName has to be set prior to calling this.
+     *
+     * \sa fromAppStreamFile, fromAppStreamId
+     *
+     * \since 6.26
+     */
+    static KAboutData fromAppStreamForApplication();
 
 public:
     // KF6: remove constructor that includes catalogName, and put default
@@ -1160,6 +1293,16 @@ public:
     KAboutData &setLicense(KAboutLicense::LicenseKey licenseKey, KAboutLicense::VersionRestriction versionRestriction);
 
     /*!
+     * Sets the license.
+     *
+     * \a license a license object, obtained e.g. via KAboutLicense::byKeyword().
+     * \sa addLicense, addLicenseText, setLicenseText, setLicenseTextFile
+     *
+     * \since 6.26
+     */
+    KAboutData &setLicense(KAboutLicense &&license);
+
+    /*!
      * Adds a license identifier.
      *
      * If there is only one unknown license set, e.g. by using the default
@@ -1186,6 +1329,16 @@ public:
      * \since 5.37
      */
     KAboutData &addLicense(KAboutLicense::LicenseKey licenseKey, KAboutLicense::VersionRestriction versionRestriction);
+
+    /*!
+     * Adds a license.
+     *
+     * \a license a license object, obtained e.g. via KAboutLicense::byKeyword().
+     * \sa addLicenseText, setLicense, setLicenseText, setLicenseTextFile
+     *
+     * \since 6.26
+     */
+    KAboutData &addLicense(KAboutLicense &&license);
 
     /*!
      * Defines the copyright statement to show when displaying the license.
@@ -1477,6 +1630,19 @@ public:
      * \since 5.16
      **/
     QString desktopFileName() const;
+
+    /*!
+     * Adds a release note for this application.
+     * \sa releases()
+     * \since 6.26
+     */
+    KAboutData &addRelease(KAboutRelease &&release);
+    /*!
+     * Returns all release notes for this application.
+     * \sa addRelease()
+     * \since 6.26
+     */
+    [[nodiscard]] QList<KAboutRelease> releases() const;
 
 private:
     friend void KCrash::defaultCrashHandler(int sig);

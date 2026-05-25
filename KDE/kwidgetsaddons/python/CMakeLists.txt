@@ -4,7 +4,7 @@
 set(bindings_library "KWidgetsAddons")
 
 set(wrapped_header ${CMAKE_SOURCE_DIR}/python/bindings.h)
-set(typesystem_file ${CMAKE_SOURCE_DIR}/python/bindings.xml)
+set(typesystem_file ${CMAKE_SOURCE_DIR}/python/typesystem_kwidgetsaddons.xml)
 
 set(generated_sources
     ${CMAKE_CURRENT_BINARY_DIR}/KWidgetsAddons/kwidgetsaddons_module_wrapper.cpp
@@ -99,6 +99,7 @@ ecm_generate_python_bindings(
     VERSION ${KF_VERSION}
     WRAPPED_HEADER ${wrapped_header}
     TYPESYSTEM ${typesystem_file}
+    EXPORT_TYPESYSTEM
     GENERATED_SOURCES ${generated_sources}
     DEPENDENCIES KF6::WidgetsAddons
     QT_VERSION ${REQUIRED_QT_VERSION}

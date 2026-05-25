@@ -14,7 +14,7 @@ Name[bn]=WordReference.com অনুবাদ: ইংরাজি থেকে �
 Name[bn_IN]=WordReference.com অনুবাদ: ইংরাজি থেকে ফ্রেঞ্চ
 Name[bs]=WordReference.com Prijevod: sa engleskog na francuski
 Name[ca]=Traducció WordReference.com: Anglès - Francès
-Name[ca@valencia]=Traducció WordReference.com: Anglés - Francés
+Name[ca@valencia]=Traducció WordReference.com: Anglés – Francés
 Name[cs]=Překlad WordReference.com: z angličtiny do francouzštiny
 Name[csb]=WordReference.com: anielsczi -> francësczi
 Name[cy]=Cyfieithiad WordReference.com: Saesneg i Ffrangeg
@@ -131,6 +131,7 @@ Query[pt]=https://www.wordreference.com/enfr/\\{@}
 Query[pt_BR]=https://www.wordreference.com/enfr/\\{@}
 Query[ro]=https://www.wordreference.com/enfr/\\{@}
 Query[ru]=https://www.wordreference.com/enfr/\\{@}
+Query[sk]=https://www.wordreference.com/fr/Translation.asp?enfr=\\{@}
 Query[sl]=https://www.wordreference.com/enfr/\\{@}
 Query[sv]=https://www.wordreference.com/enfr/\\{@}
 Query[th]=https://www.wordreference.com/enfr/\\{@}

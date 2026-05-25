@@ -14,7 +14,7 @@ Name[bn]=WordReference.com অনুবাদ: ইতালীয় থেকে �
 Name[bn_IN]=WordReference.com অনুবাদ: ইটালিয়ান থেকে ইংরাজি
 Name[bs]=WordReference.com Prijevod: sa italijanskog na engleski
 Name[ca]=Traducció WordReference.com: Italià - Anglès
-Name[ca@valencia]=Traducció WordReference.com: Italià - Anglés
+Name[ca@valencia]=Traducció WordReference.com: Italià – Anglés
 Name[cs]=Překlad WordReference.com: z italštiny do angličtiny
 Name[csb]=WordReference.com: italsczi -> anielsczi
 Name[cy]=Cyfieithiad WordReference.com: Eidaleg i Saesneg
@@ -131,6 +131,7 @@ Query[pt]=https://www.wordreference.com/iten/\\{@}
 Query[pt_BR]=https://www.wordreference.com/iten/\\{@}
 Query[ro]=https://www.wordreference.com/iten/\\{@}
 Query[ru]=https://www.wordreference.com/iten/\\{@}
+Query[sk]=https://www.wordreference.com/it/translation.asp?enit=\\{@}
 Query[sl]=https://www.wordreference.com/iten/\\{@}
 Query[sv]=https://www.wordreference.com/iten/\\{@}
 Query[th]=https://www.wordreference.com/iten/\\{@}

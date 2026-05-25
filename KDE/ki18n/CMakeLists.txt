@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.29)
 
-set(KF_VERSION "6.25.0") # handled by release scripts
+set(KF_VERSION "6.26.0") # handled by release scripts
 project(KI18n VERSION ${KF_VERSION})
 
 # ECM setup
 include(FeatureSummary)
-find_package(ECM 6.25.0  NO_MODULE)
+find_package(ECM 6.26.0  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
-list(APPEND CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${KI18n_SOURCE_DIR}/cmake ${KI18n_BINARY_DIR}/cmake)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${KI18n_SOURCE_DIR}/cmake ${KI18n_BINARY_DIR}/cmake)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -50,7 +50,6 @@ set_package_properties(LibIntl PROPERTIES TYPE REQUIRED
     URL "http://gnuwin32.sourceforge.net/packages/libintl.htm"
     PURPOSE "Needed for building KI18n unless glibc is the system libc implementation"
 )
-find_package(Iconv REQUIRED)
 
 find_package(IsoCodes)
 set_package_properties(IsoCodes PROPERTIES TYPE RUNTIME

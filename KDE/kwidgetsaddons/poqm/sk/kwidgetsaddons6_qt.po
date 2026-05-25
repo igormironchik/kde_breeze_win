@@ -20,8 +20,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.2\n"
 "X-Qt-Contexts: true\n"
 
 #. Generic sans serif font presented in font choosers. When selected, the system will choose a real font, mandated by distro settings.
@@ -152,7 +152,7 @@ msgstr "Fonetické symboly"
 #: kcharselect-translation.cpp:24 kcharselectdata.cpp:743
 msgctxt "KCharSelectData|KCharSelect section name"
 msgid "Combining Diacritics"
-msgstr "Zlúčenie diakritických značiek"
+msgstr "Zlúčenie diakritiky"
 
 #: kcharselect-translation.cpp:25
 msgctxt "KCharSelectData|KCharSelect section name"
@@ -260,12 +260,9 @@ msgid "Syriac Supplement"
 msgstr "Sýrsky doplnok"
 
 #: kcharselect-translation.cpp:46
-#, fuzzy
-#| msgctxt "KCharSelectData|KCharselect unicode block name"
-#| msgid "Arabic Extended-A"
 msgctxt "KCharSelectData|KCharselect unicode block name"
 msgid "Arabic Extended-B"
-msgstr "Arabské rozšírené-A"
+msgstr "Arabské rozšírené-B"
 
 #: kcharselect-translation.cpp:47
 msgctxt "KCharSelectData|KCharselect unicode block name"
@@ -450,7 +447,7 @@ msgstr "Tai Tham"
 #: kcharselect-translation.cpp:83
 msgctxt "KCharSelectData|KCharselect unicode block name"
 msgid "Combining Diacritical Marks Extended"
-msgstr "Zlúčenie diakritických značiek"
+msgstr "Zlúčenie diakritických značiek – rozšírené"
 
 #: kcharselect-translation.cpp:84
 msgctxt "KCharSelectData|KCharselect unicode block name"
@@ -1010,7 +1007,7 @@ msgstr "Vložené Etiópske doplnky"
 #: kcharselect-translation.cpp:196
 msgctxt "KCharSelectData|KCharselect unicode block name"
 msgid "Miscellaneous Symbols and Pictographs"
-msgstr "Rôzne symboly a šípky"
+msgstr "Rôzne symboly a piktogramy"
 
 #: kcharselect-translation.cpp:197
 msgctxt "KCharSelectData|KCharselect unicode block name"
@@ -1035,7 +1032,7 @@ msgstr "Alchemické symboly"
 #: kcharselect-translation.cpp:201
 msgctxt "KCharSelectData|KCharselect unicode block name"
 msgid "Geometric Shapes Extended"
-msgstr "Geometrické tvary"
+msgstr "Geometrické tvary – rozšírené"
 
 #: kcharselect-translation.cpp:202
 msgctxt "KCharSelectData|KCharselect unicode block name"
@@ -1062,208 +1059,202 @@ msgctxt "KCharSelectData|KCharselect unicode block name"
 msgid "Symbols for Legacy Computing"
 msgstr "Symboly pre staršie výpočty"
 
-#: kcharselect.cpp:393
-#, fuzzy
-#| msgctxt "KCharSelect|@info:placeholder"
-#| msgid "Enter a search term or character..."
+#: kcharselect.cpp:394
 msgctxt "KCharSelect|@info:placeholder"
 msgid "Enter a search term or character…"
 msgstr "Zadajte hľadaný výraz alebo znak"
 
-#: kcharselect.cpp:395
+#: kcharselect.cpp:396
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Enter a search term or character here"
 msgstr "Sem zadajte hľadaný výraz alebo znak"
 
-#: kcharselect.cpp:402
-#, fuzzy
-#| msgctxt "KStandardGuiItem|"
-#| msgid "&Find"
+#: kcharselect.cpp:403
 msgctxt "KCharSelect|@action"
 msgid "&Find…"
 msgstr "&Nájsť"
 
-#: kcharselect.cpp:426
+#: kcharselect.cpp:427
 msgctxt "KCharSelect|@action:button Goes to previous character"
 msgid "Previous in History"
 msgstr "Predchádzajúce v histórii"
 
-#: kcharselect.cpp:428
+#: kcharselect.cpp:429
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Go to previous character in history"
 msgstr "Predchádzajúci znak v histórii"
 
-#: kcharselect.cpp:433
+#: kcharselect.cpp:434
 msgctxt "KCharSelect|@action:button Goes to next character"
 msgid "Next in History"
 msgstr "Nasledujúce v histórii"
 
-#: kcharselect.cpp:435
+#: kcharselect.cpp:436
 msgctxt "KCharSelect|info:tooltip"
 msgid "Go to next character in history"
 msgstr "Prejsť na nasledujúci znak v histórii"
 
-#: kcharselect.cpp:440
+#: kcharselect.cpp:441
 msgctxt "KCharSelect|@action go back"
 msgid "&Back"
 msgstr "Späť"
 
-#: kcharselect.cpp:447
+#: kcharselect.cpp:448
 msgctxt "KCharSelect|@action go forward"
 msgid "&Forward"
 msgstr "Dopredu"
 
-#: kcharselect.cpp:466
+#: kcharselect.cpp:467
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Select a category"
 msgstr "Vyberte kategóriu"
 
-#: kcharselect.cpp:470
+#: kcharselect.cpp:471
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Select a block to be displayed"
 msgstr "Vyberte blok, ktorý sa zobrazí"
 
-#: kcharselect.cpp:489
+#: kcharselect.cpp:490
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Set font"
 msgstr "Nastaviť písmo"
 
-#: kcharselect.cpp:496
+#: kcharselect.cpp:497
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Set font size"
 msgstr "Nastavte veľkosť písma"
 
-#: kcharselect.cpp:798
+#: kcharselect.cpp:799
 msgctxt "KCharSelect|"
 msgid "Character:"
 msgstr "Znak:"
 
-#: kcharselect.cpp:804
+#: kcharselect.cpp:805
 msgctxt "KCharSelect|"
 msgid "Name: "
 msgstr "Názov: "
 
-#: kcharselect.cpp:813
+#: kcharselect.cpp:814
 msgctxt "KCharSelect|"
 msgid "Annotations and Cross References"
 msgstr "Poznámky a krížové odkazy"
 
-#: kcharselect.cpp:817
+#: kcharselect.cpp:818
 msgctxt "KCharSelect|"
 msgid "Alias names:"
 msgstr "Alternatívne názvy:"
 
-#: kcharselect.cpp:825
+#: kcharselect.cpp:826
 msgctxt "KCharSelect|"
 msgid "Notes:"
 msgstr "Poznámky:"
 
-#: kcharselect.cpp:833
+#: kcharselect.cpp:834
 msgctxt "KCharSelect|"
 msgid "See also:"
 msgstr "Pozri tiež:"
 
-#: kcharselect.cpp:848
+#: kcharselect.cpp:849
 msgctxt "KCharSelect|"
 msgid "Equivalents:"
 msgstr "Ekvivalenty:"
 
-#: kcharselect.cpp:856
+#: kcharselect.cpp:857
 msgctxt "KCharSelect|"
 msgid "Approximate equivalents:"
 msgstr "Približné ekvivalenty:"
 
-#: kcharselect.cpp:864
+#: kcharselect.cpp:865
 msgctxt "KCharSelect|"
 msgid "Decomposition:"
 msgstr "Rozklad:"
 
-#: kcharselect.cpp:876
+#: kcharselect.cpp:877
 msgctxt "KCharSelect|"
 msgid "CJK Ideograph Information"
 msgstr "Informácie o ideograme CJK"
 
-#: kcharselect.cpp:879
+#: kcharselect.cpp:880
 msgctxt "KCharSelect|"
 msgid "Definition in English: "
 msgstr "Definícia v angličtine: "
 
-#: kcharselect.cpp:886
+#: kcharselect.cpp:887
 msgctxt "KCharSelect|"
 msgid "Mandarin Pronunciation: "
 msgstr "Mandarínska výslovnosť: "
 
-#: kcharselect.cpp:893
+#: kcharselect.cpp:894
 msgctxt "KCharSelect|"
 msgid "Cantonese Pronunciation: "
 msgstr "Kantonská výslovnosť: "
 
-#: kcharselect.cpp:900
+#: kcharselect.cpp:901
 msgctxt "KCharSelect|"
 msgid "Japanese On Pronunciation: "
 msgstr "Japonská On výslovnosť: "
 
-#: kcharselect.cpp:907
+#: kcharselect.cpp:908
 msgctxt "KCharSelect|"
 msgid "Japanese Kun Pronunciation: "
 msgstr "Japonská Kun výslovnosť: "
 
-#: kcharselect.cpp:914
+#: kcharselect.cpp:915
 msgctxt "KCharSelect|"
 msgid "Tang Pronunciation: "
 msgstr "Tang výslovnosť: "
 
-#: kcharselect.cpp:921
+#: kcharselect.cpp:922
 msgctxt "KCharSelect|"
 msgid "Korean Pronunciation: "
 msgstr "Kórejská výslovnosť: "
 
-#: kcharselect.cpp:927
+#: kcharselect.cpp:928
 msgctxt "KCharSelect|"
 msgid "General Character Properties"
 msgstr "Všeobecné vlastnosti znaku"
 
-#: kcharselect.cpp:928
+#: kcharselect.cpp:929
 msgctxt "KCharSelect|"
 msgid "Block: "
 msgstr "Blok: "
 
-#: kcharselect.cpp:929
+#: kcharselect.cpp:930
 msgctxt "KCharSelect|"
 msgid "Unicode category: "
 msgstr "Kategória Unicode: "
 
-#: kcharselect.cpp:933
+#: kcharselect.cpp:934
 msgctxt "KCharSelect|"
 msgid "Various Useful Representations"
 msgstr "Rôzne užitočné reprezentácie"
 
-#: kcharselect.cpp:934
+#: kcharselect.cpp:935
 msgctxt "KCharSelect|"
 msgid "UTF-8:"
 msgstr "UTF-8:"
 
-#: kcharselect.cpp:938
+#: kcharselect.cpp:939
 msgctxt "KCharSelect|"
 msgid "UTF-16: "
 msgstr "UTF-16: "
 
-#: kcharselect.cpp:945
+#: kcharselect.cpp:946
 msgctxt "KCharSelect|"
 msgid "C octal escaped UTF-8: "
 msgstr "C osmičkové escape UTF-8: "
 
-#: kcharselect.cpp:949
+#: kcharselect.cpp:950
 msgctxt "KCharSelect|"
 msgid "XML decimal entity:"
 msgstr "Desiatková entita XML:"
 
-#: kcharselect.cpp:1101
+#: kcharselect.cpp:1102
 msgctxt "KCharSelectItemModel|"
 msgid "Unicode code point:"
 msgstr "Bod kódu Unicode:"
 
-#: kcharselect.cpp:1101
+#: kcharselect.cpp:1102
 msgctxt "KCharSelectItemModel|Character"
 msgid "In decimal"
 msgstr "Desiatkovo"
@@ -1464,20 +1455,14 @@ msgid "Unknown"
 msgstr "Neznáme"
 
 #: kcolorcombo.cpp:333
-#, fuzzy
-#| msgctxt "@item license"
-#| msgid "Custom"
 msgctxt "KColorCombo|@item:inlistbox Custom color"
 msgid "Custom…"
 msgstr "Vlastná"
 
 #: kcontextualhelpbutton.cpp:68
-#, fuzzy
-#| msgctxt "KPasswordDialog|"
-#| msgid "Show Contextual Help"
 msgctxt "QObject|@action:button accessible name"
 msgid "Contextual Help"
-msgstr "Zobraziť kontextovú nápovedu"
+msgstr "Kontextová nápoveda"
 
 #: kdatecombobox.cpp:187
 msgctxt "KDateComboBox|@info"
@@ -1548,81 +1533,51 @@ msgid "Close"
 msgstr "Zavrieť"
 
 #: kdatepickerpopup.cpp:96
-#, fuzzy
-#| msgctxt "KDateComboBox|@option next year"
-#| msgid "Next Year"
 msgctxt "KDatePickerPopup|@option next year"
 msgid "Next Year"
 msgstr "Nasledujúci rok"
 
 #: kdatepickerpopup.cpp:97
-#, fuzzy
-#| msgctxt "KDateComboBox|@option next month"
-#| msgid "Next Month"
 msgctxt "KDatePickerPopup|@option next month"
 msgid "Next Month"
 msgstr "Nasledujúci mesiac"
 
 #: kdatepickerpopup.cpp:98
-#, fuzzy
-#| msgctxt "KDateComboBox|@option next week"
-#| msgid "Next Week"
 msgctxt "KDatePickerPopup|@option next week"
 msgid "Next Week"
 msgstr "Nasledujúci týždeň"
 
 #: kdatepickerpopup.cpp:99
-#, fuzzy
-#| msgctxt "KDateComboBox|@option tomorrow"
-#| msgid "Tomorrow"
 msgctxt "KDatePickerPopup|@option tomorrow"
 msgid "Tomorrow"
 msgstr "Zajtra"
 
 #: kdatepickerpopup.cpp:100
-#, fuzzy
-#| msgctxt "KDateComboBox|@option today"
-#| msgid "Today"
 msgctxt "KDatePickerPopup|@option today"
 msgid "Today"
 msgstr "Dnes"
 
 #: kdatepickerpopup.cpp:101
-#, fuzzy
-#| msgctxt "KDateComboBox|@option yesterday"
-#| msgid "Yesterday"
 msgctxt "KDatePickerPopup|@option yesterday"
 msgid "Yesterday"
 msgstr "Včera"
 
 #: kdatepickerpopup.cpp:102
-#, fuzzy
-#| msgctxt "KDateComboBox|@option last week"
-#| msgid "Last Week"
 msgctxt "KDatePickerPopup|@option last week"
 msgid "Last Week"
 msgstr "Minulý týždeň"
 
 #: kdatepickerpopup.cpp:103
-#, fuzzy
-#| msgctxt "KDateComboBox|@option last month"
-#| msgid "Last Month"
 msgctxt "KDatePickerPopup|@option last month"
 msgid "Last Month"
 msgstr "Minulý mesiac"
 
 #: kdatepickerpopup.cpp:104
-#, fuzzy
-#| msgctxt "KDateComboBox|@option last year"
-#| msgid "Last Year"
 msgctxt "KDatePickerPopup|@option last year"
 msgid "Last Year"
 msgstr "Minulý rok"
 
 #: kdatepickerpopup.cpp:123
-#, fuzzy
-#| msgctxt "KDateComboBox|@option do not specify a date"
-#| msgid "No Date"
 msgctxt "KDatePickerPopup|@option do not specify a date"
 msgid "No Date"
 msgstr "Žiadny dátum"
@@ -1695,7 +1650,7 @@ msgstr "Tučné"
 #: kfontchooser.cpp:212
 msgctxt "KFontChooser|@item font"
 msgid "Bold Condensed Oblique"
-msgstr ""
+msgstr "Bold Condensed Oblique"
 
 #: kfontchooser.cpp:266
 msgctxt "KFontChooser|"
@@ -1718,19 +1673,14 @@ msgstr "Vybrať písmo"
 #: kfontchooserwidget.ui:21
 msgctxt "KFontChooserWidget|"
 msgid "Comma separated list of font features (e.g., liga, calt):"
-msgstr ""
+msgstr "Zoznam vlastností písma oddelený čiarkami (napr. liga, calt):"
 
 #: kfontchooserwidget.ui:31
 msgctxt "KFontChooserWidget|"
 msgid "Sample:"
-msgstr ""
+msgstr "Vzorka:"
 
 #: kfontchooserwidget.ui:41
-#, fuzzy
-#| msgctxt "KFontChooser|"
-#| msgid ""
-#| "This sample text illustrates the current settings. You may edit it to "
-#| "test special characters."
 msgctxt "KFontChooserWidget|"
 msgid ""
 "This sample text illustrates the current settings. You may edit it to test "
@@ -1740,9 +1690,6 @@ msgstr ""
 "chcete vyskúšať špeciálne znaky."
 
 #: kfontchooserwidget.ui:51
-#, fuzzy
-#| msgctxt "KFontChooser|@option:check"
-#| msgid "Show only monospaced fonts"
 msgctxt "KFontChooserWidget|"
 msgid "Show only monospaced fonts"
 msgstr "Zobraziť iba neproporcionálne písma"
@@ -1783,9 +1730,6 @@ msgid "Relative"
 msgstr "Relatívne"
 
 #: kfontrequester.cpp:185
-#, fuzzy
-#| msgctxt "KFontRequester|@info:tooltip"
-#| msgid "Choose font..."
 msgctxt "KFontRequester|@info:tooltip"
 msgid "Choose font…"
 msgstr "Vybrať Písmo..."
@@ -1796,11 +1740,6 @@ msgid "Preview of the selected font"
 msgstr "Náhľad vybraného písma"
 
 #: kfontrequester.cpp:193
-#, fuzzy
-#| msgctxt "KFontRequester|"
-#| msgid ""
-#| "This is a preview of the selected font. You can change it by clicking the "
-#| "\"Choose Font...\" button."
 msgctxt "KFontRequester|@info:whatsthis"
 msgid ""
 "This is a preview of the selected font. You can change it by clicking the "
@@ -1816,11 +1755,7 @@ msgid "Preview of the \"%1\" font"
 msgstr "Náhľad písma \"%1\""
 
 #: kfontrequester.cpp:198
-#, fuzzy, qt-format
-#| msgctxt "KFontRequester|"
-#| msgid ""
-#| "This is a preview of the \"%1\" font. You can change it by clicking the "
-#| "\"Choose Font...\" button."
+#, qt-format
 msgctxt "KFontRequester|@info:whatsthis"
 msgid ""
 "This is a preview of the \"%1\" font. You can change it by clicking the "
@@ -1848,6 +1783,8 @@ msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna alia"
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna alia"
 
 #: kmessagebox.cpp:252
 msgctxt ""
@@ -1855,7 +1792,7 @@ msgctxt ""
 "arbitrary text that is just short enough that it should never be wrapped. In "
 "a latin charset, suggested length is around 70 chars."
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmi"
-msgstr ""
+msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmi"
 
 #: kmessagebox.cpp:319
 msgctxt "KMessageBox|"
@@ -1929,44 +1866,30 @@ msgid "Close message"
 msgstr "Zatvoriť správu"
 
 #: kmessagewidget.cpp:288
-#, fuzzy
-#| msgid "Success"
 msgctxt ""
 "KMessageWidget|accessible name of positively-colored (e.g. green) message box"
 msgid "Success"
 msgstr "Úspech"
 
 #: kmessagewidget.cpp:291
-#, fuzzy
-#| msgctxt "KCharSelect|"
-#| msgid "Notes:"
 msgctxt ""
 "KMessageWidget|accessible name of info-colored (e.g. blue) message box"
 msgid "Note"
-msgstr "Poznámky:"
+msgstr "Poznámka"
 
 #: kmessagewidget.cpp:294
-#, fuzzy
-#| msgctxt "KMessageBox|"
-#| msgid "Warning"
 msgctxt ""
 "KMessageWidget|accessible name of warning-colored (e.g. orange) message box"
 msgid "Warning"
 msgstr "Upozornenie"
 
 #: kmessagewidget.cpp:297
-#, fuzzy
-#| msgctxt "KMessageBox|"
-#| msgid "Error"
 msgctxt ""
 "KMessageWidget|accessible name of error-colored (e.g. red) message box"
 msgid "Error"
 msgstr "Chyba"
 
 #: kmimetypechooser.cpp:88
-#, fuzzy
-#| msgctxt "KMimeTypeChooser|"
-#| msgid "Search for file type or filename pattern..."
 msgctxt "KMimeTypeChooser|@info:placeholder"
 msgid "Search for file type or filename pattern…"
 msgstr "Hľadať vzor typu alebo názvu súboru..."
@@ -1992,8 +1915,6 @@ msgid "Patterns"
 msgstr "Vzorky"
 
 #: kmimetypechooser.cpp:126
-#, fuzzy
-#| msgid "&Edit"
 msgctxt "KMimeTypeChooser|@action:button"
 msgid "&Edit…"
 msgstr "&Upraviť"
@@ -2004,20 +1925,16 @@ msgid "Launch the MIME type editor"
 msgstr "Spustiť MIME type editor"
 
 #: kmimetypeeditor.cpp:27
-#, fuzzy
-#| msgid "Could not find '%1' executable."
 msgctxt "QObject|"
 msgid "Could not find the \"keditfiletype\" executable in PATH."
 msgstr "Nepodarilo sa nájsť program '%1'."
 
 #: kmimetypeeditor.cpp:37
-#, fuzzy
-#| msgid "Could not find '%1' executable."
 msgctxt "QObject|"
 msgid ""
 "Could not start the \"keditfiletype\" executable, please check your "
 "installation."
-msgstr "Nepodarilo sa nájsť program '%1'."
+msgstr "Nepodarilo sa spustiť program '%1', skontrolujte svoju inštaláciu."
 
 #: knewpassworddialog.cpp:63
 #, qt-format
@@ -2096,9 +2013,7 @@ msgctxt "KNewPasswordWidget|@label"
 msgid "Password strength &meter:"
 msgstr "Meter kvality hesla:"
 
-#: kpageview.cpp:515
-#, fuzzy
-#| msgid "Search:"
+#: kpageview.cpp:516
 msgctxt "KPageView|@info:placeholder"
 msgid "Search…"
 msgstr "Hľadať:"
@@ -2159,20 +2074,14 @@ msgid "Change the visibility of the password"
 msgstr "Zmeniť viditeľnosť hesla"
 
 #: kpasswordlineedit.cpp:87
-#, fuzzy
-#| msgctxt "KPasswordDialog|@title:window"
-#| msgid "Password"
 msgctxt "QObject|@action:inmenu"
 msgid "Show Password"
-msgstr "Heslo"
+msgstr "Zobraziť heslo"
 
 #: kpasswordlineedit.cpp:88
-#, fuzzy
-#| msgctxt "KPasswordDialog|@title:window"
-#| msgid "Password"
 msgctxt "QObject|@action:inmenu"
 msgid "Hide Password"
-msgstr "Heslo"
+msgstr "Skryť heslo"
 
 #: kpixmapregionselectordialog.cpp:56
 msgctxt "KPixmapRegionSelectorDialog|@title:window"
@@ -2268,8 +2177,6 @@ msgid "Do not save data"
 msgstr "Neukladať dáta"
 
 #: kstandardguiitem.cpp:184
-#, fuzzy
-#| msgid "Save As"
 msgctxt "KStandardGuiItem|"
 msgid "Save &As…"
 msgstr "Uložiť ako"
@@ -2301,9 +2208,6 @@ msgstr ""
 "Použite to na vyskúšanie rôznych nastavení."
 
 #: kstandardguiitem.cpp:203
-#, fuzzy
-#| msgctxt "KStandardGuiItem|"
-#| msgid "Administrator &Mode..."
 msgctxt "KStandardGuiItem|"
 msgid "Administrator &Mode…"
 msgstr "Režim &administrátora..."
@@ -2410,8 +2314,6 @@ msgid "Go forward one step"
 msgstr "Prejsť dopredu o jeden krok"
 
 #: kstandardguiitem.cpp:276
-#, fuzzy
-#| msgid "Print"
 msgctxt "KStandardGuiItem|"
 msgid "&Print…"
 msgstr "Tlačiť"
@@ -2442,9 +2344,6 @@ msgid "Delete item(s)"
 msgstr "Odstrániť položky"
 
 #: kstandardguiitem.cpp:299
-#, fuzzy
-#| msgctxt "@label:button"
-#| msgid "&Open"
 msgctxt "KStandardGuiItem|"
 msgid "&Open…"
 msgstr "&Otvoriť"
@@ -2480,8 +2379,6 @@ msgid "&Insert"
 msgstr "&Vložiť"
 
 #: kstandardguiitem.cpp:325
-#, fuzzy
-#| msgid "Configure"
 msgctxt "KStandardGuiItem|"
 msgid "Confi&gure…"
 msgstr "Nastaviť"
@@ -2566,7 +2463,6 @@ msgstr "Zobraziť v okno na celú obrazovku"
 #~ msgstr "&Upraviť..."
 
 #, fuzzy
-#~| msgid "Search"
 #~ msgctxt "KPageView|"
 #~ msgid "Search..."
 #~ msgstr "Hľadať"
@@ -2588,8 +2484,6 @@ msgstr "Zobraziť v okno na celú obrazovku"
 #~ msgstr "Nastaviť..."
 
 #, fuzzy
-#~| msgctxt "KFontChooser|"
-#~| msgid "Font size<br /><i>fixed</i> or <i>relative</i><br />to environment"
 #~ msgctxt "KFontChooser|@info:tooltip"
 #~ msgid "Font size<br /><i>fixed</i> or <i>relative</i><br />to environment"
 #~ msgstr ""
@@ -2597,11 +2491,6 @@ msgstr "Zobraziť v okno na celú obrazovku"
 #~ "prostrediu"
 
 #, fuzzy
-#~| msgctxt "KFontChooser|"
-#~| msgid ""
-#~| "Here you can switch between fixed font size and font size to be "
-#~| "calculated dynamically and adjusted to changing environment (e.g. widget "
-#~| "dimensions, paper size)."
 #~ msgctxt "KFontChooser|@info:whatsthis"
 #~ msgid ""
 #~ "Here you can switch between fixed font size and font size to be "

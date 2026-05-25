@@ -18,6 +18,7 @@
 #include <QCommandLineParser>
 #include <QCoreApplication>
 #include <QFile>
+#include <QFileInfo>
 #include <QHash>
 #include <QJsonObject>
 #include <QList>
@@ -25,6 +26,7 @@
 #include <QSharedData>
 #include <QStandardPaths>
 #include <QTextStream>
+#include <QXmlStreamReader>
 
 #include <algorithm>
 
@@ -531,6 +533,64 @@ KAboutLicense KAboutComponent::license() const
 
 KAboutComponent &KAboutComponent::operator=(const KAboutComponent &other) = default;
 
+class KAboutReleasePrivate : public QSharedData
+{
+public:
+    QString m_version;
+    QDate m_date;
+    QString m_description;
+    QString m_untranslatedDescription;
+    QUrl m_url;
+};
+
+KAboutRelease::KAboutRelease()
+    : d(new KAboutReleasePrivate)
+{
+}
+
+KAboutRelease::KAboutRelease(const QString &version, const QDate &date, const QString &description, const QString &untranslatedDescription, const QUrl &url)
+    : d(new KAboutReleasePrivate)
+{
+    d->m_version = version;
+    d->m_date = date;
+    d->m_description = description;
+    d->m_untranslatedDescription = untranslatedDescription;
+    d->m_url = url;
+}
+
+KAboutRelease::KAboutRelease(const KAboutRelease &) = default;
+KAboutRelease::KAboutRelease(KAboutRelease &&) noexcept = default;
+
+KAboutRelease::~KAboutRelease() = default;
+
+KAboutRelease &KAboutRelease::operator=(const KAboutRelease &) = default;
+KAboutRelease &KAboutRelease::operator=(KAboutRelease &&) noexcept = default;
+
+QString KAboutRelease::version() const
+{
+    return d->m_version;
+}
+
+QDate KAboutRelease::date() const
+{
+    return d->m_date;
+}
+
+QString KAboutRelease::description() const
+{
+    return d->m_description;
+}
+
+QString KAboutRelease::untranslatedDescription() const
+{
+    return d->m_untranslatedDescription;
+}
+
+QUrl KAboutRelease::url() const
+{
+    return d->m_url;
+}
+
 class KAboutDataPrivate
 {
 public:
@@ -549,6 +609,7 @@ public:
     QList<KAboutPerson> _translatorList;
     QList<KAboutComponent> _componentList;
     QList<KAboutLicense> _licenseList;
+    QList<KAboutRelease> _releaseList;
     QVariant programLogo;
     QString customAuthorPlainText, customAuthorRichText;
     bool customAuthorTextEnabled;
@@ -801,6 +862,13 @@ KAboutData &KAboutData::setLicense(KAboutLicense::LicenseKey licenseKey, KAboutL
     return *this;
 }
 
+KAboutData &KAboutData::setLicense(KAboutLicense &&license)
+{
+    license.d->_aboutData = this;
+    d->_licenseList[0] = std::move(license);
+    return *this;
+}
+
 KAboutData &KAboutData::addLicense(KAboutLicense::LicenseKey licenseKey)
 {
     return addLicense(licenseKey, KAboutLicense::OnlyThisVersion);
@@ -815,6 +883,15 @@ KAboutData &KAboutData::addLicense(KAboutLicense::LicenseKey licenseKey, KAboutL
     } else {
         d->_licenseList.append(KAboutLicense(licenseKey, versionRestriction, this));
     }
+    return *this;
+}
+
+KAboutData &KAboutData::addLicense(KAboutLicense &&license)
+{
+    if (d->_licenseList.size() == 1 && d->_licenseList[0].key() == KAboutLicense::Unknown) {
+        return setLicense(std::move(license));
+    }
+    d->_licenseList.push_back(std::move(license));
     return *this;
 }
 
@@ -1081,6 +1158,17 @@ QString KAboutData::desktopFileName() const
 #endif
 }
 
+KAboutData &KAboutData::addRelease(KAboutRelease &&release)
+{
+    d->_releaseList.push_back(std::move(release));
+    return *this;
+}
+
+QList<KAboutRelease> KAboutData::releases() const
+{
+    return d->_releaseList;
+}
+
 class KAboutDataRegistry
 {
 public:
@@ -1275,6 +1363,214 @@ void KAboutData::processCommandLine(QCommandLineParser *parser)
     if (foundArgument) {
         ::exit(EXIT_SUCCESS);
     }
+}
+
+[[nodiscard]] static QString resolveLanguage(const std::unordered_map<QString, QString> &value, const QStringList &langs = QLocale().uiLanguages())
+{
+    for (auto langIt = langs.begin(); langIt != langs.end(); ++langIt) {
+        auto it = value.find(*langIt);
+        if (it != value.end()) {
+            return (*it).second;
+        }
+
+        const auto idx = (*langIt).indexOf('-'_L1);
+        if (idx <= 0) {
+            continue;
+        }
+        const auto genericLang = QStringView(*langIt).left(idx);
+        if (std::next(langIt) != langs.end() && (*std::next(langIt)).startsWith(genericLang)) {
+            continue;
+        }
+        it = value.find(genericLang.toString());
+        if (it != value.end()) {
+            return (*it).second;
+        }
+    }
+
+    const auto it = value.find(QString());
+    return it != value.end() ? (*it).second : QString();
+}
+
+// built-in entities that QXmlStreamReader resolves and that we need to re-apply to rich text content
+struct {
+    const unsigned char c;
+    const char entity[5];
+} static constexpr const entity_map[] = {
+    {'<', "lt"},
+    {'>', "gt"},
+    {'&', "amp"},
+    {'\'', "apos"},
+    {'"', "quot"},
+};
+
+[[nodiscard]] static QString quoteEntities(QStringView s)
+{
+    QString out;
+    out.reserve(s.size());
+    for (const auto c : s) {
+        const auto it = std::ranges::find_if(entity_map, [c](const auto &m) {
+            return m.c == c.cell() && c.row() == 0;
+        });
+        if (it != std::end(entity_map)) {
+            out += '&'_L1 + QLatin1StringView((*it).entity) + ';'_L1;
+        } else {
+            out.push_back(c);
+        }
+    }
+    return out;
+}
+
+struct AppDataDesc {
+    QString desc;
+    QString rawDesc;
+};
+
+[[nodiscard]] static AppDataDesc readAppStreamDescription(QXmlStreamReader &reader)
+{
+    AppDataDesc desc;
+
+    QString elemName;
+    std::unordered_map<QString, QString> translationBuffer;
+
+    while (!reader.atEnd() && !reader.hasError()) {
+        const auto token = reader.readNext();
+        if (token == QXmlStreamReader::EndElement) {
+            break;
+        }
+        if (token == QXmlStreamReader::StartElement) {
+            const auto lang = reader.attributes().value("http://www.w3.org/XML/1998/namespace"_L1, "lang"_L1).toString();
+            if ((lang.isEmpty() || elemName != reader.name()) && !translationBuffer.empty()) {
+                desc.desc += '<'_L1 + elemName + '>'_L1 + resolveLanguage(translationBuffer) + "</"_L1 + elemName + '>'_L1;
+                translationBuffer.clear();
+            }
+            elemName = reader.name().toString();
+            auto subDesc = readAppStreamDescription(reader);
+            translationBuffer[lang] = std::move(subDesc.desc);
+            if (lang.isEmpty() && !translationBuffer.empty()) {
+                desc.rawDesc += '<'_L1 + elemName + '>'_L1 + resolveLanguage(translationBuffer, {}) + "</"_L1 + elemName + '>'_L1;
+            }
+        }
+        if (token == QXmlStreamReader::Characters && !reader.isWhitespace()) {
+            if (!translationBuffer.empty()) {
+                desc.desc += '<'_L1 + elemName + '>'_L1 + resolveLanguage(translationBuffer) + "</"_L1 + elemName + '>'_L1;
+                desc.rawDesc += '<'_L1 + elemName + '>'_L1 + resolveLanguage(translationBuffer, {}) + "</"_L1 + elemName + '>'_L1;
+                translationBuffer.clear();
+            }
+            desc.desc += quoteEntities(reader.text());
+            desc.rawDesc += quoteEntities(reader.text());
+        }
+    }
+    if (!translationBuffer.empty()) {
+        desc.desc += '<'_L1 + elemName + '>'_L1 + resolveLanguage(translationBuffer) + "</"_L1 + elemName + '>'_L1;
+    }
+
+    desc.desc = std::move(desc.desc).trimmed();
+    desc.rawDesc = std::move(desc.rawDesc).trimmed();
+    return desc;
+}
+
+KAboutData KAboutData::fromAppStreamFile(const QString &appStreamFileName)
+{
+    KAboutData *aboutData = s_registry->m_appData;
+    if (!aboutData) {
+        aboutData = new KAboutData(QCoreApplication::applicationName(), QString(), QString());
+        aboutData->setBugAddress(QByteArray());
+        s_registry->m_appData = aboutData;
+    }
+
+    QFile appStreamFile(appStreamFileName);
+    if (appStreamFile.fileName().isEmpty() || !appStreamFile.open(QFile::ReadOnly)) {
+        qCWarning(KABOUTDATA) << "Failed to open appStreamFile" << appStreamFile.fileName() << appStreamFile.errorString();
+        return *aboutData;
+    }
+
+    std::unordered_map<QString, QString> appName, appSummary;
+    QXmlStreamReader reader(&appStreamFile);
+    while (!reader.atEnd() && !reader.hasError()) {
+        const auto token = reader.readNext();
+        if (token != QXmlStreamReader::StartElement) {
+            continue;
+        }
+
+        if (reader.name() == "component"_L1 || reader.name() == "releases"_L1) {
+            // recurse into
+        } else if (reader.name() == "id"_L1) {
+            aboutData->setDesktopFileName(reader.readElementText());
+        } else if (reader.name() == "project_license"_L1) {
+            aboutData->addLicense(KAboutLicense::byKeyword(reader.readElementText()));
+        } else if (reader.name() == "developer"_L1) {
+            aboutData->setOrganizationDomain(reader.attributes().value("id"_L1).toUtf8());
+            // where to put developer-name?
+            reader.skipCurrentElement();
+        } else if (reader.name() == "name"_L1) {
+            const auto lang = reader.attributes().value("http://www.w3.org/XML/1998/namespace"_L1, "lang"_L1).toString();
+            appName[lang] = reader.readElementText();
+        } else if (reader.name() == "summary"_L1) {
+            const auto lang = reader.attributes().value("http://www.w3.org/XML/1998/namespace"_L1, "lang"_L1).toString();
+            appSummary[lang] = reader.readElementText();
+        } else if (reader.name() == "url"_L1) {
+            const auto type = reader.attributes().value("type"_L1);
+            if (type == "homepage"_L1) {
+                aboutData->setHomepage(reader.readElementText());
+            } else if (type == "bugtracker"_L1) {
+                aboutData->setBugAddress(reader.readElementText().toUtf8());
+            } else {
+                reader.skipCurrentElement();
+            }
+        } else if (reader.name() == "release"_L1) {
+            const auto version = reader.attributes().value("version"_L1).toString();
+            const auto date = QDate::fromString(QStringView(reader.attributes().value("date")).left(10), Qt::ISODate);
+            AppDataDesc desc;
+            QUrl url;
+
+            while (!reader.atEnd() && !reader.hasError()) {
+                const auto token = reader.readNext();
+                if (token == QXmlStreamReader::EndElement && reader.name() == "release"_L1) {
+                    break;
+                }
+                if (token != QXmlStreamReader::StartElement) {
+                    continue;
+                }
+
+                if (reader.name() == "url"_L1) {
+                    url = QUrl(reader.readElementText());
+                } else if (reader.name() == "description"_L1) {
+                    desc = readAppStreamDescription(reader);
+                } else {
+                    reader.skipCurrentElement();
+                }
+            }
+
+            if (!version.isEmpty() && !desc.desc.isEmpty()) {
+                aboutData->addRelease(KAboutRelease(version, date, desc.desc, desc.rawDesc, url));
+            }
+        } else {
+            reader.skipCurrentElement();
+        }
+    }
+
+    aboutData->setDisplayName(resolveLanguage(appName));
+    aboutData->setShortDescription(resolveLanguage(appSummary));
+    return *aboutData;
+}
+
+KAboutData KAboutData::fromAppStreamId(const QString &applicationId)
+{
+    for (const auto &variant : {"metainfo"_L1, "appdata"_L1}) {
+        const auto p = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                              "metainfo/"_L1 + applicationId + '.'_L1 + variant + ".xml"_L1,
+                                              QStandardPaths::LocateFile);
+        if (!p.isEmpty()) {
+            return KAboutData::fromAppStreamFile(p);
+        }
+    }
+
+    return KAboutData();
+}
+
+KAboutData KAboutData::fromAppStreamForApplication()
+{
+    return KAboutData::fromAppStreamId(QCoreApplication::instance()->property("desktopFileName").toString());
 }
 
 std::unique_ptr<KAboutDataListener> KAboutDataListener::s_theListener = nullptr;

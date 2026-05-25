@@ -1,6 +1,7 @@
 # translation of kdelibs4.po to Polish
 # translation of kdelibs4.po to
 # Version: $Revision: 685926 $
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Ostatnie poprawki przed 2.0 Jacek Stolarczyk <jstolarz@kde.org>
 # Jacek Stolarczyk <jstolarz@kde.org>, 2001.
 # Piotr Roszatycki <dexter@debian.org>, 1997-2000.
@@ -11,21 +12,21 @@
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Michal Rudolf <michal@rudolf.waw.pl>, 2010.
 # Artur Chłond <eugenewolfe@o2.pl>, 2010.
-# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2024-10-12 10:27+0200\n"
+"PO-Revision-Date: 2026-04-11 08:47+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Qt-Contexts: true\n"
 
 #. Generic sans serif font presented in font choosers. When selected, the system will choose a real font, mandated by distro settings.
@@ -1063,202 +1064,202 @@ msgctxt "KCharSelectData|KCharselect unicode block name"
 msgid "Symbols for Legacy Computing"
 msgstr "Przestarzałe symbole komputerowe"
 
-#: kcharselect.cpp:393
+#: kcharselect.cpp:394
 msgctxt "KCharSelect|@info:placeholder"
 msgid "Enter a search term or character…"
 msgstr "Wpisz wyrażenie lub znak do wyszukania…"
 
-#: kcharselect.cpp:395
+#: kcharselect.cpp:396
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Enter a search term or character here"
 msgstr "Tutaj wpisz wyrażenie lub znak do wyszukania"
 
-#: kcharselect.cpp:402
+#: kcharselect.cpp:403
 msgctxt "KCharSelect|@action"
 msgid "&Find…"
 msgstr "Po&szukaj…"
 
-#: kcharselect.cpp:426
+#: kcharselect.cpp:427
 msgctxt "KCharSelect|@action:button Goes to previous character"
 msgid "Previous in History"
 msgstr "Poprzedni w historii"
 
-#: kcharselect.cpp:428
+#: kcharselect.cpp:429
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Go to previous character in history"
 msgstr "Przejdź do poprzedniego znaku w historii"
 
-#: kcharselect.cpp:433
+#: kcharselect.cpp:434
 msgctxt "KCharSelect|@action:button Goes to next character"
 msgid "Next in History"
 msgstr "Następny w historii"
 
-#: kcharselect.cpp:435
+#: kcharselect.cpp:436
 msgctxt "KCharSelect|info:tooltip"
 msgid "Go to next character in history"
 msgstr "Przejdź do następnego znaku w historii"
 
-#: kcharselect.cpp:440
+#: kcharselect.cpp:441
 msgctxt "KCharSelect|@action go back"
 msgid "&Back"
 msgstr "&Wstecz"
 
-#: kcharselect.cpp:447
+#: kcharselect.cpp:448
 msgctxt "KCharSelect|@action go forward"
 msgid "&Forward"
 msgstr "&Naprzód"
 
-#: kcharselect.cpp:466
+#: kcharselect.cpp:467
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Select a category"
 msgstr "Wybierz kategorię"
 
-#: kcharselect.cpp:470
+#: kcharselect.cpp:471
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Select a block to be displayed"
 msgstr "Wybierz blok do wyświetlenia"
 
-#: kcharselect.cpp:489
+#: kcharselect.cpp:490
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Set font"
 msgstr "Ustaw czcionkę"
 
-#: kcharselect.cpp:496
+#: kcharselect.cpp:497
 msgctxt "KCharSelect|@info:tooltip"
 msgid "Set font size"
 msgstr "Ustaw rozmiar czcionki"
 
-#: kcharselect.cpp:798
+#: kcharselect.cpp:799
 msgctxt "KCharSelect|"
 msgid "Character:"
 msgstr "Znak:"
 
-#: kcharselect.cpp:804
+#: kcharselect.cpp:805
 msgctxt "KCharSelect|"
 msgid "Name: "
 msgstr "Nazwa: "
 
-#: kcharselect.cpp:813
+#: kcharselect.cpp:814
 msgctxt "KCharSelect|"
 msgid "Annotations and Cross References"
 msgstr "Przypisy i odsyłacze"
 
-#: kcharselect.cpp:817
+#: kcharselect.cpp:818
 msgctxt "KCharSelect|"
 msgid "Alias names:"
 msgstr "Zamienne nazwy:"
 
-#: kcharselect.cpp:825
+#: kcharselect.cpp:826
 msgctxt "KCharSelect|"
 msgid "Notes:"
 msgstr "Uwagi:"
 
-#: kcharselect.cpp:833
+#: kcharselect.cpp:834
 msgctxt "KCharSelect|"
 msgid "See also:"
 msgstr "Zobacz też:"
 
-#: kcharselect.cpp:848
+#: kcharselect.cpp:849
 msgctxt "KCharSelect|"
 msgid "Equivalents:"
 msgstr "Odpowiedniki:"
 
-#: kcharselect.cpp:856
+#: kcharselect.cpp:857
 msgctxt "KCharSelect|"
 msgid "Approximate equivalents:"
 msgstr "Przybliżone odpowiedniki:"
 
-#: kcharselect.cpp:864
+#: kcharselect.cpp:865
 msgctxt "KCharSelect|"
 msgid "Decomposition:"
 msgstr "Dekompozycja:"
 
-#: kcharselect.cpp:876
+#: kcharselect.cpp:877
 msgctxt "KCharSelect|"
 msgid "CJK Ideograph Information"
 msgstr "Informacja o ideogramie CJK"
 
-#: kcharselect.cpp:879
+#: kcharselect.cpp:880
 msgctxt "KCharSelect|"
 msgid "Definition in English: "
 msgstr "Definicja angielska: "
 
-#: kcharselect.cpp:886
+#: kcharselect.cpp:887
 msgctxt "KCharSelect|"
 msgid "Mandarin Pronunciation: "
 msgstr "Wymowa mandaryńska: "
 
-#: kcharselect.cpp:893
+#: kcharselect.cpp:894
 msgctxt "KCharSelect|"
 msgid "Cantonese Pronunciation: "
 msgstr "Wymowa kantońska: "
 
-#: kcharselect.cpp:900
+#: kcharselect.cpp:901
 msgctxt "KCharSelect|"
 msgid "Japanese On Pronunciation: "
 msgstr "Wymowa japońska On: "
 
-#: kcharselect.cpp:907
+#: kcharselect.cpp:908
 msgctxt "KCharSelect|"
 msgid "Japanese Kun Pronunciation: "
 msgstr "Wymowa japońska Kun: "
 
-#: kcharselect.cpp:914
+#: kcharselect.cpp:915
 msgctxt "KCharSelect|"
 msgid "Tang Pronunciation: "
 msgstr "Wymowa Tang: "
 
-#: kcharselect.cpp:921
+#: kcharselect.cpp:922
 msgctxt "KCharSelect|"
 msgid "Korean Pronunciation: "
 msgstr "Wymowa koreańska: "
 
-#: kcharselect.cpp:927
+#: kcharselect.cpp:928
 msgctxt "KCharSelect|"
 msgid "General Character Properties"
 msgstr "Ogólne właściwości znaku"
 
-#: kcharselect.cpp:928
+#: kcharselect.cpp:929
 msgctxt "KCharSelect|"
 msgid "Block: "
 msgstr "Blok: "
 
-#: kcharselect.cpp:929
+#: kcharselect.cpp:930
 msgctxt "KCharSelect|"
 msgid "Unicode category: "
 msgstr "Kategoria Unicode: "
 
-#: kcharselect.cpp:933
+#: kcharselect.cpp:934
 msgctxt "KCharSelect|"
 msgid "Various Useful Representations"
 msgstr "Różne użyteczne reprezentacje"
 
-#: kcharselect.cpp:934
+#: kcharselect.cpp:935
 msgctxt "KCharSelect|"
 msgid "UTF-8:"
 msgstr "UTF-8:"
 
-#: kcharselect.cpp:938
+#: kcharselect.cpp:939
 msgctxt "KCharSelect|"
 msgid "UTF-16: "
 msgstr "UTF-16: "
 
-#: kcharselect.cpp:945
+#: kcharselect.cpp:946
 msgctxt "KCharSelect|"
 msgid "C octal escaped UTF-8: "
 msgstr "Ósemkowo ze znakiem C UTF-8: "
 
-#: kcharselect.cpp:949
+#: kcharselect.cpp:950
 msgctxt "KCharSelect|"
 msgid "XML decimal entity:"
 msgstr "Dziesiętna encja XML:"
 
-#: kcharselect.cpp:1101
+#: kcharselect.cpp:1102
 msgctxt "KCharSelectItemModel|"
 msgid "Unicode code point:"
 msgstr "Punkt kodu Unicode:"
 
-#: kcharselect.cpp:1101
+#: kcharselect.cpp:1102
 msgctxt "KCharSelectItemModel|Character"
 msgid "In decimal"
 msgstr "W dziesiętnych"
@@ -1958,12 +1959,12 @@ msgstr "Hasło jest puste."
 #: knewpassworddialog.cpp:71
 msgctxt "KNewPasswordDialog|@info"
 msgid "Passwords do not match."
-msgstr "Hasła nie pasują."
+msgstr "Hasła nie są te same."
 
 #: knewpassworddialog.cpp:76
 msgctxt "KNewPasswordDialog|@info"
 msgid "Passwords match."
-msgstr "Hasła pasują."
+msgstr "Hasła są te same."
 
 #: knewpassworddialog.cpp:133
 msgctxt "KNewPasswordDialog|@title:window"
@@ -2010,14 +2011,14 @@ msgstr "Hasło:"
 #: knewpasswordwidget.ui:29
 msgctxt "KNewPasswordWidget|@label:textbox"
 msgid "&Verify:"
-msgstr "&Sprawdzenie hasła:"
+msgstr "Ha&sło ponownie:"
 
 #: knewpasswordwidget.ui:54
 msgctxt "KNewPasswordWidget|@label"
 msgid "Password strength &meter:"
 msgstr "&Miernik siły hasła:"
 
-#: kpageview.cpp:515
+#: kpageview.cpp:516
 msgctxt "KPageView|@info:placeholder"
 msgid "Search…"
 msgstr "Poszukaj…"

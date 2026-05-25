@@ -26,6 +26,7 @@
 #include <QMenuBar>
 #include <QPainter>
 #include <QStyleOption>
+#include <QTreeView>
 #include <QWindow>
 
 #include <QDialog>
@@ -36,7 +37,7 @@ namespace Breeze
 //* contrast for arrow and treeline rendering
 static const qreal arrowShade = 0.15;
 
-static const qreal highlightBackgroundAlpha = 0.33;
+static const qreal highlightBackgroundAlpha = Metrics::Blend_Value;
 
 static const auto radioCheckSunkenDarkeningFactor = 110;
 
@@ -72,7 +73,6 @@ Helper::Helper(KSharedConfig::Ptr config)
     : QObject()
     , _config(std::move(config))
     , _kwinConfig(KSharedConfig::openConfig("kwinrc"))
-    , _decorationConfig(new InternalSettings())
     , _eventFilter(new PaletteChangedEventFilter(this))
 {
 }
@@ -84,18 +84,10 @@ KSharedConfig::Ptr Helper::config() const
 }
 
 //____________________________________________________________________
-QSharedPointer<InternalSettings> Helper::decorationConfig() const
-{
-    return _decorationConfig;
-}
-
-//____________________________________________________________________
 void Helper::loadConfig()
 {
     _viewFocusBrush = KStatefulBrush(KColorScheme::View, KColorScheme::FocusColor);
     _viewHoverBrush = KStatefulBrush(KColorScheme::View, KColorScheme::HoverColor);
-    _buttonFocusBrush = KStatefulBrush(KColorScheme::Button, KColorScheme::FocusColor);
-    _buttonHoverBrush = KStatefulBrush(KColorScheme::Button, KColorScheme::HoverColor);
     _viewNegativeTextBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeText);
     _viewNeutralTextBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NeutralText);
 
@@ -103,7 +95,6 @@ void Helper::loadConfig()
     _config->reparseConfiguration();
     _kwinConfig->reparseConfiguration();
     _cachedAutoValid = false;
-    _decorationConfig->load();
 
     KConfigGroup globalGroup(_config->group(QStringLiteral("WM")));
     _activeTitleBarColor = globalGroup.readEntry("activeBackground", palette.color(QPalette::Active, QPalette::Highlight));
@@ -190,18 +181,6 @@ QColor Helper::hoverOutlineColor(const QPalette &palette) const
 }
 
 //____________________________________________________________________
-QColor Helper::buttonFocusOutlineColor(const QPalette &palette) const
-{
-    return KColorUtils::mix(buttonFocusColor(palette), palette.color(QPalette::ButtonText), 0.15);
-}
-
-//____________________________________________________________________
-QColor Helper::buttonHoverOutlineColor(const QPalette &palette) const
-{
-    return KColorUtils::mix(buttonHoverColor(palette), palette.color(QPalette::ButtonText), 0.15);
-}
-
-//____________________________________________________________________
 QColor Helper::sidePanelOutlineColor(const QPalette &palette, bool hasFocus, qreal opacity, AnimationMode mode) const
 {
     QColor outline(palette.color(QPalette::Inactive, QPalette::Highlight));
@@ -220,7 +199,7 @@ QColor Helper::sidePanelOutlineColor(const QPalette &palette, bool hasFocus, qre
 //____________________________________________________________________
 QColor Helper::frameBackgroundColor(const QPalette &palette, QPalette::ColorGroup group) const
 {
-    return KColorUtils::mix(palette.color(group, QPalette::Window), palette.color(group, QPalette::Base), 0.3);
+    return KColorUtils::mix(palette.color(group, QPalette::Window), palette.color(group, QPalette::Base), Metrics::Blend_Value);
 }
 
 //____________________________________________________________________
@@ -716,9 +695,9 @@ void Helper::renderButtonFrame(QPainter *painter,
         }
     } else {
         if (down && enabled) {
-            bgBrush = KColorUtils::mix(palette.button().color(), highlightColor, 0.333);
+            bgBrush = KColorUtils::mix(palette.button().color(), highlightColor, Metrics::Blend_Value);
         } else if (checked) {
-            bgBrush = hasNeutralHighlight ? KColorUtils::mix(palette.button().color(), neutralText(palette), 0.333)
+            bgBrush = hasNeutralHighlight ? KColorUtils::mix(palette.button().color(), neutralText(palette), Metrics::Blend_Value)
                                           : KColorUtils::mix(palette.button().color(), palette.buttonText().color(), 0.125);
             penBrush =
                 hasNeutralHighlight ? neutralText(palette) : KColorUtils::mix(palette.button().color(), palette.buttonText().color(), frameIntensityBias());
@@ -739,7 +718,8 @@ void Helper::renderButtonFrame(QPainter *painter,
     // Animations
     if (bgAnimation != AnimationData::OpacityInvalid && enabled) {
         QColor color1 = bgBrush.color();
-        QColor color2 = flat ? alphaColor(highlightColor, highlightBackgroundAlpha) : KColorUtils::mix(palette.button().color(), highlightColor, 0.333);
+        QColor color2 =
+            flat ? alphaColor(highlightColor, highlightBackgroundAlpha) : KColorUtils::mix(palette.button().color(), highlightColor, Metrics::Blend_Value);
         bgBrush = KColorUtils::mix(color1, color2, bgAnimation);
     }
     if (penAnimation != AnimationData::OpacityInvalid && enabled) {
@@ -832,15 +812,6 @@ void Helper::renderTabWidgetFrame(QPainter *painter, const QRectF &rect, const Q
     // render
     QPainterPath path(roundedPath(frameRect, corners, radius));
     painter->drawPath(path);
-}
-
-//______________________________________________________________________________
-void Helper::renderSelection(QPainter *painter, const QRectF &rect, const QColor &color) const
-{
-    painter->setRenderHint(QPainter::Antialiasing);
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(color);
-    painter->drawRect(rect);
 }
 
 //______________________________________________________________________________
@@ -1726,6 +1697,46 @@ void Helper::renderEllipseShadow(QPainter *painter, const QRectF &rect, const QC
     painter->restore();
 }
 
+void Helper::renderViewItemPosition(QPainter *painter,
+                                    const QStyleOptionViewItem::ViewItemPosition &pos,
+                                    const Qt::LayoutDirection direction,
+                                    const QRectF &rect,
+                                    const QColor &bg,
+                                    const QColor &outline) const
+{
+    painter->save();
+    painter->setRenderHint(QPainter::Antialiasing);
+    QFlags<Breeze::Side> sides;
+    const bool reverse = direction == Qt::RightToLeft;
+
+    switch (pos) {
+    case QStyleOptionViewItem::Invalid:
+        painter->setBrush(bg);
+        painter->setPen(outline);
+        painter->drawRect(rect);
+        painter->restore();
+        return;
+    case QStyleOptionViewItem::Beginning:
+        painter->setClipping(true);
+        painter->setClipRect(rect);
+        sides = SideTop | SideBottom | (reverse ? SideRight : SideLeft);
+        break;
+    case QStyleOptionViewItem::Middle:;
+        sides = SideTop | SideBottom;
+        break;
+    case QStyleOptionViewItem::End:
+        painter->setClipping(true);
+        painter->setClipRect(rect);
+        sides = SideTop | SideBottom | (reverse ? SideLeft : SideRight);
+        break;
+    case QStyleOptionViewItem::OnlyOne:
+        sides = SideTop | SideBottom | SideLeft | SideRight;
+        break;
+    }
+    renderFocusRect(painter, rect, bg, outline, sides);
+    painter->restore();
+}
+
 //______________________________________________________________________________
 bool Helper::isX11()
 {
@@ -1751,6 +1762,47 @@ QRectF Helper::strokedRect(const QRectF &rect, const qreal penWidth) const
      */
     qreal adjustment = 0.5 * penWidth;
     return rect.adjusted(adjustment, adjustment, -adjustment, -adjustment);
+}
+
+QMargins Helper::itemViewItemMargins(const QStyleOptionViewItem *option) const
+{
+    QMargins margins(Metrics::ItemView_ItemMarginLeft, Metrics::ItemView_ItemMarginTop, Metrics::ItemView_ItemMarginRight, Metrics::ItemView_ItemMarginBottom);
+    if (!option) {
+        return margins;
+    }
+
+    const QFrame *frame = qobject_cast<const QFrame *>(option->widget);
+    const QAbstractItemView *abstractItemView = qobject_cast<const QAbstractItemView *>(option->widget);
+
+    const bool isFirst = option->index.row() == 0;
+    const bool hasFrame = frame && frame->frameShape() == QFrame::StyledPanel;
+    const bool reverse = option->direction == Qt::RightToLeft;
+
+    if (isFirst) {
+        margins.setTop(Metrics::ItemView_FirstItemTopMarginHeight);
+    }
+
+    // Breeze frame has one extra white pixel
+    if (hasFrame) {
+        margins -= {1, isFirst ? 1 : 0, 1, 0};
+    }
+
+    // If a treeview wants to show the highlight separate for each column, always draw rounded borders
+    // if (tree && !tree->allColumnsShowFocus()) {
+    if (abstractItemView && abstractItemView->selectionBehavior() != QAbstractItemView::SelectRows) {
+        return margins;
+    }
+
+    if ((reverse && option->viewItemPosition == QStyleOptionViewItem::End) || (!reverse && option->viewItemPosition == QStyleOptionViewItem::Beginning)
+        || option->viewItemPosition == QStyleOptionViewItem::Middle) {
+        margins.setRight(0);
+    }
+    if ((reverse && option->viewItemPosition == QStyleOptionViewItem::Beginning) || (!reverse && option->viewItemPosition == QStyleOptionViewItem::End)
+        || option->viewItemPosition == QStyleOptionViewItem::Middle) {
+        margins.setLeft(0);
+    }
+
+    return margins;
 }
 
 //______________________________________________________________________________
