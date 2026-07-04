@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 project(breeze)
-set(PROJECT_VERSION "6.6.90")
+set(PROJECT_VERSION "6.7.2")
 
 set(KF5_MIN_VERSION "5.102.0")
-set(KF6_MIN_VERSION "6.24.0")
+set(KF6_MIN_VERSION "6.26.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 set(QT5_MIN_VERSION "5.15.2")
 set(QT_MIN_VERSION "6.10.0")

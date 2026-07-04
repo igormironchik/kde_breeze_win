@@ -2,8 +2,8 @@
 
 ## Current versions
 
-* `KF6` libraries `v6.26.0`
-* `Breeze` UI style `v6.6.90`
+* `KF6` libraries `v6.27.0`
+* `Breeze` UI style `v6.7.2`
 
 ## Building
 

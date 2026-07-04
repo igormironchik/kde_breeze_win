@@ -77,6 +77,7 @@ kconfig_compiler_test(Test14 KCFGC test14.kcfgc KCFG test14.kcfg CLASS_NAME Test
 kconfig_compiler_test(Test15 CLASS_NAME Test15 GENERATE_PROPERTIES GENERATE_MOC SINGLETON QML_REGISTRATION)
 kconfig_compiler_test(Test16 CLASS_NAME Test16 GENERATE_PROPERTIES GENERATE_MOC SINGLETON QML_REGISTRATION QML_UNCREATABLE)
 kconfig_compiler_test(Test17 CLASS_NAME Test17 GENERATE_PROPERTIES GENERATE_MOC SINGLETON QML_REGISTRATION DEFAULT_VALUE_GETTERS)
+kconfig_compiler_test(Test19 CLASS_NAME Test19 GENERATE_PROPERTIES GENERATE_MOC SINGLETON QML_REGISTRATION DEFAULT_VALUE_GETTERS NAME_SPACE Foo)
 
 kconfig_compiler_test(test_state_config MAIN test_state_config_main.cpp CLASS_NAME MyStateConfig MUTATORS ITEM_ACCESSORS GENERATE_MOC)
 kconfig_compiler_test(test_state_config_nameless MAIN test_state_config_nameless_main.cpp CLASS_NAME MyStateConfig MUTATORS ITEM_ACCESSORS GENERATE_MOC)
@@ -87,6 +88,8 @@ kconfig_compiler_test(test_signal MAIN test_signal_main.cpp CLASS_NAME TestSigna
 kconfig_compiler_test(test_notifiers MAIN test_notifiers_main.cpp CLASS_NAME TestNotifiers MUTATORS GLOBAL_ENUMS NOTIFIERS)
 kconfig_compiler_test(test_time MAIN test_time_main.cpp CLASS_NAME TestTime MUTATORS)
 kconfig_compiler_test(test_kconfigconstructor MAIN test_kconfigconstructormain.cpp CLASS_NAME TestKConfigConstructor PARENT_IN_CONSTRUCTOR MUTATORS KCONFIG_CONSTRUCTOR)
+
+kconfig_compiler_test(Test18 NOTIFIERS GENERATE_MOC)
 
 ########### next target ###############
 

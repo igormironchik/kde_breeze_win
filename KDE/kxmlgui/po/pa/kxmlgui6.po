@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-28 00:41+0000\n"
+"POT-Creation-Date: 2026-05-12 00:41+0000\n"
 "PO-Revision-Date: 2024-01-03 14:00-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -927,23 +927,23 @@ msgctxt "@title:window"
 msgid "Export Shortcuts"
 msgstr "ਸ਼ਾਰਟਕੱਟ ਐਕਸਪੋਰਟ ਕਰੋ"
 
-#: kshortcutschemeseditor.cpp:187 kshortcutschemeseditor.cpp:198
+#: kshortcutschemeseditor.cpp:187 kshortcutschemeseditor.cpp:202
 #, kde-format
 msgid "Shortcuts (*.shortcuts)"
 msgstr "ਸ਼ਾਰਟਕੱਟ (*.shortcuts)"
 
-#: kshortcutschemeseditor.cpp:198
+#: kshortcutschemeseditor.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Shortcuts"
 msgstr "ਸ਼ਾਰਟਕੱਟ ਇੰਪੋਰਟ ਕਰੋ"
 
-#: kshortcutschemeseditor.cpp:209
+#: kshortcutschemeseditor.cpp:213
 #, kde-format
 msgid "Shortcut scheme successfully saved."
 msgstr "ਸ਼ਾਰਟਕੱਟ ਸਕੀਮ ਕਾਮਯਾਬੀ ਨਾਲ ਸੰਭਾਲੀ ਗਈ।"
 
-#: kshortcutschemeseditor.cpp:212
+#: kshortcutschemeseditor.cpp:216
 #, kde-format
 msgid "Error saving the shortcut scheme."
 msgstr "ਸ਼ਾਰਟਕੱਟ ਸਕੀਮ ਸੰਭਾਲਣ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।"
@@ -1302,12 +1302,12 @@ msgstr "ਵਾਪਸ"
 msgid "No text"
 msgstr "ਕੋਈ ਟੈਕਸਟ ਨਹੀਂ"
 
-#: kxmlguiwindow.cpp:193
+#: kxmlguiwindow.cpp:203
 #, kde-format
 msgid "Find Action…"
 msgstr "...ਕਾਰਵਾਈ ਲੱਭੋ"
 
-#: kxmlguiwindow.cpp:563
+#: kxmlguiwindow.cpp:573
 #, kde-format
 msgid ""
 "There are two actions (%1, %2) that want to use the same shortcut (%3). This "
@@ -1315,7 +1315,7 @@ msgid ""
 "org'>bugs.kde.org</a>"
 msgstr ""
 
-#: kxmlguiwindow.cpp:568
+#: kxmlguiwindow.cpp:578
 #, fuzzy, kde-format
 #| msgid "Shortcuts"
 msgid "Ambiguous Shortcuts"

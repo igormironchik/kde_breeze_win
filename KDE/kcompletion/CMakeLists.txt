@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.29)
 
-set(KF_VERSION "6.26.0") # handled by release scripts
-set(KF_DEP_VERSION "6.26.0") # handled by release scripts
+set(KF_VERSION "6.27.0") # handled by release scripts
+set(KF_DEP_VERSION "6.27.0") # handled by release scripts
 project(KCompletion VERSION ${KF_VERSION})
 
 # ECM setup
 include(FeatureSummary)
-find_package(ECM 6.26.0  NO_MODULE)
+find_package(ECM 6.27.0  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
@@ -50,7 +50,7 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 ecm_set_disabled_deprecation_versions(
     QT 6.11
-    KF 6.23
+    KF 6.26
 )
 
 ecm_install_po_files_as_qm(poqm)

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kxmlgui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-28 00:41+0000\n"
+"POT-Creation-Date: 2026-05-12 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -890,23 +890,23 @@ msgctxt "@title:window"
 msgid "Export Shortcuts"
 msgstr "निर्यात संक्षिप्तमार्गाः"
 
-#: kshortcutschemeseditor.cpp:187 kshortcutschemeseditor.cpp:198
+#: kshortcutschemeseditor.cpp:187 kshortcutschemeseditor.cpp:202
 #, kde-format
 msgid "Shortcuts (*.shortcuts)"
 msgstr "संक्षिप्तमार्गाः (*.shortcuts)"
 
-#: kshortcutschemeseditor.cpp:198
+#: kshortcutschemeseditor.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Shortcuts"
 msgstr "आयात संक्षिप्तमार्गाः"
 
-#: kshortcutschemeseditor.cpp:209
+#: kshortcutschemeseditor.cpp:213
 #, kde-format
 msgid "Shortcut scheme successfully saved."
 msgstr "संक्षिप्तमार्गः योजना सफलतया रक्षिता।."
 
-#: kshortcutschemeseditor.cpp:212
+#: kshortcutschemeseditor.cpp:216
 #, kde-format
 msgid "Error saving the shortcut scheme."
 msgstr "संक्षिप्तमार्गः योजनायाः रक्षणे त्रुटिः ।."
@@ -1270,12 +1270,12 @@ msgstr "अपाकरोति"
 msgid "No text"
 msgstr "न पाठ्य"
 
-#: kxmlguiwindow.cpp:193
+#: kxmlguiwindow.cpp:203
 #, kde-format
 msgid "Find Action…"
 msgstr "कर्म अन्वेष्टुम्…"
 
-#: kxmlguiwindow.cpp:563
+#: kxmlguiwindow.cpp:573
 #, kde-format
 msgid ""
 "There are two actions (%1, %2) that want to use the same shortcut (%3). This "
@@ -1286,7 +1286,7 @@ msgstr ""
 "अधिकतया दोषः अस्ति । कृपया <a href='https://bugs.kde.org'>bugs.kde.org</a> "
 "इत्यत्र निवेदयन्तु"
 
-#: kxmlguiwindow.cpp:568
+#: kxmlguiwindow.cpp:578
 #, kde-format
 msgid "Ambiguous Shortcuts"
 msgstr "अस्पष्ट संक्षिप्तमार्गाः"

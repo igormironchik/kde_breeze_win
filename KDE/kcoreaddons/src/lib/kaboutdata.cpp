@@ -1172,7 +1172,7 @@ QList<KAboutRelease> KAboutData::releases() const
 class KAboutDataRegistry
 {
 public:
-    KAboutDataRegistry()
+    KAboutDataRegistry() noexcept
         : m_appData(nullptr)
     {
     }
@@ -1330,7 +1330,13 @@ void KAboutData::processCommandLine(QCommandLineParser *parser)
             printf("%s\n",
                    qPrintable(QCoreApplication::translate("KAboutData CLI", "This application was written by somebody who wants to remain anonymous.")));
         } else {
-            printf("%s\n", qPrintable(QCoreApplication::translate("KAboutData CLI", "%1 was written by:").arg(qAppName())));
+            QString appDisplayName = d->_displayName;
+
+            if (appDisplayName.isEmpty()) {
+                appDisplayName = d->_componentName;
+            }
+
+            printf("%s\n", qPrintable(QCoreApplication::translate("KAboutData CLI", "%1 was written by:").arg(appDisplayName)));
             for (const KAboutPerson &person : std::as_const(d->_authorList)) {
                 QString authorData = QLatin1String("    ") + person.name();
                 if (!person.emailAddress().isEmpty()) {
@@ -1357,7 +1363,7 @@ void KAboutData::processCommandLine(QCommandLineParser *parser)
 
     const QString desktopFileName = parser->value(QStringLiteral("desktopfile"));
     if (!desktopFileName.isEmpty()) {
-        d->desktopFileName = desktopFileName;
+        setApplicationData(setDesktopFileName(desktopFileName));
     }
 
     if (foundArgument) {

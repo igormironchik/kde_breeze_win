@@ -1,10 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 # Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkirigamiplugin_qt\n"
-"PO-Revision-Date: 2023-02-22 22:44+0900\n"
-"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-05-10 19:26+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +14,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: qtrich\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: controls/AboutItem.qml:166
 #, qt-format
@@ -83,7 +84,7 @@ msgctxt "AboutItem|"
 msgid "Translators"
 msgstr "翻訳者"
 
-#: controls/AboutPage.qml:103
+#: controls/AboutPage.qml:102
 #, qt-format
 msgctxt "AboutPage|"
 msgid "About %1"
@@ -107,7 +108,7 @@ msgctxt "Chip|"
 msgid "Remove"
 msgstr "タグを削除"
 
-#: controls/ContextDrawer.qml:65
+#: controls/ContextDrawer.qml:64
 msgctxt "ContextDrawer|"
 msgid "Actions"
 msgstr "アクション"
@@ -117,17 +118,17 @@ msgctxt "ContextualHelpButton|"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: controls/GlobalDrawer.qml:366
+#: controls/GlobalDrawer.qml:365
 msgctxt "GlobalDrawer|"
 msgid "Back"
 msgstr "戻る"
 
-#: controls/GlobalDrawer.qml:719
+#: controls/GlobalDrawer.qml:718
 msgctxt "GlobalDrawer|"
 msgid "Close Sidebar"
 msgstr "サイドバーを閉じる"
 
-#: controls/GlobalDrawer.qml:724
+#: controls/GlobalDrawer.qml:723
 msgctxt "GlobalDrawer|"
 msgid "Open Sidebar"
 msgstr "サイドバーを開く"
@@ -143,20 +144,14 @@ msgid "Password"
 msgstr "パスワード"
 
 #: controls/PasswordField.qml:46
-#, fuzzy
-#| msgctxt "PasswordField|"
-#| msgid "Password"
 msgctxt "PasswordField|"
 msgid "Hide Password"
-msgstr "パスワード"
+msgstr "パスワードを非表示"
 
 #: controls/PasswordField.qml:46
-#, fuzzy
-#| msgctxt "PasswordField|"
-#| msgid "Password"
 msgctxt "PasswordField|"
 msgid "Show Password"
-msgstr "パスワード"
+msgstr "パスワードを表示"
 
 #: controls/private/globaltoolbar/HandleButton.qml:24
 #, fuzzy
@@ -175,9 +170,6 @@ msgid "Open menu"
 msgstr "メニューを開く"
 
 #: controls/private/globaltoolbar/NavigationButtons.qml:102
-#, fuzzy
-#| msgctxt "BackButton|"
-#| msgid "Navigate Back"
 msgctxt "NavigationButtons|"
 msgid "Navigate Back"
 msgstr "戻る"
@@ -252,7 +244,7 @@ msgctxt "UrlButton|"
 msgid "Copy Link to Clipboard"
 msgstr "リンクをクリップボードにコピー"
 
-#: dialogs/DialogHeaderTopContent.qml:103
+#: dialogs/DialogHeaderTopContent.qml:104
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
@@ -284,27 +276,27 @@ msgctxt "Kirigami::Platform::Settings|"
 msgid "Qt %2 (built against %3)"
 msgstr "Qt %2 (%3 を用いてビルドされました)"
 
-#: templates/InlineMessage.qml:350
+#: templates/InlineMessage.qml:351
 msgctxt "InlineMessage|"
 msgid "Success"
 msgstr ""
 
-#: templates/InlineMessage.qml:352
+#: templates/InlineMessage.qml:353
 msgctxt "InlineMessage|"
 msgid "Warning"
 msgstr ""
 
-#: templates/InlineMessage.qml:354
+#: templates/InlineMessage.qml:355
 msgctxt "InlineMessage|"
 msgid "Error"
 msgstr ""
 
-#: templates/InlineMessage.qml:356
+#: templates/InlineMessage.qml:357
 msgctxt "InlineMessage|"
 msgid "Note"
 msgstr ""
 
-#: templates/InlineMessage.qml:443
+#: templates/InlineMessage.qml:444
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
@@ -312,27 +304,20 @@ msgctxt "InlineMessage|"
 msgid "Close"
 msgstr "メニューを閉じる"
 
-#: templates/OverlayDrawer.qml:147
+#: templates/OverlayDrawer.qml:148
 msgctxt "OverlayDrawer|"
 msgid "Close drawer"
 msgstr "ドロアを閉じる"
 
-#: templates/OverlayDrawer.qml:153
+#: templates/OverlayDrawer.qml:154
 msgctxt "OverlayDrawer|"
 msgid "Open drawer"
 msgstr "ドロアを開く"
 
-#: templates/OverlaySheet.qml:294
+#: templates/OverlaySheet.qml:298
 #, fuzzy
 #| msgctxt "PageRowGlobalToolBarUI|"
 #| msgid "Close menu"
 msgctxt "OverlaySheet|@action:button close dialog"
 msgid "Close"
 msgstr "メニューを閉じる"
-
-#, fuzzy
-#~| msgctxt "PageRowGlobalToolBarUI|"
-#~| msgid "Close menu"
-#~ msgctxt "Dialog|@action:button close dialog"
-#~ msgid "Close"
-#~ msgstr "メニューを閉じる"

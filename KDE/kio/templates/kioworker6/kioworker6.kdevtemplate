@@ -1,5 +1,6 @@
 [General]
 Name=C++ Worker (KF6)
+Name[am]=C++ Worker (KF6)
 Name[ar]=عامل سي++ (KF6)
 Name[az]=C++ Worker (KF6)
 Name[be]=C++ Worker (KF6)
@@ -43,6 +44,7 @@ Name[sk]=C++ (KF6)
 Name[sl]=C++ Worker (KF6)
 Name[sq]=C++ Worker (KF6)
 Name[sv]=C++ arbetare (KF6)
+Name[ta]=C++ பணிநிரல் (KF6)
 Name[th]=C++ Worker (KF6)
 Name[tr]=C++ İşçi (KF6)
 Name[ug]=C++ Worker (KF6)
@@ -50,6 +52,7 @@ Name[uk]=Обробник C++ (KF6)
 Name[zh_CN]=C++ 工作程序 (KF6)
 Name[zh_TW]=C++ Worker (KF6)
 Comment=KIO Worker Template
+Comment[am]=KIO Worker Template
 Comment[ar]=قالب عامل الدخل والخرج
 Comment[az]=KİO modulu nümunəsi
 Comment[be]=Шаблон KIO Worker

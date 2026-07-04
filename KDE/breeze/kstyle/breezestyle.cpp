@@ -1039,7 +1039,7 @@ QRect Style::subElementRect(SubElement element, const QStyleOption *option, cons
                 // Move from right to left either right aligned icons on ltr layouts or left aligned on rtl layouts
                 const auto adjustment = baseRect.right() - margins.right() - Metrics::ItemView_ItemPaddingWidth + marginAdjust;
                 if (viewOption->rect.width() > adjustment) {
-                    baseRect.moveLeft(adjustment);
+                    baseRect.moveRight(adjustment);
                 }
 
             } else {
@@ -4842,12 +4842,7 @@ bool Style::drawPanelItemViewItemPrimitive(const QStyleOption *option, QPainter 
     // render custom background
     if (hasCustomBackground && !hasSolidBackground) {
         painter->setBrushOrigin(viewItemOption->rect.topLeft());
-        _helper->renderViewItemPosition(painter,
-                                        viewItemPosition,
-                                        viewItemOption->direction,
-                                        viewItemOption->rect,
-                                        viewItemOption->backgroundBrush.color(),
-                                        QColor());
+        _helper->renderViewItemPosition(painter, viewItemPosition, viewItemOption->direction, viewItemOption->rect, viewItemOption->backgroundBrush, QColor());
         return true;
     }
 

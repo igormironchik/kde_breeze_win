@@ -57,7 +57,6 @@ ecm_qt_declare_logging_category(KF6Archive
     IDENTIFIER KArchiveLog
     CATEGORY_NAME kf.archive
     OLD_CATEGORY_NAMES kf5.karchive
-    DEFAULT_SEVERITY Warning
     DESCRIPTION "KArchive"
     EXPORT KARCHIVE
 )

@@ -394,7 +394,12 @@ KDirModelNode *KDirModelPrivate::expandAllParentsUntil(const QUrl &_url) const /
             return node;
         }
         qCDebug(category) << "going into" << node->item().url();
-        Q_ASSERT(isDir(node));
+        if (!isDir(node)) {
+            // The url points to something below an existing file, e.g. the user typed
+            // "file.png/foo" in a file dialog. That can't exist, so there's nothing to expand.
+            qCDebug(category) << node->item().url() << "is not a directory, cannot descend into" << url;
+            return nullptr;
+        }
         dirNode = static_cast<KDirModelDirNode *>(node);
     }
     // NOTREACHED
@@ -850,14 +855,6 @@ void KDirModel::clearAllPreviews()
 
 void KDirModel::itemChanged(const QModelIndex &index)
 {
-    // This method is really a itemMimeTypeChanged(), it's mostly called by KFilePreviewGenerator.
-    // When the MIME type is determined, clear the old "preview" (could be
-    // MIME type dependent like when cutting files, #164185)
-    KDirModelNode *node = d->nodeForIndex(index);
-    if (node) {
-        node->setPreview(QIcon());
-    }
-
     qCDebug(category) << "dataChanged(" << debugIndex(index) << ")";
     Q_EMIT dataChanged(index, index);
 }
@@ -1024,12 +1021,14 @@ bool KDirModel::setData(const QModelIndex &index, const QVariant &value, int rol
             KDirModelNode *node = static_cast<KDirModelNode *>(index.internalPointer());
             const KFileItem &item = node->item();
             const QString newName = value.toString();
+            bool isLocal = false;
+            QUrl oldUrl = item.mostLocalUrl(&isLocal);
             if (newName.isEmpty() || newName == item.text() || (newName == QLatin1Char('.')) || (newName == QLatin1String(".."))) {
                 return true;
             }
-            QUrl newUrl = item.url().adjusted(QUrl::RemoveFilename);
+            QUrl newUrl = oldUrl.adjusted(QUrl::RemoveFilename);
             newUrl.setPath(newUrl.path() + KIO::encodeFileName(newName));
-            KIO::Job *job = KIO::moveAs(item.url(), newUrl, item.url().isLocalFile() ? KIO::HideProgressInfo : KIO::DefaultFlags);
+            KIO::Job *job = KIO::moveAs(oldUrl, newUrl, isLocal ? KIO::HideProgressInfo : KIO::DefaultFlags);
             job->uiDelegate()->setAutoErrorHandlingEnabled(true);
             // undo handling
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Rename, QList<QUrl>() << item.url(), newUrl, job);

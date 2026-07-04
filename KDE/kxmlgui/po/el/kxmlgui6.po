@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-28 00:41+0000\n"
+"POT-Creation-Date: 2026-05-12 00:41+0000\n"
 "PO-Revision-Date: 2021-09-14 08:39+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -943,23 +943,23 @@ msgctxt "@title:window"
 msgid "Export Shortcuts"
 msgstr "Εξαγωγή συντομεύσεων"
 
-#: kshortcutschemeseditor.cpp:187 kshortcutschemeseditor.cpp:198
+#: kshortcutschemeseditor.cpp:187 kshortcutschemeseditor.cpp:202
 #, kde-format
 msgid "Shortcuts (*.shortcuts)"
 msgstr "Συντομεύσεις (*.shortcuts)"
 
-#: kshortcutschemeseditor.cpp:198
+#: kshortcutschemeseditor.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Shortcuts"
 msgstr "Εισαγωγή συντομεύσεων"
 
-#: kshortcutschemeseditor.cpp:209
+#: kshortcutschemeseditor.cpp:213
 #, kde-format
 msgid "Shortcut scheme successfully saved."
 msgstr "Επιτυχής αποθήκευση θέματος συντομεύσεων."
 
-#: kshortcutschemeseditor.cpp:212
+#: kshortcutschemeseditor.cpp:216
 #, kde-format
 msgid "Error saving the shortcut scheme."
 msgstr "Σφάλμα κατά την αποθήκευση θέματος συντομεύσεων."
@@ -1333,13 +1333,13 @@ msgstr "Αναίρεση"
 msgid "No text"
 msgstr "Χωρίς κείμενο"
 
-#: kxmlguiwindow.cpp:193
+#: kxmlguiwindow.cpp:203
 #, fuzzy, kde-format
 #| msgid "Action"
 msgid "Find Action…"
 msgstr "Ενέργεια"
 
-#: kxmlguiwindow.cpp:563
+#: kxmlguiwindow.cpp:573
 #, kde-format
 msgid ""
 "There are two actions (%1, %2) that want to use the same shortcut (%3). This "
@@ -1350,7 +1350,7 @@ msgstr ""
 "συντόμευση (%3). Είναι σχεδόν σίγουρο ότι πρόκειται για σφάλμα. Μπορείτε να "
 "το αναφέρετε στο <a href='https://bugs.kde.org'>bugs.kde.org</a>"
 
-#: kxmlguiwindow.cpp:568
+#: kxmlguiwindow.cpp:578
 #, kde-format
 msgid "Ambiguous Shortcuts"
 msgstr "Διφορούμενες συντομεύσεις"

@@ -175,6 +175,7 @@ void TestTrash::initTestCase()
     for (auto it = writableTopDirs.constBegin(); it != writableTopDirs.constEnd(); ++it) {
         const QString topdir = topDirs[*it];
         const QString trashdir = trashDirs[*it];
+        // TODO: Fails on local installs for unknown reasons
         QVERIFY(!topdir.isEmpty());
         QVERIFY(!trashDirs.isEmpty());
         if (topdir != QLatin1String("/tmp/") || // we'd prefer not to use /tmp here, to separate the tests
@@ -919,6 +920,14 @@ void TestTrash::statFileInDirectory()
     QVERIFY(!item.isWritable());
     QVERIFY(!item.isHidden());
     QCOMPARE(item.text(), QStringLiteral("testfile"));
+}
+
+void TestTrash::statInvalid()
+{
+    QUrl url(QStringLiteral("trash:/foo-bar"));
+    KIO::UDSEntry entry;
+    bool ok = MyNetAccess_stat(url, entry);
+    QVERIFY(!ok);
 }
 
 void TestTrash::statBrokenSymlinkInSubdir()

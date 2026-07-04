@@ -13,7 +13,6 @@ import org.kde.kirigami.platform as Platform
 import org.kde.kirigami.primitives as Primitives
 import org.kde.kirigami.layouts as KL
 import org.kde.kirigami.controls as KC
-import org.kde.kirigami.private.polyfill
 import "private" as P
 
 /*!
@@ -33,7 +32,7 @@ QQC2.Page {
 //BEGIN properties
     padding: Platform.Units.gridUnit
     topPadding: padding + SafeArea.margins.top
-    bottomPadding: padding + SafeArea.margins.bottom
+    bottomPadding: padding + (footer && footer.visible ? 0 : SafeArea.margins.bottom)
     leftPadding: padding + SafeArea.margins.left
     rightPadding: padding + SafeArea.margins.right
 
@@ -220,7 +219,7 @@ QQC2.Page {
             z: 9997
             anchors {
                 fill: parent
-                topMargin: globalToolBar.height
+                topMargin: globalToolBar.row ? 0 : globalToolBar.height
             }
         }
     ]

@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.29)
 
-set(KF_VERSION "6.26.0") # handled by release scripts
-set(KF_DEP_VERSION "6.26.0") # handled by release scripts
+set(KF_VERSION "6.27.0") # handled by release scripts
+set(KF_DEP_VERSION "6.27.0") # handled by release scripts
 
 project(KIO VERSION ${KF_VERSION})
 
 include(FeatureSummary)
-find_package(ECM 6.26.0 NO_MODULE)
+find_package(ECM 6.27.0 NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
@@ -142,7 +142,7 @@ endif()
 
 ecm_set_disabled_deprecation_versions(
     QT 6.11.0
-    KF 6.23.0
+    KF 6.26.0
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kio6\")
@@ -180,7 +180,6 @@ include(CMakePackageConfigHelpers)
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF6KIOConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/KF6KIOConfig.cmake"
-  PATH_VARS KDE_INSTALL_DBUSINTERFACEDIR
   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 

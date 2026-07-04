@@ -50,8 +50,14 @@ DavJob::DavJob(DavJobPrivate &dd, int method, const QString &request)
     stream << (int)7 << d->m_url << method;
     // Same for static data
     if (!request.isEmpty()) {
-        d->staticData = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" + request.toUtf8();
-        d->staticData.chop(1);
+        if (!request.startsWith(QLatin1StringView("<?xml"))) {
+            // QDomDocument
+            d->staticData = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" + request.toUtf8();
+            d->staticData.chop(1);
+        } else {
+            // QXmlStreamWriter
+            d->staticData = request.toUtf8();
+        }
         d->savedStaticData = d->staticData;
         stream << static_cast<qint64>(d->staticData.size());
     } else {
@@ -129,6 +135,11 @@ DavJob *KIO::davReport(const QUrl &url, const QString &report, const QString &de
     DavJob *job = DavJobPrivate::newJob(url, (int)KIO::DAV_REPORT, report, flags);
     job->addMetaData(QStringLiteral("davDepth"), depth);
     return job;
+}
+
+DavJob *KIO::davMkCol(const QUrl &url, const QString &properties, JobFlags flags)
+{
+    return DavJobPrivate::newJob(url, (int)KIO::DAV_MKCOL, properties, flags);
 }
 
 #include "moc_davjob.cpp"

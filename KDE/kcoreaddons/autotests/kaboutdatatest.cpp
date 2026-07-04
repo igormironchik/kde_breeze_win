@@ -16,14 +16,16 @@
 
 using namespace Qt::Literals;
 
-#ifndef Q_OS_WIN
 void initLocale()
 {
+#ifndef Q_OS_WIN
     qputenv("LC_ALL", "en_US.utf-8");
+#else
+    QLocale::setDefault(QLocale(u"en_US"_s));
+#endif
 }
 
 Q_CONSTRUCTOR_FUNCTION(initLocale)
-#endif
 
 class KAboutDataTest : public QObject
 {
@@ -241,8 +243,6 @@ void KAboutDataTest::testSetAddLicense()
     QTextStream licenseFileStream(&licenseFile);
     licenseFileStream << LicenseFileText;
     licenseFile.close();
-
-    const QString lineFeed = QString::fromLatin1("\n\n");
 
     KAboutData aboutData(QString::fromLatin1(AppName),
                          QLatin1String(ProgramName),

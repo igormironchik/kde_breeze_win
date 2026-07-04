@@ -23,6 +23,8 @@ The plugin.qmltypes file will sit in the source directory. This function will
 include the code that installs the file in the right place and a small unit
 test named qmltypes-pluginname-version that makes sure that it doesn't need updating.
 
+With Qt6 prefer using qt_add_qml_module()/ecm_add_qml_module() and declarative
+type registration, which do this automatically.
 
 Since 5.33.0
 #]=======================================================================]

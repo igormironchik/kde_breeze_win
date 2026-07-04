@@ -14,7 +14,6 @@ import org.kde.kirigami.controls as KC
 import org.kde.kirigami.layouts as KL
 import org.kde.kirigami.primitives as Primitives
 import org.kde.kirigami.platform as Platform
-import org.kde.kirigami.private.polyfill
 import "private" as KP
 
 /*!
@@ -430,7 +429,7 @@ KC.OverlayDrawer {
                 ? Platform.Theme.Window : parent.Platform.Theme.colorSet
 
             visible: !delegate.isExpanded
-            width: parent.width
+            implicitWidth: parent.implicitWidth
 
             tAction: delegate.tAction
 
@@ -582,7 +581,7 @@ KC.OverlayDrawer {
 
                         spacing: 0
 
-                        Layout.alignment: Qt.AlignHCenter
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
                         Layout.leftMargin: root.leftPadding
                         Layout.rightMargin: root.rightPadding
                         Layout.bottomMargin: Platform.Units.smallSpacing

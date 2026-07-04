@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.29)
 
-set(KF_VERSION "6.26.0") # handled by release scripts
+set(KF_VERSION "6.27.0") # handled by release scripts
 project(BreezeIcons VERSION ${KF_VERSION})
 
 # Disallow in-source build
@@ -10,7 +10,7 @@ endif()
 
 # ECM setup
 include(FeatureSummary)
-find_package(ECM 6.26.0  NO_MODULE)
+find_package(ECM 6.27.0  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
@@ -71,7 +71,6 @@ if(WITH_ICONS_LIBRARY)
       "${CMAKE_CURRENT_SOURCE_DIR}/KF6BreezeIconsConfig.cmake.in"
       "${CMAKE_CURRENT_BINARY_DIR}/KF6BreezeIconsConfig.cmake"
       INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-      PATH_VARS  CMAKE_INSTALL_PREFIX
     )
 
     install(FILES

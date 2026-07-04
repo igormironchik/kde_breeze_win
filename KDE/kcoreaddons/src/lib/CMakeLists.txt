@@ -29,7 +29,13 @@ configure_file(util/config-util.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-util.
 
 add_library(KF6CoreAddons)
 add_library(KF6::CoreAddons ALIAS KF6CoreAddons)
-qt_extract_metatypes(KF6CoreAddons)
+
+qt_extract_metatypes(KF6CoreAddons OUTPUT_FILES METATYPES_FILE)
+
+# see https://qt-project.atlassian.net/browse/QTBUG-123052
+# might be replaced with proper Qt API once that exists
+get_filename_component(METATYPES_FILE_NAME ${METATYPES_FILE} NAME)
+target_sources(KF6CoreAddons INTERFACE $<INSTALL_INTERFACE:${KDE_INSTALL_QTMETATYPESDIR}/${METATYPES_FILE_NAME}>)
 
 set_target_properties(KF6CoreAddons PROPERTIES
     VERSION     ${KCOREADDONS_VERSION}
@@ -220,7 +226,6 @@ ecm_qt_export_logging_category(
     IDENTIFIER KDIRWATCH
     CATEGORY_NAME kf.coreaddons.kdirwatch
     OLD_CATEGORY_NAMES kf5.kcoreaddons.kdirwatch
-    DEFAULT_SEVERITY Warning
     DESCRIPTION "KDirWatch (KCoreAddons)"
     EXPORT KCOREADDONS
 )
@@ -377,5 +382,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCoreAddons COMPONENT Devel
 )
 install(FILES plugin/kpluginmetadata.schema.json DESTINATION ${KDE_INSTALL_DATADIR}/kf6/jsonschema COMPONENT Devel)
+
+install(FILES ${METATYPES_FILE} DESTINATION ${KDE_INSTALL_QTMETATYPESDIR})
 
 ecm_generate_qdoc(KF6CoreAddons kcoreaddons.qdocconf)
