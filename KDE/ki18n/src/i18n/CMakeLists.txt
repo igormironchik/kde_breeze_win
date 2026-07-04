@@ -8,6 +8,8 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.h.in" "${CMAKE_CURRENT_BINARY
 add_library(KF6I18n)
 add_library(KF6::I18n ALIAS KF6I18n)
 
+find_package(Iconv REQUIRED)
+
 set_target_properties(KF6I18n PROPERTIES
     VERSION     ${KI18N_VERSION}
     SOVERSION   ${KI18N_SOVERSION}
@@ -61,7 +63,7 @@ target_include_directories(KF6I18n
 
 target_link_libraries(KF6I18n PUBLIC Qt6::Core)
 # This is only required for platforms which don't use glibc (with glibc LibIntl_LIBRARIES will be empty)
-target_link_libraries(KF6I18n PRIVATE ${LibIntl_LIBRARIES})
+target_link_libraries(KF6I18n PRIVATE ${LibIntl_LIBRARIES} Iconv::Iconv)
 if (ANDROID)
     target_link_libraries(KF6I18n PRIVATE android)
 endif()
