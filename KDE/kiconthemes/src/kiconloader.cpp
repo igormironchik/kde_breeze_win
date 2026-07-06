@@ -210,6 +210,8 @@ public:
             message.setArguments(QList<QVariant>() << int(group));
             QDBusConnection::sessionBus().send(message);
         }
+#else
+        Q_EMIT iconChanged(group);
 #endif
     }
 
