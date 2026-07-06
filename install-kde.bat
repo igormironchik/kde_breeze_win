@@ -328,7 +328,7 @@ IF %ERRORLEVEL% NEQ 0 (
 	exit /B %ERRORLEVEL%
 )
 
-cmake -S KDE/kiconthemes -B ../builds/build-kiconthemes -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+cmake -S KDE/kiconthemes -B ../builds/build-kiconthemes -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -DUSE_DBUS=OFF -G "NMake Makefiles"
 
 IF %ERRORLEVEL% NEQ 0 (
 	exit /B %ERRORLEVEL%
