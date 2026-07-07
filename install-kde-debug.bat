@@ -1,0 +1,528 @@
+set /P qt_version=<"%CD%\qt.version"
+
+set /P qt_arch=<"%CD%\qt.arch.win"
+
+set "current_dir=%CD%"
+
+set "cwd=%current_dir:\=/%"
+
+set "PATH=%PATH%;%cwd%/../Qt/%qt_version%/%qt_arch%/bin"
+
+set "PKG_CONFIG_PATH=%cwd%/../builds/conan"
+
+conan install . -of ../builds/conan -s build_type=Debug --build=missing --deployer=runtime_deploy -c tools.cmake.cmaketoolchain:generator="NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+call "..\builds\conan\conanbuild.bat"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+@echo on
+
+call "..\builds\conan\conanrun.bat"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+@echo on
+
+for /f "tokens=*" %%i in ('pkg-config.exe --variable=prefix libgettext') do (set gettext_prefix=%%i & goto :next)
+
+:next
+
+set "INCLUDE=%INCLUDE%;%gettext_prefix%/include"
+
+set "LIB=%LIB%;%gettext_prefix%/lib"
+
+cmake -S KDE/extra-cmake-modules -B ../builds/build-extra-cmake-modules -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=OFF -DBUILD_HTML_DOCS=OFF -DBUILD_MAN_DOCS=OFF -DCMAKE_INSTALL_PREFIX=../KDE -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-extra-cmake-modules --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-extra-cmake-modules --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kwidgetsaddons -B ../builds/build-kwidgetsaddons -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_PYTHON_BINDINGS=False -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kwidgetsaddons --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kwidgetsaddons --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kconfig -B ../builds/build-kconfig -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kconfig --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kconfig --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kcoreaddons -B ../builds/build-kcoreaddons -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kcoreaddons --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kcoreaddons --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/ki18n -B ../builds/build-ki18n -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MODULE_PATH=%cwd%/../builds/conan -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-ki18n --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-ki18n --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/karchive -B ../builds/build-karchive -DCMAKE_BUILD_TYPE=Debug -DOPENSSL_ROOT_DIR=%cwd%/../Qt/Tools/OpenSSLv3/Win_x64 -DCMAKE_MODULE_PATH=%cwd%/../builds/conan -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-karchive --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-karchive --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kservice -B ../builds/build-kservice -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kservice --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kservice --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/solid -B ../builds/build-solid -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MODULE_PATH="%cwd%/../builds/conan;%cwd%/cmake" -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-solid --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-solid --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kcrash -B ../builds/build-kcrash -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kcrash --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kcrash --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kwindowsystem -B ../builds/build-kwindowsystem -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kwindowsystem --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kwindowsystem --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kbookmarks -B ../builds/build-kbookmarks -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kbookmarks --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kbookmarks --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kguiaddons -B ../builds/build-kguiaddons -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kguiaddons --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kguiaddons --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kcolorscheme -B ../builds/build-kcolorscheme -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kcolorscheme --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kcolorscheme --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kcodecs -B ../builds/build-kcodecs -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kcodecs --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kcodecs --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kcompletion -B ../builds/build-kcompletion -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kcompletion --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kcompletion --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/breeze-icons -B ../builds/build-breeze-icons -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-breeze-icons --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-breeze-icons --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kiconthemes -B ../builds/build-kiconthemes -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -DUSE_DBUS=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kiconthemes --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kiconthemes --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kitemviews -B ../builds/build-kitemviews -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kitemviews --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kitemviews --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/snoretoast -B ../builds/build-snoretoast -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-snoretoast --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-snoretoast --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/knotifications -B ../builds/build-knotifications -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-knotifications --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-knotifications --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kjobwidgets -B ../builds/build-kjobwidgets -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kjobwidgets --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kjobwidgets --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kio -B ../builds/build-kio -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kio --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kio --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kconfigwidgets -B ../builds/build-kconfigwidgets -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kconfigwidgets --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kconfigwidgets --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kxmlgui -B ../builds/build-kxmlgui -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kxmlgui --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kxmlgui --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/kirigami -B ../builds/build-kirigami -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kirigami --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kirigami --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+
+cmake -S KDE/kcmutils -B ../builds/build-kcmutils -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-kcmutils --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-kcmutils --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake -S KDE/breeze -B ../builds/build-breeze -DCMAKE_BUILD_TYPE=Debug -DBUILD_QT5=OFF -DWITH_DECORATIONS=OFF -DCMAKE_INSTALL_PREFIX=../KDE -DECM_DIR=../KDE/share/ECM/cmake -DCMAKE_PREFIX_PATH="%cwd%/Qt/%qt_version%/%qt_arch%;%cwd%/../KDE;%cwd%/../builds/conan" -DBUILD_TESTING=OFF -G "NMake Makefiles"
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --build ../builds/build-breeze --config Debug -j 3
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
+
+cmake --install ../builds/build-breeze --prefix ../KDE
+
+IF %ERRORLEVEL% NEQ 0 (
+	exit /B %ERRORLEVEL%
+)
