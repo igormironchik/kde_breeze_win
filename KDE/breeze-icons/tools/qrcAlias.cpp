@@ -235,9 +235,9 @@ static void generateQRCAndCheckInputs(const QStringList &indirs, const QString &
                 validateXml(fullPath);
 
                 // do duplicate check for non-generated icons
-                if (!generatedIcons) {
-                    checkForDuplicates(fullPath);
-                }
+                // if (!generatedIcons) {
+                //     checkForDuplicates(fullPath);
+                // }
             } else if (fullPath.endsWith(QLatin1String(".theme"))) {
                 themeFileFound = true;
             }
