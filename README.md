@@ -8,5 +8,4 @@
 ## Building
 
 * `install-qt.bat`
-* `install-openssl.bat`
 * `install-kde.bat`
