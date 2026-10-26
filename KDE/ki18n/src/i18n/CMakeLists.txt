@@ -8,8 +8,6 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.h.in" "${CMAKE_CURRENT_BINARY
 add_library(KF6I18n)
 add_library(KF6::I18n ALIAS KF6I18n)
 
-find_package(Iconv REQUIRED)
-
 set_target_properties(KF6I18n PROPERTIES
     VERSION     ${KI18N_VERSION}
     SOVERSION   ${KI18N_SOVERSION}
@@ -63,7 +61,7 @@ target_include_directories(KF6I18n
 
 target_link_libraries(KF6I18n PUBLIC Qt6::Core)
 # This is only required for platforms which don't use glibc (with glibc LibIntl_LIBRARIES will be empty)
-target_link_libraries(KF6I18n PRIVATE ${LibIntl_LIBRARIES} Iconv::Iconv)
+target_link_libraries(KF6I18n PRIVATE ${LibIntl_LIBRARIES})
 if (ANDROID)
     target_link_libraries(KF6I18n PRIVATE android)
 endif()
@@ -71,7 +69,7 @@ target_compile_options(KF6I18n PRIVATE -DTRANSLATION_DOMAIN=\"ki18n6\")
 
 install(TARGETS KF6I18n EXPORT KF6I18nTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
-ecm_generate_headers(KI18n_HEADERS
+ecm_generate_headers(KI18n_CamelCase_HEADERS
   HEADER_NAMES
     KLazyLocalizedString
     KLocalizedContext
@@ -84,6 +82,7 @@ ecm_generate_headers(KI18n_HEADERS
 
 install(FILES
     ${KI18n_HEADERS}
+    ${KI18n_CamelCase_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/ki18n_export.h
     DESTINATION "${KDE_INSTALL_INCLUDEDIR_KF}/KI18n" COMPONENT Devel
 )
@@ -115,3 +114,16 @@ endif()
 endif()
 
 ecm_generate_qdoc(KF6I18n ki18n.qdocconf)
+
+ecm_add_installed_library_check(KF6I18n
+    PACKAGE_NAME "KF6I18n"
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6I18n
+    HEADERS ${KI18n_CamelCase_HEADERS}
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KF6I18n
+    PREFIX KI18N
+)

@@ -15,6 +15,7 @@ import org.kde.kirigami.platform as Platform
 /*!
   \qmltype InlineMessage
   \inqmlmodule org.kde.kirigami
+  \inherits Control
 
   \brief An inline message item with support for associated actions.
 
@@ -283,7 +284,7 @@ T.Control {
 
         Accessible.ignored: true
 
-        readonly property real fixedContentWidth: icon.width + Platform.Units.smallSpacing * 3 + (root.showCloseButton ? closeButton.width + Platform.Units.smallSpacing : 0)
+        readonly property real fixedContentWidth: icon.width + Platform.Units.largeSpacing + Platform.Units.smallSpacing * 2 + (root.showCloseButton ? closeButton.width + Platform.Units.smallSpacing : 0)
         readonly property real remainingWidth: width - fixedContentWidth - label.implicitWidth
         readonly property bool multiline: remainingWidth <= 0 || atBottom
         readonly property bool atBottom: (root.actions.length > 0) && (label.lineCount > 1 || actionsLayout.implicitWidth > remainingWidth)

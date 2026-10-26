@@ -52,6 +52,8 @@ Name[mai]=केडीई टेकबेस
 Name[ml]=കെഡിഇ ടെക്ക്ബേസ്
 Name[mr]=केडीई टेकबेस
 Name[my]=ကေဒီအီး နည်းပညာရှင်များ
+Name[nan_TW]=KDE TechBase
+Name[nan_TW@latin]=KDE TechBase
 Name[nb]=KDE TechBase
 Name[nds]=KDE-TechBase
 Name[nl]=KDE TechBase
@@ -123,6 +125,8 @@ Query[lg]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[lt]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[lv]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[my]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
+Query[nan_TW]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
+Query[nan_TW@latin]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[nb]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[nl]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[nn]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
@@ -141,7 +145,6 @@ Query[tg]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[th]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[tok]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[tr]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
-Query[ug]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[uk]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[vi]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search
 Query[zh_CN]=https://techbase.kde.org/Special:Search?search=\\{@}&fulltext=Search

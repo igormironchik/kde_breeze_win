@@ -53,6 +53,8 @@ Name[mai]=फेसबुक
 Name[ml]=ഫേസ്ബുക്ക്
 Name[mr]=फेसबूक
 Name[my]=ဖေ့စ်ဘွတ်ခ်
+Name[nan_TW]=Facebook
+Name[nan_TW@latin]=Facebook
 Name[nb]=Facebook
 Name[nds]=Facebook
 Name[nl]=Facebook
@@ -77,7 +79,6 @@ Name[tg]=Facebook
 Name[th]=เฟซบุ้ค
 Name[tok]=ilo Facebook
 Name[tr]=Facebook
-Name[ug]=Facebook
 Name[uk]=Facebook
 Name[vi]=Facebook
 Name[wa]=Facebook
@@ -128,6 +129,8 @@ Query[lt]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[lv]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[mr]=http://www.facebook.com/search/?q=\\{@}&init=quick
 Query[my]=https://www.facebook.com/search/?q=\\{@}&init=quick
+Query[nan_TW]=https://www.facebook.com/search/?q=\\{@}&init=quick
+Query[nan_TW@latin]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[nb]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[nds]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[nl]=https://www.facebook.com/search/?q=\\{@}&init=quick
@@ -151,7 +154,6 @@ Query[tg]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[th]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[tok]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[tr]=https://www.facebook.com/search/?q=\\{@}&init=quick
-Query[ug]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[uk]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[vi]=https://www.facebook.com/search/?q=\\{@}&init=quick
 Query[wa]=https://www.facebook.com/search/?q=\\{@}&init=quick

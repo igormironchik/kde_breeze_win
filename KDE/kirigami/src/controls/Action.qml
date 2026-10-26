@@ -151,7 +151,10 @@ QQC2.Action {
     readonly property list<T.Action> visibleChildren: children
         .filter(action => !(action instanceof Action) || action.visible)
 
-    shortcut: fromQAction?.shortcut
+    // TODO: Remove workaround once we can depend on Qt 6.11. See https://codereview.qt-project.org/c/qt/qtdeclarative/+/751770
+    shortcut: if (fromQAction) {
+        return P.ActionHelper.nativeKey(fromQAction.shortcut);
+    }
     text: fromQAction?.text ?? ''
     icon.name: {
         if (!fromQAction) {
@@ -179,6 +182,7 @@ QQC2.Action {
         }
     }
     readonly property Shortcut alternateShortcut : Shortcut {
+        enabled: action.enabled
         sequences: P.ActionHelper.alternateShortcuts(action.fromQAction)
         onActivated: action.trigger()
     }

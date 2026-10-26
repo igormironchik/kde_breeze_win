@@ -60,6 +60,8 @@ Name[ml]=CTAN - സമഗ്രമായ ടെക്സ് ശേഖര ശൃ�
 Name[mr]=CTAN - कॉम्प्रेहेंसिव टेक्स संग्रह संजाळ
 Name[ms]=CTAN - Rangkaian Arkib TeX Komprehensif
 Name[my]=စီတန် - များပြားပါဝင်သော TeX အဟောင်းသိမ်းတိုက် ကွန်ရက်
+Name[nan_TW]=CTAN - 完整 TeX 封存網路
+Name[nan_TW@latin]=CTAN - Uân-tsíng TeX Hong-tsûn Bāng-lōo
 Name[nb]=CTAN – TeX-arkiv: «Comprehensive TeX Archive Network»
 Name[nds]=CTAN - Ümfaten TeX-Archievnettwark
 Name[ne]=CTAN - व्यापक TeX सङ्ग्रह सञ्जाल
@@ -139,6 +141,8 @@ Query[lg]=https://ctan.org/search?phrase=\\{@}
 Query[lt]=https://ctan.org/search?phrase=\\{@}
 Query[lv]=https://ctan.org/search?phrase=\\{@}
 Query[my]=https://ctan.org/search?phrase=\\{@}
+Query[nan_TW]=https://ctan.org/search?phrase=\\{@}
+Query[nan_TW@latin]=https://ctan.org/search?phrase=\\{@}
 Query[nb]=https://ctan.org/search?phrase=\\{@}
 Query[nl]=https://ctan.org/search?phrase=\\{@}
 Query[nn]=https://ctan.org/search?phrase=\\{@}
@@ -157,7 +161,6 @@ Query[tg]=https://ctan.org/search?phrase=\\{@}
 Query[th]=https://ctan.org/search?phrase=\\{@}
 Query[tok]=https://ctan.org/search?phrase=\\{@}
 Query[tr]=https://ctan.org/search?phrase=\\{@}
-Query[ug]=https://ctan.org/search?phrase=\\{@}
 Query[uk]=https://ctan.org/search?phrase=\\{@}
 Query[vi]=https://ctan.org/search?phrase=\\{@}
 Query[zh_CN]=https://ctan.org/search?phrase=\\{@}
