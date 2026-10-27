@@ -18,7 +18,7 @@ For preparing some values useful in the context it also provides a function
 ::
 
   ecm_generate_export_header(<library_target_name>
-      VERSION <version>
+      [VERSION <version>] # Optional since 6.30
       [BASE_NAME <base_name>]
       [GROUP_BASE_NAME <group_base_name>]
       [EXPORT_MACRO_NAME <export_macro_name>]
@@ -31,6 +31,7 @@ For preparing some values useful in the context it also provides a function
       [DEPRECATED_BASE_VERSION <deprecated_base_version>]
       [DEPRECATION_VERSIONS <deprecation_version> [<deprecation_version2> [...]]]
       [EXCLUDE_DEPRECATED_BEFORE_AND_AT <exclude_deprecated_before_and_at_version>]
+      [DEPRECATED_ATTRIBUTE_TYPE <attribute_type>] #  Since 6.28
       [NO_BUILD_SET_DEPRECATED_WARNINGS_SINCE]
       [NO_DEFINITION_EXPORT_TO_BUILD_INTERFACE]
       [USE_VERSION_HEADER [<version_file_name>]] #  Since 5.106
@@ -40,7 +41,8 @@ For preparing some values useful in the context it also provides a function
   )
 
 ``VERSION`` specifies the version of the library, given in the format
-"<major>.<minor>.<patchlevel>".
+"<major>.<minor>.<patchlevel>". Since 6.30 this argument is optional if
+``${PROJECT_VERSION}`` is set and will default to that.
 
 ``GROUP_BASE_NAME`` specifies the name to use for the macros defining
 library group default values. If set, this will generate code supporting
@@ -67,6 +69,24 @@ needs to be listed here, otherwise the macro will fail to work.
 deprecated before and at should be excluded from the build completely.
 Possible values are "0" (default), "CURRENT" (which resolves to <version>)
 and a version string in the format "<major>.<minor>.<patchlevel>".
+
+``DEPRECATED_ATTRIBUTE_TYPE`` specifies the type of attribute to use in the
+generated macros. Options are "STANDARD" (default when the minimum required
+version of ECM is 6.28 or newer) or "COMPILER" (default otherwise, legacy).
+"STANDARD" will result in the use of the C++ standard attribute
+``[[deprecated("text")]]``, where-as "COMPILER" will use the pre-C++14
+compiler-specific annotations like ``__attribute__ ((__deprecated__("text")))``
+or ``__declspec(deprecated("text"))``, if available.
+Since 6.28.
+
+.. warning::
+  The compiler-specific annotation attributes can be placed more freely in
+  the signatures of declarations, the C++ standard ``[[deprecated("text")]]``
+  ones are restrained to the standard locations for attributes. So when
+  switching from "COMPILER" to "STANDARD" it needs to be ensured all used
+  deprecation macros are only at locations where attributes are possible.
+  Also note that with "STANDARD" the special enumerator macros (see below)
+  will not be available, as usually the normal deprecation macro can be used.
 
 ``NO_BUILD_SET_DEPRECATED_WARNINGS_SINCE`` specifies that the definition
 ``<prefix_name><uppercase_base_name>_DEPRECATED_WARNINGS_SINCE`` will
@@ -110,7 +130,7 @@ would only append the string passed as argument value.
 
 The function ``ecm_generate_export_header`` defines C++ preprocessor macros
 in the generated export header, some for use in the sources of the library
-the header is generated for, other for use by projects linking agsinst the
+the header is generated for, other for use by projects linking against the
 library.
 
 The macros for use in the library C++ sources are these, next to those also
@@ -139,6 +159,8 @@ defined by `GenerateExportHeader
   on the warnings macro flags set (see below). In builds using C++14 standard or earlier,
   where enumerator attributes are not yet supported, the macro will always yield an empty string.
   With MSVC it is also always an empty string for now.
+  Not available with ``DEPRECATED_ATTRIBUTE_TYPE`` set to "STANDARD", there the normal macro can
+  be usually used.
   Since 5.82.
 
 ``<prefix_name><uppercase_base_name>_ENUMERATOR_DEPRECATED_VERSION_BELATED(major, minor, textmajor, textminor, text)``
@@ -151,6 +173,8 @@ defined by `GenerateExportHeader
   Useful for retroactive tagging of API for the compiler without injecting the
   API into the compiler warning conditions of already released versions.
   With MSVC it is also always an empty string for now.
+  Not available with ``DEPRECATED_ATTRIBUTE_TYPE`` set to "STANDARD", there the normal macro can
+  be usually used.
   Since 5.82.
 
 ``<prefix_name><uppercase_base_name>_ENABLE_DEPRECATED_SINCE(major, minor)``
@@ -474,6 +498,7 @@ function(ecm_generate_export_header target)
         VERSION_BASE_NAME
         VERSION_MACRO_NAME
         EXCLUDE_DEPRECATED_BEFORE_AND_AT
+        DEPRECATED_ATTRIBUTE_TYPE
         EXPORT_MACRO_NAME
         DEPRECATED_MACRO_NAME
         NO_EXPORT_MACRO_NAME
@@ -491,15 +516,25 @@ function(ecm_generate_export_header target)
     # helper string
     set(_version_triple_regexp "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$")
     # args sanity check
-    if (NOT ARGS_VERSION)
-        message(FATAL_ERROR "No VERSION passed when calling ecm_generate_export_header().")
-    elseif(NOT ARGS_VERSION MATCHES ${_version_triple_regexp})
-        message(FATAL_ERROR "VERSION expected to be in x.y.z format when calling ecm_generate_export_header().")
+    if (ARGS_VERSION)
+        if(NOT ARGS_VERSION MATCHES ${_version_triple_regexp})
+            message(FATAL_ERROR "VERSION expected to be in x.y.z format when calling ecm_generate_export_header(), is: ${ARGS_VERSION}")
+        endif()
+        set(_version ${ARGS_VERSION})
+    else()
+        if (PROJECT_VERSION)
+            if(NOT PROJECT_VERSION MATCHES ${_version_triple_regexp})
+                message(FATAL_ERROR "PROJECT_VERSION expected to be in x.y.z format when calling ecm_generate_export_header(), is: ${PROJECT_VERSION}")
+            endif()
+            set(_version ${PROJECT_VERSION})
+        else()
+            message(FATAL_ERROR "No VERSION passed when calling ecm_generate_export_header().")
+        endif()
     endif()
     if (NOT ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT)
         set(ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT 0)
     elseif(ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT")
-        set(ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT ${ARGS_VERSION})
+        set(ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT ${_version})
     elseif(NOT ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT MATCHES ${_version_triple_regexp} AND
            NOT ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "0")
         message(FATAL_ERROR "EXCLUDE_DEPRECATED_BEFORE_AND_AT expected to be in \"x.y.z\" format, \"0\" or \"CURRENT\" when calling ecm_generate_export_header().")
@@ -508,12 +543,12 @@ function(ecm_generate_export_header target)
         if (ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT)
             set(ARGS_DEPRECATED_BASE_VERSION "${ARGS_EXCLUDE_DEPRECATED_BEFORE_AND_AT}")
         else()
-            string(REGEX REPLACE ${_version_triple_regexp} "\\1" _version_major "${ARGS_VERSION}")
+            string(REGEX REPLACE ${_version_triple_regexp} "\\1" _version_major "${_version}")
             set(ARGS_DEPRECATED_BASE_VERSION "${_version_major}.0.0")
         endif()
     else()
         if(ARGS_DEPRECATED_BASE_VERSION STREQUAL "CURRENT")
-            set(ARGS_DEPRECATED_BASE_VERSION ${ARGS_VERSION})
+            set(ARGS_DEPRECATED_BASE_VERSION ${_version})
         elseif(NOT ARGS_DEPRECATED_BASE_VERSION MATCHES ${_version_triple_regexp} AND
                NOT ARGS_DEPRECATED_BASE_VERSION STREQUAL "0")
             message(FATAL_ERROR "DEPRECATED_BASE_VERSION expected to be in \"x.y.z\" format, \"0\" or \"CURRENT\" when calling ecm_generate_export_header().")
@@ -550,7 +585,7 @@ function(ecm_generate_export_header target)
             set(_version_hexnumber "${_upper_version_base_name}_VERSION")
         endif()
     else()
-        _ecm_geh_generate_hex_number(_version_hexnumber "${ARGS_VERSION}")
+        _ecm_geh_generate_hex_number(_version_hexnumber "${_version}")
     endif()
 
     if(NOT ARGS_EXPORT_FILE_NAME)
@@ -578,6 +613,19 @@ function(ecm_generate_export_header target)
     else()
         set(_deprecated_macro_name "${_macro_base_name}_DEPRECATED")
     endif()
+    if (ARGS_DEPRECATED_ATTRIBUTE_TYPE STREQUAL "STANDARD")
+        set(_use_std_attribute TRUE)
+    elseif (ARGS_DEPRECATED_ATTRIBUTE_TYPE STREQUAL "COMPILER")
+        set(_use_std_attribute FALSE)
+    elseif (ARGS_DEPRECATED_ATTRIBUTE_TYPE)
+        message(FATAL_ERROR "DEPRECATED_ATTRIBUTE_TYPE has to be one of STANDARD and COMPILER, was \"${ARGS_DEPRECATED_ATTRIBUTE_TYPE}\".")
+    else()
+        if (ECM_GLOBAL_FIND_VERSION VERSION_LESS 6.28)
+            set(_use_std_attribute FALSE)
+        else()
+            set(_use_std_attribute TRUE)
+        endif()
+    endif()
 
     if(NOT IS_ABSOLUTE ${ARGS_EXPORT_FILE_NAME})
         set(ARGS_EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/${ARGS_EXPORT_FILE_NAME}")
@@ -600,8 +648,9 @@ function(ecm_generate_export_header target)
     endif()
 
     # for the set of compiler versions supported by ECM/KF we can assume those attributes supported
-    # KF6: with C++17 as minimum standard planned, switch to always use [[deprecated(text)]]
-    if (CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
+    if (_use_std_attribute)
+        set(_decl_deprecated_text_definition "[[deprecated(text)]]")
+    elseif (CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
         set(_decl_deprecated_text_definition "__attribute__ ((__deprecated__(text)))")
     elseif(MSVC)
         set(_decl_deprecated_text_definition "__declspec(deprecated(text))")
@@ -616,6 +665,24 @@ function(ecm_generate_export_header target)
         else()
             string(APPEND _output "#include <${_version_header}>\n")
         endif()
+    endif()
+    if (_use_std_attribute)
+        # generate_export_header() has no option to disable generation of macros
+        # for deprecation attributes or to use the standard attribute.
+        # For now just add code to redefine the respective macros.
+        # TODO: consider stop using generate_export_header(), only deployed actually to
+        # get the export/visibility macros definitions, simple logic could be copied over
+        string(APPEND _output "
+#undef ${_macro_base_name}_DECL_DEPRECATED
+#define ${_macro_base_name}_DECL_DEPRECATED [[deprecated]]
+
+#undef ${_macro_base_name}_DECL_DEPRECATED_EXPORT
+#define ${_macro_base_name}_DECL_DEPRECATED_EXPORT ${_macro_base_name}_EXPORT ${_macro_base_name}_DECL_DEPRECATED
+
+#undef ${_macro_base_name}_DECL_DEPRECATED_NO_EXPORT
+#define ${_macro_base_name}_DECL_DEPRECATED_NO_EXPORT ${_macro_base_name}_NO_EXPORT ${_macro_base_name}_DECL_DEPRECATED
+"
+        )
     endif()
     string(APPEND _output "
 #define ${_macro_base_name}_DECL_DEPRECATED_TEXT(text) ${_decl_deprecated_text_definition}
@@ -763,16 +830,18 @@ function(ecm_generate_export_header target)
 "#define ${_macro_base_name}_DEPRECATED_VERSION_BELATED(major, minor, textmajor, textminor, text) ${_macro_base_name}_DEPRECATED_VERSION_##major(minor, \"Since \"#textmajor\".\"#textminor\". \" text)
 "
         )
-        # reusing the existing version-controlled deprecation macros for enumerator deprecation macros
-        # to avoid having to repeat all the explicit version variants
-        # TODO: MSVC seems to have issues with __declspec(deprecated) being used as enumerator attribute
-        # and deals only with standard [[deprecated(text)]].
-        # But for now we have to keep the deprecation macros using the compiler-specific attributes,
-        # because CMake's GenerateExportHeader uses the latter for the export macros and
-        # at least GCC does not support both being used mixed e.g. on the same class or method.
-        # Possibly needs to be solved by forking GenerateExportHeader to get complete control.
-        if(NOT MSVC)
-            string(APPEND _output
+        # only add special macros for enums for compiler-specific attribute backward-support
+        if(NOT _use_std_attribute)
+            # reusing the existing version-controlled deprecation macros for enumerator deprecation macros
+            # to avoid having to repeat all the explicit version variants
+            # TODO: MSVC seems to have issues with __declspec(deprecated) being used as enumerator attribute
+            # and deals only with standard [[deprecated(text)]].
+            # But for now we have to keep the deprecation macros using the compiler-specific attributes,
+            # because CMake's GenerateExportHeader uses the latter for the export macros and
+            # at least GCC does not support both being used mixed e.g. on the same class or method.
+            # Possibly needs to be solved by forking GenerateExportHeader to get complete control.
+            if(NOT MSVC)
+                string(APPEND _output
 "#if defined(__cpp_enumerator_attributes) && __cpp_enumerator_attributes >= 201411
 #  define ${_macro_base_name}_ENUMERATOR_DEPRECATED_VERSION(major, minor, text) ${_macro_base_name}_DEPRECATED_VERSION(major, minor, text)
 #  define ${_macro_base_name}_ENUMERATOR_DEPRECATED_VERSION_BELATED(major, minor, textmajor, textminor, text) ${_macro_base_name}_DEPRECATED_VERSION_BELATED(major, minor, textmajor, textminor, text)
@@ -781,14 +850,15 @@ function(ecm_generate_export_header target)
 #  define ${_macro_base_name}_ENUMERATOR_DEPRECATED_VERSION_BELATED(major, minor, textmajor, textminor, text)
 #endif
 "
-            )
-        else()
-            string(APPEND _output
+                )
+            else()
+                string(APPEND _output
 "// Not yet implemented for MSVC
 #define ${_macro_base_name}_ENUMERATOR_DEPRECATED_VERSION(major, minor, text)
 #define ${_macro_base_name}_ENUMERATOR_DEPRECATED_VERSION_BELATED(major, minor, textmajor, textminor, text)
 "
-            )
+                )
+            endif()
         endif()
     endif()
     if (ARGS_CUSTOM_CONTENT_FROM_VARIABLE)

@@ -17,12 +17,13 @@ import org.kde.kirigami.primitives as Primitives
 /*!
   \qmltype Overlay
   \inqmlmodule org.kde.kirigami
+  \inherits Popup
 
   \brief An overlay sheet that covers the current Page content.
 
   OverlaySheet is used for auxiliary display of narrow, read-only, scrollable
   content. For more details, see
-  https://develop.kde.org/hig/displaying_content/#page-vs-dialog-vs-overlaysheet.
+  \l { https://develop.kde.org/hig/displaying_content/#page-vs-dialog-vs-overlaysheet } { https://develop.kde.org/hig/displaying_content/#page-vs-dialog-vs-overlaysheet }.
 
   Can be dismissed with a touch swipe when scrolled to the top or bottom.
 
@@ -97,7 +98,7 @@ T.Popup {
 
 //BEGIN Reimplemented Properties
     QQC2.Overlay.modal: Rectangle {
-        color: Qt.rgba(0, 0, 0, 0.3)
+        color: Qt.rgba(0, 0, 0, 0.5)
 
         // the opacity of the item is changed internally by QQuickPopup on open/close
         Behavior on opacity {
@@ -166,7 +167,7 @@ T.Popup {
 
     Component.onCompleted: {
         Qt.callLater(() => {
-            if (!root.parent && typeof applicationWindow !== "undefined") {
+            if (!root.parent && typeof applicationWindow === "function") {
                 root.parent = applicationWindow().overlay
             }
         });
@@ -215,7 +216,17 @@ T.Popup {
                 return;
             }
             const currentY = mapToItem(null, mouse.x, mouse.y).y;
+            const flickable = scrollView.contentItem as Flickable;
 
+            if (flickable) {
+                if (currentY > lastY && !flickable.atYBeginning && translation.y >= 0) {
+                    lastY = currentY;
+                    return;
+                } else if (currentY < lastY && !flickable.atYEnd && translation.y <= 0) {
+                    lastY = currentY;
+                    return;
+                }
+            }
             if (dragStarted && currentY !== lastY) {
                 translation.y += currentY - lastY;
             }
@@ -229,7 +240,7 @@ T.Popup {
             if (mouseDragBlocker.active) {
                 return;
             }
-            if (Math.abs(mapToItem(null, mouse.x, mouse.y).y - scenePressY) > Platform.Units.gridUnit * 5) {
+            if (Math.abs(translation.y) > Platform.Units.gridUnit * 5) {
                 root.close();
             } else {
                 restoreAnim.restart();

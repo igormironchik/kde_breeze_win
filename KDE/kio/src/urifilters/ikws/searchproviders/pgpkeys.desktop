@@ -60,6 +60,8 @@ Name[ml]=ഓപ്പണ്‍പിജിപി (OpenPGP) കീ തെരച�
 Name[mr]=OpenPGP किल्ली शोध
 Name[ms]=Carian Kekunci OpenPGP
 Name[my]=အိုးပန်းပီဂျီပီ ကီးရှာရန်
+Name[nan_TW]=OpenPGP 鎖匙搜揣
+Name[nan_TW@latin]=OpenPGP Só-sî Tshiau-tshuē
 Name[nb]=OpenPGP-nøkkelsøk
 Name[nds]=OpenPGP-Slötel-Söök
 Name[ne]=खुला PGP कुञ्जी खोजी
@@ -138,6 +140,8 @@ Query[lg]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[lt]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[lv]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[my]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
+Query[nan_TW]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
+Query[nan_TW@latin]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[nb]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[nl]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[nn]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
@@ -156,7 +160,6 @@ Query[tg]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[th]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[tok]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[tr]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
-Query[ug]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[uk]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[vi]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex
 Query[zh_CN]=https://pgp.mit.edu/pks/lookup?search=\\{@}&op=vindex

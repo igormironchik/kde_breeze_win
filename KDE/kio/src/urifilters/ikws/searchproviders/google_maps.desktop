@@ -50,6 +50,8 @@ Name[lv]=Google Maps
 Name[mai]=गूगल नक्सा
 Name[mr]=गूगल नकाशे
 Name[my]=ဂူးဂယ်မြေပုံများ
+Name[nan_TW]=Google 地圖
+Name[nan_TW@latin]=Google Tē-tôo
 Name[nb]=Google Maps
 Name[nds]=Google.de-Koorten
 Name[nl]=Google Maps
@@ -118,7 +120,7 @@ Query[id]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[ie]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[is]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[it]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
-Query[ja]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
+Query[ja]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr&hl=ja
 Query[ka]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[kk]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[ko]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
@@ -127,6 +129,8 @@ Query[lt]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[lv]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[mr]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[my]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
+Query[nan_TW]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
+Query[nan_TW@latin]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[nb]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[nds]=https://maps.google.de/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[nl]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
@@ -151,7 +155,6 @@ Query[tg]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[th]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[tok]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[tr]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
-Query[ug]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[uk]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr
 Query[vi]=https://maps.google.com/maps?hl=vi&q=\\{@}&ie=UTF8&iwloc=addr
 Query[wa]=https://maps.google.com/maps?q=\\{@}&ie=UTF8&iwloc=addr

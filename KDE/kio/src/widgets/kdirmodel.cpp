@@ -620,6 +620,11 @@ void KDirModelPrivate::_k_slotNewItems(const QUrl &directoryUrl, const KFileItem
 void KDirModelPrivate::_k_slotCompleted(const QUrl &directoryUrl)
 {
     KDirModelNode *result = nodeForUrl(directoryUrl); // O(depth)
+    if (!result) {
+        // Directory no longer in the model (openUrl() switched away before this
+        // listing finished). Ignore the stale completion.
+        return;
+    }
     Q_ASSERT(isDir(result));
     KDirModelDirNode *dirNode = static_cast<KDirModelDirNode *>(result);
     m_urlsBeingFetched.remove(dirNode);
@@ -878,7 +883,8 @@ QVariant KDirModel::data(const QModelIndex &index, int role) const
                 return KIO::convertSize(item.size()); // size formatted as QString
             case ModifiedTime: {
                 static KFormat format;
-                const QDateTime dt = item.time(KFileItem::ModificationTime);
+                const auto time = item.entry().numberValue(KIO::UDSEntry::UDS_MODIFICATION_TIME);
+                const QDateTime dt = QDateTime::fromSecsSinceEpoch(time, QTimeZone(QTimeZone::UTC));
                 return format.formatRelativeDateTime(dt, QLocale::ShortFormat);
             }
             case Permissions:

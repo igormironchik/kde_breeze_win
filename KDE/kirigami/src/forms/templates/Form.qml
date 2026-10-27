@@ -101,7 +101,7 @@ Item {
             labelWidth = w;
             for (let entry of children) {
                 if ("__assignedWidthForLabels" in entry) {
-                    entry.__assignedWidthForLabels = w;
+                    entry.__assignedWidthForLabels = Math.round(w);
                 }
             }
 
@@ -116,7 +116,11 @@ Item {
 
             root.__collapsed = Math.max(implicitWidth, twinImplicitWidth) > root.width;
         }
-        anchors.centerIn: parent
+        anchors {
+            top: parent.top
+            topMargin: Platform.Units.largeSpacing
+            horizontalCenter: parent.horizontalCenter
+        }
 
         width: root.__collapsed
                 ? Math.min(implicitWidth, parent.width, Platform.Units.gridUnit * 30)

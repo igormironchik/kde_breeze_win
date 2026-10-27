@@ -140,8 +140,12 @@ KFilePlacesModelPrivate::KFilePlacesModelPrivate(KFilePlacesModel *qq)
     , fileIndexingEnabled(isFileIndexingEnabled())
     , tagsLister(new KCoreDirLister(q))
 {
-    if (KProtocolInfo::isKnownProtocol(QStringLiteral("tags"))) {
+    if (fileIndexingEnabled && KProtocolInfo::isKnownProtocol(QStringLiteral("tags"))) {
         QObject::connect(tagsLister, &KCoreDirLister::itemsAdded, q, [this](const QUrl &, const KFileItemList &items) {
+            if (!supportedSchemes.isEmpty() && !supportedSchemes.contains(QLatin1String("tags"))) {
+                return;
+            }
+
             if (tags.isEmpty()) {
                 QList<QUrl> existingBookmarks;
 

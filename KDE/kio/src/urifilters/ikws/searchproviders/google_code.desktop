@@ -52,6 +52,8 @@ Name[lv]=Google Code
 Name[mai]=गूगल कोड
 Name[mr]=गूगल कोड
 Name[my]=ဂူးဂယ်ကုတ်
+Name[nan_TW]=Google Code
+Name[nan_TW@latin]=Google Code
 Name[nb]=Google Code
 Name[nds]=Google.com-Kode
 Name[nl]=Google Code
@@ -76,7 +78,6 @@ Name[tg]=Рамзи Google
 Name[th]=Google Code
 Name[tok]=ilo alasa pi ilo lon ilo Google
 Name[tr]=Google Kod
-Name[ug]=Google Code
 Name[uk]=Google Code
 Name[vi]=Google Mã
 Name[wa]=Google Côde
@@ -127,6 +128,8 @@ Query[lt]=https://code.google.com/query/#q=\\{%2520}
 Query[lv]=https://code.google.com/query/#q=\\{%2520}
 Query[mr]=https://code.google.com/query/#q=\\{%2520}
 Query[my]=https://code.google.com/query/#q=\\{%2520}
+Query[nan_TW]=https://code.google.com/query/#q=\\{%2520}
+Query[nan_TW@latin]=https://code.google.com/query/#q=\\{%2520}
 Query[nb]=https://code.google.com/query/#q=\\{%2520}
 Query[nds]=https://code.google.com/query/#q=\\{%2520}
 Query[nl]=https://code.google.com/query/#q=\\{%2520}
@@ -150,7 +153,6 @@ Query[tg]=https://code.google.com/query/#q=\\{%2520}
 Query[th]=https://code.google.com/query/#q=\\{%2520}
 Query[tok]=https://code.google.com/query/#q=\\{%2520}
 Query[tr]=https://code.google.com/query/#q=\\{%2520}
-Query[ug]=https://code.google.com/query/#q=\\{%2520}
 Query[uk]=https://code.google.com/query/#q=\\{%2520}
 Query[vi]=https://code.google.com/query/#q=\\{%2520}
 Query[wa]=https://code.google.com/query/#q=\\{%2520}
